@@ -36,6 +36,7 @@ struct YarmoukStudentApp: App {
             .sheet(item: Binding(get: { router.notesFor.map { CourseRoute(code: $0) } },
                                  set: { router.notesFor = $0?.code })) { route in
                 NavigationStack { NotesView(courseCode: route.code) }
+                    .presentationDragIndicator(.visible)
                     .environmentObject(store)
                     .environment(\.layoutDirection, .rightToLeft)
                     .environment(\.locale, Locale(identifier: "ar_JO@numbers=latn"))

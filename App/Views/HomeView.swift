@@ -101,7 +101,9 @@ struct HomeView: View {
                             }
                             Spacer()
                             VStack(alignment: .trailing, spacing: 2) {
-                                Text(next.slot.startLabel).font(.plex(.title3, .bold)).foregroundStyle(.primary)
+                                (Text(ClockFormat.number(next.slot.startHour, next.slot.startMinute)).font(.plex(.title3, .bold))
+                                 + Text("\u{00A0}" + ClockFormat.period(next.slot.startHour)).font(.plex(.footnote, .semibold)))
+                                    .foregroundStyle(.primary).lineLimit(1)
                                 Text(countdown(to: next.interval.start, now: context.date))
                                     .font(.plex(.caption, .semibold)).foregroundStyle(Brand.accent)
                             }

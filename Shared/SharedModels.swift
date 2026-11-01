@@ -64,10 +64,12 @@ struct LectureSlot: Codable, Hashable, Identifiable {
         let total = startHour * 60 + startMinute + durationMinutes
         return Self.timeLabel(total / 60, total % 60)
     }
-    static func timeLabel(_ h: Int, _ m: Int) -> String {
-        let h12 = h > 12 ? h - 12 : (h == 0 ? 12 : h)
-        return String(format: "%d:%02d", h12, m)
-    }
+    var endHour: Int { (startHour * 60 + startMinute + durationMinutes) / 60 }
+    var endMinute: Int { (startHour * 60 + startMinute + durationMinutes) % 60 }
+    /// «4:30 م – 5:30 م»
+    var rangeLabel: String { ClockFormat.range(startHour, startMinute, endHour, endMinute) }
+    /// "9:30 ص" — 12-hour with Arabic ص/م everywhere in the app.
+    static func timeLabel(_ h: Int, _ m: Int) -> String { ClockFormat.label(h, m) }
 }
 
 struct Timetable: Codable, Hashable {

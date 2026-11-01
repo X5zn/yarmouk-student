@@ -497,7 +497,7 @@ private struct RegisteredCourseCard: View {
                 }
                 Text(course.name).font(.plex(.headline))
                 HStack(spacing: 14) {
-                    Label { Text(verbatim: "\(course.from) – \(course.to)").monospacedDigit() } icon: { Image(systemName: "clock") }
+                    Label { Text(verbatim: ClockFormat.range(from: course.from, to: course.to)).monospacedDigit() } icon: { Image(systemName: "clock") }
                     if !course.room.isEmpty {
                         Label { Text(verbatim: displayRoom) } icon: { Image(systemName: course.mode.contains("إلكتروني") ? "video" : "mappin.and.ellipse") }
                     }

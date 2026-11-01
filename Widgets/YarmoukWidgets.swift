@@ -83,7 +83,9 @@ struct NextLectureView: View {
                 Spacer(minLength: 0)
                 if let c = entry.course, let s = entry.slot, let start = entry.start {
                     Text(c.name).font(.headline).lineLimit(2)
-                    Text(s.startLabel).font(.system(size: 26, weight: .bold, design: .rounded))
+                    (Text(ClockFormat.number(s.startHour, s.startMinute)).font(.system(size: 26, weight: .bold, design: .rounded))
+                     + Text("\u{00A0}" + ClockFormat.period(s.startHour)).font(.system(size: 15, weight: .semibold)))
+                        .lineLimit(1).minimumScaleFactor(0.7)
                     if !place.isEmpty { Text(place).font(.caption).foregroundStyle(.secondary).lineLimit(1) }
                     Text(start, style: .relative).font(.caption2.weight(.semibold)).foregroundStyle(Brand.green)
                 } else {

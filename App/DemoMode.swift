@@ -93,7 +93,7 @@ enum DemoMode {
             store.sections[ar] = [
                 MoodleSection(id: "s0", number: 0, title: "عام", modules: [
                     demoForum,
-                    MoodleModule(id: "9002", name: "موعد المحاضرة: أحد وثلاثاء وخميس 9:30 بقاعة اد 253", kind: "label", url: nil),
+                    MoodleModule(id: "9002", name: "موعد المحاضرة: أحد وثلاثاء وخميس 9:30 ص بقاعة اد 253", kind: "label", url: nil),
                     MoodleModule(id: "9003", name: "خطة المادة - الفصل الأول", kind: "resource", url: "https://elearning.yu.edu.jo/mod/resource/view.php?id=9003"),
                     MoodleModule(id: "9004", name: "المحاضرة على Teams", kind: "url", url: "https://elearning.yu.edu.jo/mod/url/view.php?id=9004")
                 ]),

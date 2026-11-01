@@ -183,13 +183,8 @@ final class AppStore: ObservableObject {
 
     static let coursePalette = ["#006B3F", "#E07A1F", "#5B4BC4", "#1D74D8", "#0E8C8C", "#C2410C", "#B4236B", "#4D7C0F"]
 
-    /// "09:30" / "4:30" / "16:30" → (hour, minute) on a 24h clock (university hours 8:00–19:00).
-    static func clock(_ s: String) -> (Int, Int)? {
-        let digits = s.replacingOccurrences(of: ".", with: ":").split(separator: ":").map { Int($0.trimmingCharacters(in: .whitespaces)) }
-        guard digits.count >= 2, var h = digits[0], let m = digits[1] else { return nil }
-        if h < 7 { h += 12 }
-        return (h, m)
-    }
+    /// "09:30" / "04:30" / "16:30" / "4:30 م" → (hour, minute) on a 24h clock (see ClockFormat.parse).
+    static func clock(_ s: String) -> (Int, Int)? { ClockFormat.parse(s) }
 
     /// His real registered courses become the timetable: days, times, rooms, instructors.
     /// Seats and colours he already has are kept; e-learning ids are matched by course code.

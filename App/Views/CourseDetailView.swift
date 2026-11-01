@@ -274,11 +274,20 @@ struct CourseHero: View {
             }
             if let first = slots.sorted(by: { $0.weekday < $1.weekday }).first {
                 let days = slots.map(\.weekday).sorted { ($0 % 7) < ($1 % 7) }.map { ArabicFormat.dayName($0) }
-                HStack(spacing: 6) {
-                    chip("calendar", days.joined(separator: " · "))
-                    chip("clock", "\(first.startLabel)–\(first.endLabel)")
-                    if first.isOnline { chip("video.fill", "Teams") }
-                    else if !first.room.isEmpty { chip("mappin", first.room) }
+                // One row when it fits; otherwise days on their own row, then time and room.
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 6) {
+                        chip("calendar", days.joined(separator: " · "))
+                        chip("clock", first.rangeLabel)
+                        placeChip(first)
+                    }
+                    VStack(alignment: .leading, spacing: 6) {
+                        chip("calendar", days.joined(separator: " · "))
+                        HStack(spacing: 6) {
+                            chip("clock", first.rangeLabel)
+                            placeChip(first)
+                        }
+                    }
                 }
             }
         }
@@ -290,6 +299,11 @@ struct CourseHero: View {
                 .fill(LinearGradient(colors: [course.color, course.color.opacity(0.78)], startPoint: .topLeading, endPoint: .bottomTrailing))
                 .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
         }
+    }
+
+    @ViewBuilder private func placeChip(_ slot: LectureSlot) -> some View {
+        if slot.isOnline { chip("video.fill", "Teams") }
+        else if !slot.room.isEmpty { chip("mappin", slot.room) }
     }
 
     private func chip(_ symbol: String, _ text: String) -> some View {

@@ -278,10 +278,14 @@ struct LectureCard: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             VStack(alignment: .trailing, spacing: 2) {
-                Text(slot.startLabel).font(.system(size: 17, weight: .bold, design: .rounded)).foregroundStyle(.primary)
-                Text(slot.endLabel).font(.system(size: 13, weight: .medium, design: .rounded)).foregroundStyle(.secondary)
+                (Text(ClockFormat.number(slot.startHour, slot.startMinute)).font(.system(size: 17, weight: .bold, design: .rounded))
+                 + Text("\u{00A0}" + ClockFormat.period(slot.startHour)).font(.plex(.caption, .semibold)))
+                    .foregroundStyle(.primary).lineLimit(1).minimumScaleFactor(0.8)
+                (Text(ClockFormat.number(slot.endHour, slot.endMinute)).font(.system(size: 13, weight: .medium, design: .rounded))
+                 + Text("\u{00A0}" + ClockFormat.period(slot.endHour)).font(.plex(.caption2, .medium)))
+                    .foregroundStyle(.secondary).lineLimit(1).minimumScaleFactor(0.8)
             }
-            .frame(width: 50, alignment: .trailing)
+            .frame(width: 64, alignment: .trailing)
             .padding(.top, 2)
             RoundedRectangle(cornerRadius: 2.5).fill(course.color.gradient).frame(width: 5)
             VStack(alignment: .leading, spacing: 6) {

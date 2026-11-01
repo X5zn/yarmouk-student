@@ -24,7 +24,7 @@ jobs:
       - name: Parser tests (SIS pages)
         run: |
           mkdir -p /tmp/pt && cp Tests/ParserTests.swift /tmp/pt/main.swift
-          xcrun swiftc -swift-version 5 App/SISParsers.swift /tmp/pt/main.swift -o /tmp/pt/run
+          xcrun swiftc -swift-version 5 App/SISParsers.swift Shared/ClockFormat.swift /tmp/pt/main.swift -o /tmp/pt/run
           /tmp/pt/run
 
       - name: Generate Xcode project
