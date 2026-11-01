@@ -30,13 +30,17 @@ struct YarmoukStudentApp: App {
             .tint(Brand.accent)
             .sheet(item: $router.web) { link in
                 InAppBrowser(url: link.url, title: link.title)
+                    .environment(\.locale, Locale(identifier: "ar_JO@numbers=latn"))
+                    .font(.plex(.body))
             }
             .sheet(item: Binding(get: { router.notesFor.map { CourseRoute(code: $0) } },
                                  set: { router.notesFor = $0?.code })) { route in
                 NavigationStack { NotesView(courseCode: route.code) }
                     .environmentObject(store)
                     .environment(\.layoutDirection, .rightToLeft)
+                    .environment(\.locale, Locale(identifier: "ar_JO@numbers=latn"))
                     .font(.plex(.body))
+                    .tint(Brand.accent)
             }
         }
         .onChange(of: scenePhase) { _, phase in

@@ -85,8 +85,9 @@ struct SummaryView: View {
     }
 
     private func sparkline(_ terms: [AcademicTerm]) -> some View {
-        Chart(Array(terms.enumerated()), id: \.offset) { i, t in
-            AreaMark(x: .value("الفصل", i), y: .value("المعدل", t.termGPA ?? 0))
+        let dom = sparkDomain(terms)
+        return Chart(Array(terms.enumerated()), id: \.offset) { i, t in
+            AreaMark(x: .value("الفصل", i), yStart: .value("الأدنى", dom.lowerBound), yEnd: .value("المعدل", t.termGPA ?? dom.lowerBound))
                 .foregroundStyle(LinearGradient(colors: [Brand.green.opacity(0.25), Brand.green.opacity(0)], startPoint: .top, endPoint: .bottom))
                 .interpolationMethod(.catmullRom)
             LineMark(x: .value("الفصل", i), y: .value("المعدل", t.termGPA ?? 0))
@@ -97,9 +98,10 @@ struct SummaryView: View {
                 PointMark(x: .value("الفصل", i), y: .value("المعدل", t.termGPA ?? 0)).foregroundStyle(Brand.accent).symbolSize(40)
             }
         }
-        .chartYScale(domain: sparkDomain(terms))
+        .chartYScale(domain: dom)
         .chartXAxis(.hidden)
         .chartYAxis(.hidden)
+        .clipped()
         .environment(\.layoutDirection, .leftToRight)
     }
 
