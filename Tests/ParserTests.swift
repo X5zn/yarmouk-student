@@ -112,7 +112,7 @@ check(!masked.contains("1234567890") && !masked.contains("تجريبي") && mask
 // Times: SIS prints afternoon lectures without AM/PM; the app shows 12-hour with ص/م.
 func p(_ s: String) -> String { ClockFormat.parse(s).map { "\($0.0):\($0.1)" } ?? "nil" }
 check(p("09:30") == "9:30" && p("10:30") == "10:30" && p("12:30") == "12:30", "morning/noon times")
-check(p("04:30") == "16:30" && p("05:30") == "17:30" && p("02:00") == "14:00" && p("01:30") == "13:30", "afternoon times without AM/PM")
+check(p("04:30") == "16:30" && p("05:30") == "17:30" && p("02:00") == "14:0" && p("01:30") == "13:30", "afternoon times without AM/PM")
 check(p("16:30") == "16:30" && p("4:30 م") == "16:30" && p("٠٩:٣٠") == "9:30" && p("12:00 ص") == "0:0" && p("x") == "nil", "explicit and Arabic-digit times")
 check(ClockFormat.label(9, 30) == "9:30\u{00A0}ص" && ClockFormat.label(16, 30) == "4:30\u{00A0}م" && ClockFormat.label(12, 30) == "12:30\u{00A0}م", "labels with ص/م")
 check(ClockFormat.range(from: "04:30", to: "05:30") == "4:30\u{00A0}م – 5:30\u{00A0}م", "registered course range")
