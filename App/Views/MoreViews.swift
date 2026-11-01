@@ -7,6 +7,7 @@ import AVFoundation
 struct SettingsView: View {
     @EnvironmentObject var store: AppStore
     @State private var alarmState = ""
+    @State private var cacheText = ""
 
     var body: some View {
         Form {
@@ -37,7 +38,29 @@ struct SettingsView: View {
             } header: { Text("الغياب") } footer: {
                 Text("تأكد من النسبة من تعليمات الجامعة أو الدكتور، وعدّلها هون.")
             }
+            Section {
+                HStack {
+                    Label("ملفات المواد المحفوظة", systemImage: "internaldrive")
+                    Spacer()
+                    Text(cacheText).foregroundStyle(.secondary).monospacedDigit()
+                }
+                Button(role: .destructive) {
+                    Haptics.warning(); FileStore.shared.clear(); cacheText = FileStore.shared.cacheSizeText
+                } label: { Label("امسح الملفات المحفوظة", systemImage: "trash") }
+            } header: { Text("التخزين") } footer: {
+                Text("الملفات اللي فتحتها من الايليرنينغ بتنحفظ عشان تفتح بدون نت. بتنزل من جديد لما تفتحها.")
+            }
+            Section {
+                HStack {
+                    Image("YULogo").resizable().scaledToFit().frame(width: 34, height: 34)
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text("جامعة اليرموك").font(.plex(.body, .semibold))
+                        Text("النسخة \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")").font(.plex(.caption)).foregroundStyle(.secondary)
+                    }
+                }
+            }
         }
+        .onAppear { cacheText = FileStore.shared.cacheSizeText }
         .navigationTitle("الإعدادات")
         .onChange(of: store.settings) { old, new in
             Haptics.select()
@@ -104,7 +127,8 @@ struct ExamsView: View {
     var body: some View {
         List {
             ForEach(store.exams.sorted { $0.date < $1.date }) { e in
-                HStack {
+                HStack(spacing: 12) {
+                    RoundedRectangle(cornerRadius: 2).fill(store.course(e.courseCode)?.color ?? .purple).frame(width: 4, height: 40)
                     VStack(alignment: .leading, spacing: 3) {
                         Text("\(e.title) · \(store.course(e.courseCode)?.name ?? e.courseCode)").font(.plex(.body, .semibold))
                         Text("\(ArabicFormat.shortDate(e.date)) · \(ArabicFormat.time(e.date))").font(.plex(.footnote)).foregroundStyle(.secondary)
@@ -120,6 +144,17 @@ struct ExamsView: View {
                 let ids = idx.map { sorted[$0].id }
                 store.exams.removeAll { ids.contains($0.id) }
                 store.rescheduleEverything()
+            }
+        }
+        .overlay {
+            if store.exams.isEmpty {
+                VStack(spacing: 14) {
+                    ScreenState(symbol: "graduationcap", title: "ما في امتحانات مضافة", message: "ضيف مواعيد امتحاناتك وبنذكرك قبلها بأسبوع، ويوم، وساعة.")
+                    Button { Haptics.tap(); adding = true } label: {
+                        Label("ضيف امتحان", systemImage: "plus").font(.plex(.body, .semibold)).padding(.horizontal, 18).padding(.vertical, 6)
+                    }
+                    .buttonStyle(.borderedProminent).tint(Brand.green).buttonBorderShape(.capsule)
+                }
             }
         }
         .navigationTitle("الامتحانات")
@@ -184,8 +219,14 @@ struct AssignmentsView: View {
             if !done.isEmpty {
                 Section("مسلّم") { ForEach(done) { row($0) } }
             }
+        }
+        .overlay {
             if store.deadlines.isEmpty {
-                Text(store.moodleLinked ? "ما في واجبات حالياً" : "سجّل دخول الايليرنينغ من «حسابي»").foregroundStyle(.secondary)
+                if store.moodleLinked {
+                    ScreenState(symbol: "checkmark.seal", title: "ما عليك واجبات", message: "أول ما الدكتور ينزّل واجب أو كويز بيظهر هون وبنبعتلك إشعار.")
+                } else {
+                    MoodleConnectCard(message: "الواجبات والكويزات ومواعيد تسليمها بتظهر هون لحالها.").padding(20)
+                }
             }
         }
         .navigationTitle("الواجبات")
@@ -198,7 +239,7 @@ struct AssignmentsView: View {
                 Image(systemName: d.submitted ? "checkmark.circle.fill" : "clock.badge.exclamationmark")
                     .foregroundStyle(d.submitted ? .green : .orange)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(d.name).foregroundStyle(.primary)
+                    Text(d.name).font(.plex(.body, .medium)).foregroundStyle(.primary)
                     Text("\(store.course(moodleId: d.courseId)?.name ?? "") · \(ArabicFormat.shortDate(d.due)) \(ArabicFormat.time(d.due))")
                         .font(.plex(.footnote)).foregroundStyle(.secondary)
                 }
@@ -213,6 +254,7 @@ struct AssignmentsView: View {
 
 struct SearchView: View {
     @EnvironmentObject var store: AppStore
+    @StateObject private var opener = FileOpener()
     @State private var query = ""
 
     var body: some View {
@@ -222,7 +264,13 @@ struct SearchView: View {
             Section("المواد") {
                 ForEach(courses) { c in
                     NavigationLink(value: CourseRoute(code: c.code)) {
-                        VStack(alignment: .leading) { Text(c.name); Text(c.code).font(.plex(.footnote)).foregroundStyle(.secondary) }
+                        HStack(spacing: 12) {
+                            SymbolTile(symbol: "book.closed.fill", tint: c.color, size: 32)
+                            VStack(alignment: .leading, spacing: 1) {
+                                Text(c.name).font(.plex(.body, .medium))
+                                Text(c.instructor.isEmpty ? c.code : "\(c.code) · \(c.instructor)").font(.plex(.footnote)).foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
             }
@@ -231,16 +279,38 @@ struct SearchView: View {
                 if !files.isEmpty {
                     Section("ملفات ومحتوى") {
                         ForEach(files, id: \.1.id) { cid, m in
-                            Button { Haptics.tap(); Router.shared.open(m.url, title: m.name) } label: {
-                                Label(m.name, systemImage: m.symbol)
+                            Button {
+                                guard let s = m.url, let u = URL(string: s) else { return }
+                                if m.kind == "resource" { opener.openFile(key: "cm" + m.id, url: u, title: m.name) }
+                                else if m.kind == "url" { opener.openLink(key: m.id, url: u, title: m.name) }
+                                else { Haptics.tap(); Router.shared.open(s, title: m.name) }
+                            } label: {
+                                HStack(spacing: 12) {
+                                    let k = store.fileKinds[m.id] ?? .generic
+                                    SymbolTile(symbol: m.kind == "resource" ? k.symbol : m.symbol, tint: m.kind == "resource" ? k.tint : Brand.green, size: 30)
+                                    VStack(alignment: .leading, spacing: 1) {
+                                        Text(m.name).font(.plex(.body)).foregroundStyle(.primary).lineLimit(2)
+                                        Text(store.course(moodleId: cid)?.name ?? m.kindLabel).font(.plex(.caption)).foregroundStyle(.secondary)
+                                    }
+                                    Spacer()
+                                    if opener.busyKey == m.id || opener.busyKey == "cm" + m.id { ProgressView().controlSize(.small) }
+                                }
                             }
                         }
                     }
                 }
             }
         }
+        .overlay {
+            let q = query.trimmingCharacters(in: .whitespaces)
+            if !q.isEmpty && !store.timetable.courses.contains(where: { $0.name.contains(q) || $0.code.localizedCaseInsensitiveContains(q) || $0.instructor.contains(q) })
+                && !store.sections.values.contains(where: { $0.contains { $0.modules.contains { $0.name.contains(q) } } }) {
+                ScreenState(symbol: "magnifyingglass", title: "ما لقينا «\(q)»", message: "جرّب اسم مادة، دكتور، أو اسم ملف.")
+            }
+        }
         .navigationTitle("بحث")
         .searchable(text: $query, prompt: "مادة، ملف، دكتور…")
+        .fileOpener(opener)
     }
 }
 
@@ -256,15 +326,23 @@ struct PoetryView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                VStack(spacing: 8) {
-                    Text(verse.first)
-                    Text(verse.second)
+                VStack(spacing: 14) {
+                    Image(systemName: "quote.opening").font(.system(size: 22, weight: .bold)).foregroundStyle(Brand.gold)
+                    VStack(spacing: 10) {
+                        Text(verse.first)
+                        Text(verse.second)
+                    }
+                    .font(.custom("Amiri-Regular", size: 25, relativeTo: .title2))
+                    .lineSpacing(6)
+                    .multilineTextAlignment(.center)
+                    .id(verse.first)
+                    .transition(.opacity.combined(with: .scale(scale: 0.97)))
+                    Text(verse.poet).font(.plex(.footnote, .medium)).foregroundStyle(.secondary)
                 }
-                .font(.system(.title2, design: .serif).weight(.medium))
-                .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 28)
+                .padding(.vertical, 24)
                 .healthCard()
+                .animation(.snappy, value: verse.first)
 
                 Text("شو بحر هالبيت؟").font(.plex(.headline))
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
@@ -286,7 +364,10 @@ struct PoetryView: View {
                         Text(m.key).font(.plex(.footnote)).foregroundStyle(.secondary)
                     }
                     .healthCard()
-                    Button("بيت ثاني") { next() }.buttonStyle(.borderedProminent).tint(Brand.green)
+                    Button { next() } label: {
+                        Label("بيت ثاني", systemImage: "arrow.clockwise").font(.plex(.body, .semibold)).padding(.horizontal, 14).padding(.vertical, 4)
+                    }
+                    .buttonStyle(.borderedProminent).tint(Brand.green).buttonBorderShape(.capsule)
                 }
                 Text("نتيجتك \(score)/\(total)").font(.plex(.footnote)).foregroundStyle(.secondary)
             }

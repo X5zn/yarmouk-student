@@ -109,7 +109,7 @@ struct HomeView: View {
                     }
                     .buttonStyle(PressableStyle())
                 } else {
-                    EmptyHint(symbol: "moon.stars", text: "ما في محاضرات قريبة")
+                    InlineEmpty(symbol: "moon.stars", text: "ما في محاضرات قريبة")
                 }
             }
             Divider()
@@ -196,7 +196,7 @@ struct HomeView: View {
                 Text("\(store.course(e.courseCode)?.name ?? e.courseCode) · \(e.title) \(ArabicFormat.shortDate(e.date))")
                     .font(.plex(.subheadline)).foregroundStyle(.secondary).lineLimit(1)
             } else {
-                EmptyHint(symbol: "checkmark.seal", text: "ما في امتحانات مسجلة — ضيفها من هون")
+                InlineEmpty(symbol: "plus", text: "ما في امتحانات مسجلة، ضيفها من هون")
             }
         }
         .healthCard()
@@ -214,7 +214,7 @@ struct HomeView: View {
                 ProgressView(value: Double(min(w.used, w.limit)), total: Double(w.limit))
                     .tint(w.used >= w.limit - 1 ? Color.red : Color.orange)
             } else {
-                EmptyHint(symbol: "hand.thumbsup", text: "ولا غياب لحد هلأ. بعد كل محاضرة بنسألك «حضرت؟»")
+                InlineEmpty(symbol: "hand.thumbsup", text: "ولا غياب لحد هلأ. بعد كل محاضرة بنسألك «حضرت؟»")
             }
         }
         .healthCard()
@@ -277,7 +277,8 @@ struct HomeView: View {
                 Text(v.first)
                 Text(v.second)
             }
-            .font(.system(.title3, design: .serif).weight(.medium))
+            .font(.custom("Amiri-Regular", size: 21, relativeTo: .title3))
+            .lineSpacing(4)
             .foregroundStyle(.primary)
             .frame(maxWidth: .infinity)
             .multilineTextAlignment(.center)

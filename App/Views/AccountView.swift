@@ -97,9 +97,14 @@ struct AccountView: View {
                 .frame(width: 64, height: 64)
                 .background(Brand.green, in: Circle())
             VStack(alignment: .leading, spacing: 3) {
-                Text(p.fullName).font(.plex(.title3, .bold))
-                Text(p.studentNumber).font(.plex(.subheadline)).monospacedDigit().foregroundStyle(.secondary)
-                Text([p.major, p.college].filter { !$0.isEmpty }.joined(separator: " · ")).font(.plex(.footnote)).foregroundStyle(.secondary)
+                if p.fullName.isEmpty {
+                    Text("أهلاً فيك 👋").font(.plex(.title3, .bold))
+                    Text("سجّل دخول SIS والايليرنينغ تحت، وبتظهر معلوماتك هون").font(.plex(.footnote)).foregroundStyle(.secondary)
+                } else {
+                    Text(p.fullName).font(.plex(.title3, .bold))
+                    if !p.studentNumber.isEmpty { Text(p.studentNumber).font(.plex(.subheadline)).monospacedDigit().foregroundStyle(.secondary) }
+                    Text([p.major, p.college].filter { !$0.isEmpty }.joined(separator: " · ")).font(.plex(.footnote)).foregroundStyle(.secondary)
+                }
             }
             Spacer()
         }
@@ -108,10 +113,12 @@ struct AccountView: View {
 
     private var statsGrid: some View {
         let p = store.profile
+        let gpa = store.sis.record?.summary.cumulativeGPA ?? p.gpa
+        let hours = p.passedHours ?? store.sis.record?.summary.cumulativeHours
         return Grid(horizontalSpacing: 10, verticalSpacing: 10) {
             GridRow {
-                stat("المعدل التراكمي", p.gpa.map { String(format: "%.1f", $0) } ?? "—", Brand.green)
-                stat("ساعات مجتازة", p.passedHours.map(String.init) ?? "—", .blue)
+                stat("المعدل التراكمي", gpa.map { String(format: "%.1f", $0) } ?? "—", Brand.green)
+                stat("ساعات مجتازة", hours.map { String($0) } ?? "—", .blue)
             }
             GridRow {
                 stat("ضايلك", p.remainingHours.map { "\($0) ساعة" } ?? "—", .orange)
@@ -135,7 +142,7 @@ struct AccountView: View {
                 .foregroundStyle(.white)
                 .frame(width: 29, height: 29)
                 .background(tint, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
-            Text(title).foregroundStyle(.primary)
+            Text(title).font(.plex(.body)).foregroundStyle(.primary)
         }
     }
 

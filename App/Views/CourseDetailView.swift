@@ -23,10 +23,10 @@ final class FileOpener: ObservableObject {
                 Router.shared.open(url.absoluteString, title: title)
             } catch FileFetchError.login {
                 Haptics.warning()
-                error = FileFetchError.login.errorDescription
+                self.error = FileFetchError.login.errorDescription
             } catch {
                 Haptics.warning()
-                error = "ما قدرنا ننزّل الملف هلأ. تأكد من النت وجرّب كمان مرة."
+                self.error = "ما قدرنا ننزّل الملف هلأ. تأكد من النت وجرّب كمان مرة."
             }
         }
     }
@@ -153,7 +153,7 @@ struct CourseDetailView: View {
                 }
             }
             QuickAction(symbol: "mic.fill", title: "ملاحظاتي") { router.openNotes(for: code) }
-            if let t = teamsModule, let u = t.url.flatMap { URL(string: $0) } {
+            if let t = teamsModule, let u = t.url.flatMap({ URL(string: $0) }) {
                 QuickAction(symbol: "video.fill", title: "Teams") { opener.openLink(key: t.id, url: u, title: t.name) }
             }
             QuickAction(symbol: "safari.fill", title: "الموقع") {
