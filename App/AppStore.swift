@@ -1,1 +1,286 @@
-aW1wb3J0IEZvdW5kYXRpb24KaW1wb3J0IFN3aWZ0VUkKaW1wb3J0IFdpZGdldEtpdAoKLy8vIEV2ZXJ5dGhpbmcgdGhlIGFwcCBrbm93cywgc2F2ZWQgb24gdGhlIHBob25lLiBTY3JlZW5zIHJlYWQgZnJvbSBoZXJlLgpATWFpbkFjdG9yCmZpbmFsIGNsYXNzIEFwcFN0b3JlOiBPYnNlcnZhYmxlT2JqZWN0IHsKICAgIHN0YXRpYyBsZXQgc2hhcmVkID0gQXBwU3RvcmUoKQoKICAgIEBQdWJsaXNoZWQgdmFyIHRpbWV0YWJsZTogVGltZXRhYmxlID0gU2hhcmVkU3RvcmUubG9hZFRpbWV0YWJsZSgpIHsgZGlkU2V0IHsgU2hhcmVkU3RvcmUuc2F2ZVRpbWV0YWJsZSh0aW1ldGFibGUpOyBXaWRnZXRDZW50ZXIuc2hhcmVkLnJlbG9hZEFsbFRpbWVsaW5lcygpIH0gfQogICAgQFB1Ymxpc2hlZCB2YXIgcHJvZmlsZSA9IFN0dWRlbnRQcm9maWxlKCkgeyBkaWRTZXQgeyBzYXZlKCkgfSB9CiAgICBAUHVibGlzaGVkIHZhciBwbGFuQ2F0ZWdvcmllczogW1BsYW5DYXRlZ29yeV0gPSBbXSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIHNpc1BhZ2VzOiBbU3RyaW5nOiBTSVNQYWdlXSA9IFs6XSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIG1vb2RsZUNvdXJzZXM6IFtNb29kbGVDb3Vyc2VdID0gW10geyBkaWRTZXQgeyBzYXZlKCkgfSB9CiAgICBAUHVibGlzaGVkIHZhciBzZWN0aW9uczogW0ludDogW01vb2RsZVNlY3Rpb25dXSA9IFs6XSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIGRlYWRsaW5lczogW0RlYWRsaW5lXSA9IFtdIHsgZGlkU2V0IHsgc2F2ZSgpIH0gfQogICAgQFB1Ymxpc2hlZCB2YXIgbm90aWNlczogW01vb2RsZU5vdGljZV0gPSBbXSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIGV4YW1zOiBbRXhhbV0gPSBbXSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIGF0dGVuZGFuY2U6IFtBdHRlbmRhbmNlTWFya10gPSBbXSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIG5vdGVzOiBbQ291cnNlTm90ZV0gPSBbXSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIHNldHRpbmdzID0gQXBwU2V0dGluZ3MoKSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIG1vb2RsZUxpbmtlZCA9IGZhbHNlIHsgZGlkU2V0IHsgc2F2ZSgpIH0gfQogICAgQFB1Ymxpc2hlZCB2YXIgc2lzTGlua2VkID0gZmFsc2UgeyBkaWRTZXQgeyBzYXZlKCkgfSB9CiAgICBAUHVibGlzaGVkIHZhciBzaXMgPSBTSVNEYXRhLmxvYWQoKSB7IGRpZFNldCB7IGlmICFsb2FkaW5nIHsgc2lzLnNhdmUoKSB9IH0gfQogICAgQFB1Ymxpc2hlZCB2YXIgc2lzTmVlZHNMb2dpbiA9IGZhbHNlCiAgICBAUHVibGlzaGVkIHZhciBzaXNSZWZyZXNoaW5nID0gZmFsc2UKICAgIHByaXZhdGUgdmFyIGJhY2tncm91bmRTSVM6IFNJU1N5bmM/CiAgICBAUHVibGlzaGVkIHZhciBvbmJvYXJkZWQgPSBmYWxzZSB7IGRpZFNldCB7IHNhdmUoKSB9IH0KICAgIEBQdWJsaXNoZWQgdmFyIGxhc3RNb29kbGVTeW5jOiBEYXRlPyB7IGRpZFNldCB7IHNhdmUoKSB9IH0KCiAgICBAUHVibGlzaGVkIHZhciBpc1JlZnJlc2hpbmcgPSBmYWxzZQogICAgQFB1Ymxpc2hlZCB2YXIgbW9vZGxlTmVlZHNMb2dpbiA9IGZhbHNlCiAgICBAUHVibGlzaGVkIHZhciBsYXN0RXJyb3I6IFN0cmluZz8KCiAgICBwcml2YXRlIHZhciBsb2FkaW5nID0gdHJ1ZQogICAgcHJpdmF0ZSBsZXQgZmlsZVVSTDogVVJMID0gewogICAgICAgIGxldCBkaXIgPSBGaWxlTWFuYWdlci5kZWZhdWx0LnVybHMoZm9yOiAuYXBwbGljYXRpb25TdXBwb3J0RGlyZWN0b3J5LCBpbjogLnVzZXJEb21haW5NYXNrKVswXQogICAgICAgIHRyeT8gRmlsZU1hbmFnZXIuZGVmYXVsdC5jcmVhdGVEaXJlY3RvcnkoYXQ6IGRpciwgd2l0aEludGVybWVkaWF0ZURpcmVjdG9yaWVzOiB0cnVlKQogICAgICAgIHJldHVybiBkaXIuYXBwZW5kaW5nUGF0aENvbXBvbmVudCgic3RvcmUuanNvbiIpCiAgICB9KCkKICAgIHN0YXRpYyB2YXIgbWVkaWFEaXI6IFVSTCB7CiAgICAgICAgbGV0IGRpciA9IEZpbGVNYW5hZ2VyLmRlZmF1bHQudXJscyhmb3I6IC5kb2N1bWVudERpcmVjdG9yeSwgaW46IC51c2VyRG9tYWluTWFzaylbMF0uYXBwZW5kaW5nUGF0aENvbXBvbmVudCgiTm90ZXMiKQogICAgICAgIHRyeT8gRmlsZU1hbmFnZXIuZGVmYXVsdC5jcmVhdGVEaXJlY3RvcnkoYXQ6IGRpciwgd2l0aEludGVybWVkaWF0ZURpcmVjdG9yaWVzOiB0cnVlKQogICAgICAgIHJldHVybiBkaXIKICAgIH0KCiAgICBwcml2YXRlIHN0cnVjdCBTbmFwc2hvdDogQ29kYWJsZSB7CiAgICAgICAgdmFyIHByb2ZpbGU6IFN0dWRlbnRQcm9maWxlCiAgICAgICAgdmFyIHBsYW5DYXRlZ29yaWVzOiBbUGxhbkNhdGVnb3J5XQogICAgICAgIHZhciBzaXNQYWdlczogW1N0cmluZzogU0lTUGFnZV0KICAgICAgICB2YXIgbW9vZGxlQ291cnNlczogW01vb2RsZUNvdXJzZV0KICAgICAgICB2YXIgc2VjdGlvbnM6IFtJbnQ6IFtNb29kbGVTZWN0aW9uXV0KICAgICAgICB2YXIgZGVhZGxpbmVzOiBbRGVhZGxpbmVdCiAgICAgICAgdmFyIG5vdGljZXM6IFtNb29kbGVOb3RpY2VdCiAgICAgICAgdmFyIGV4YW1zOiBbRXhhbV0KICAgICAgICB2YXIgYXR0ZW5kYW5jZTogW0F0dGVuZGFuY2VNYXJrXQogICAgICAgIHZhciBub3RlczogW0NvdXJzZU5vdGVdCiAgICAgICAgdmFyIHNldHRpbmdzOiBBcHBTZXR0aW5ncwogICAgICAgIHZhciBtb29kbGVMaW5rZWQ6IEJvb2wKICAgICAgICB2YXIgc2lzTGlua2VkOiBCb29sCiAgICAgICAgdmFyIG9uYm9hcmRlZDogQm9vbAogICAgICAgIHZhciBsYXN0TW9vZGxlU3luYzogRGF0ZT8KICAgIH0KCiAgICBpbml0KCkgewogICAgICAgIGlmIGxldCBkYXRhID0gdHJ5PyBEYXRhKGNvbnRlbnRzT2Y6IGZpbGVVUkwpLCBsZXQgcyA9IHRyeT8gSlNPTkRlY29kZXIoKS5kZWNvZGUoU25hcHNob3Quc2VsZiwgZnJvbTogZGF0YSkgewogICAgICAgICAgICBwcm9maWxlID0gcy5wcm9maWxlOyBwbGFuQ2F0ZWdvcmllcyA9IHMucGxhbkNhdGVnb3JpZXM7IHNpc1BhZ2VzID0gcy5zaXNQYWdlcwogICAgICAgICAgICBtb29kbGVDb3Vyc2VzID0gcy5tb29kbGVDb3Vyc2VzOyBzZWN0aW9ucyA9IHMuc2VjdGlvbnM7IGRlYWRsaW5lcyA9IHMuZGVhZGxpbmVzOyBub3RpY2VzID0gcy5ub3RpY2VzCiAgICAgICAgICAgIGV4YW1zID0gcy5leGFtczsgYXR0ZW5kYW5jZSA9IHMuYXR0ZW5kYW5jZTsgbm90ZXMgPSBzLm5vdGVzOyBzZXR0aW5ncyA9IHMuc2V0dGluZ3MKICAgICAgICAgICAgbW9vZGxlTGlua2VkID0gcy5tb29kbGVMaW5rZWQ7IHNpc0xpbmtlZCA9IHMuc2lzTGlua2VkOyBvbmJvYXJkZWQgPSBzLm9uYm9hcmRlZDsgbGFzdE1vb2RsZVN5bmMgPSBzLmxhc3RNb29kbGVTeW5jCiAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgc2VlZCgpCiAgICAgICAgfQogICAgICAgIGxvYWRpbmcgPSBmYWxzZQogICAgfQoKICAgIC8vLyBUaW1ldGFibGUgKyBrbm93biBleGFtIHNvIHRoZSBhcHAgaXMgdXNlZnVsIGJlZm9yZSB0aGUgZmlyc3Qgc3luYy4KICAgIHByaXZhdGUgZnVuYyBzZWVkKCkgewogICAgICAgIC8vIFBlcnNvbmFsIGRldGFpbHMgKG5hbWUsIG51bWJlciwgR1BBLCBob3VycykgYXJyaXZlIGZyb20gU0lTIC8gZS1sZWFybmluZyBhZnRlciBoZSBzaWducyBpbi4KICAgICAgICBwcm9maWxlID0gU3R1ZGVudFByb2ZpbGUocGxhblRvdGFsSG91cnM6IDEzMikKICAgICAgICBsZXQgY2FsID0gQ2FsZW5kYXIueWFybW91awogICAgICAgIGlmIGxldCBtaWQgPSBjYWwuZGF0ZShmcm9tOiBEYXRlQ29tcG9uZW50cyh5ZWFyOiAyMDI2LCBtb250aDogMTEsIGRheTogMjIsIGhvdXI6IDksIG1pbnV0ZTogMzApKSB7CiAgICAgICAgICAgIGV4YW1zID0gW0V4YW0oY291cnNlQ29kZTogIkFSNDIyIiwgdGl0bGU6ICLYp9mE2KfZhdiq2K3Yp9mGINin2YTZhti12YHZiiIsIGRhdGU6IG1pZCwKICAgICAgICAgICAgICAgICAgICAgICAgICBub3RlczogItmF2K3YsNmI2YE6INi12YHYrdin2KogNTLigJM3MiDCtyDZhNmE2YLYsdin2KHYqSDZgdmC2Lc6IDgy4oCTOTMiKV0KICAgICAgICB9CiAgICB9CgogICAgcHJpdmF0ZSBmdW5jIHNhdmUoKSB7CiAgICAgICAgZ3VhcmQgIWxvYWRpbmcgZWxzZSB7IHJldHVybiB9CiAgICAgICAgbGV0IHMgPSBTbmFwc2hvdChwcm9maWxlOiBwcm9maWxlLCBwbGFuQ2F0ZWdvcmllczogcGxhbkNhdGVnb3JpZXMsIHNpc1BhZ2VzOiBzaXNQYWdlcywgbW9vZGxlQ291cnNlczogbW9vZGxlQ291cnNlcywKICAgICAgICAgICAgICAgICAgICAgICAgIHNlY3Rpb25zOiBzZWN0aW9ucywgZGVhZGxpbmVzOiBkZWFkbGluZXMsIG5vdGljZXM6IG5vdGljZXMsIGV4YW1zOiBleGFtcywgYXR0ZW5kYW5jZTogYXR0ZW5kYW5jZSwKICAgICAgICAgICAgICAgICAgICAgICAgIG5vdGVzOiBub3Rlcywgc2V0dGluZ3M6IHNldHRpbmdzLCBtb29kbGVMaW5rZWQ6IG1vb2RsZUxpbmtlZCwgc2lzTGlua2VkOiBzaXNMaW5rZWQsCiAgICAgICAgICAgICAgICAgICAgICAgICBvbmJvYXJkZWQ6IG9uYm9hcmRlZCwgbGFzdE1vb2RsZVN5bmM6IGxhc3RNb29kbGVTeW5jKQogICAgICAgIGlmIGxldCBkYXRhID0gdHJ5PyBKU09ORW5jb2RlcigpLmVuY29kZShzKSB7CiAgICAgICAgICAgIHRyeT8gZGF0YS53cml0ZSh0bzogZmlsZVVSTCwgb3B0aW9uczogWy5hdG9taWMsIC5jb21wbGV0ZUZpbGVQcm90ZWN0aW9uVW50aWxGaXJzdFVzZXJBdXRoZW50aWNhdGlvbl0pCiAgICAgICAgfQogICAgfQoKICAgIC8vIE1BUks6IC0gRGVyaXZlZAoKICAgIHZhciBmaXJzdE5hbWU6IFN0cmluZyB7IHByb2ZpbGUuZmlyc3ROYW1lLmlzRW1wdHkgPyAocHJvZmlsZS5mdWxsTmFtZS5zcGxpdChzZXBhcmF0b3I6ICIgIikuZmlyc3QubWFwKFN0cmluZy5pbml0KSA/PyAiIikgOiBwcm9maWxlLmZpcnN0TmFtZSB9CiAgICB2YXIgYXZhdGFyTGV0dGVyOiBTdHJpbmcgeyBmaXJzdE5hbWUuaXNFbXB0eSA/ICLYtyIgOiBTdHJpbmcoZmlyc3ROYW1lLnByZWZpeCgxKSkgfQogICAgdmFyIGdyZWV0aW5nOiBTdHJpbmcgeyBmaXJzdE5hbWUuaXNFbXB0eSA/ICLYo9mH2YTYp9mLINmI2LPZh9mE2KfZiyIgOiAi2KPZh9mE2KfZiyBcKGZpcnN0TmFtZSkiIH0KCiAgICBmdW5jIGNvdXJzZShfIGNvZGU6IFN0cmluZykgLT4gQ291cnNlSW5mbz8geyB0aW1ldGFibGUuY291cnNlKGNvZGUpIH0KICAgIGZ1bmMgY291cnNlKG1vb2RsZUlkOiBJbnQpIC0+IENvdXJzZUluZm8/IHsgdGltZXRhYmxlLmNvdXJzZXMuZmlyc3QgeyAkMC5tb29kbGVJZCA9PSBtb29kbGVJZCB9IH0KCiAgICB2YXIgdG9kYXlzU2xvdHM6IFtMZWN0dXJlU2xvdF0geyB0aW1ldGFibGUuc2xvdHMob246IC5ub3cpIH0KCiAgICB2YXIgcGVuZGluZ0RlYWRsaW5lczogW0RlYWRsaW5lXSB7CiAgICAgICAgZGVhZGxpbmVzLmZpbHRlciB7ICEkMC5zdWJtaXR0ZWQgJiYgJDAuZHVlID4gLm5vdyB9LnNvcnRlZCB7ICQwLmR1ZSA8ICQxLmR1ZSB9CiAgICB9CiAgICB2YXIgc3VibWl0dGVkQ291bnQ6IEludCB7IGRlYWRsaW5lcy5maWx0ZXIoXC5zdWJtaXR0ZWQpLmNvdW50IH0KCiAgICB2YXIgdXBjb21pbmdFeGFtczogW0V4YW1dIHsgZXhhbXMuZmlsdGVyIHsgJDAuZGF0ZSA+IC5ub3cuYWRkaW5nVGltZUludGVydmFsKC0zNjAwICogMykgfS5zb3J0ZWQgeyAkMC5kYXRlIDwgJDEuZGF0ZSB9IH0KCiAgICBmdW5jIGFic2VuY2VzKGZvciBjb2RlOiBTdHJpbmcpIC0+IEludCB7IGF0dGVuZGFuY2UuZmlsdGVyIHsgJDAuY291cnNlQ29kZSA9PSBjb2RlICYmICEkMC5hdHRlbmRlZCB9LmNvdW50IH0KICAgIGZ1bmMgYXR0ZW5kZWQoZm9yIGNvZGU6IFN0cmluZykgLT4gSW50IHsgYXR0ZW5kYW5jZS5maWx0ZXIgeyAkMC5jb3Vyc2VDb2RlID09IGNvZGUgJiYgJDAuYXR0ZW5kZWQgfS5jb3VudCB9CgogICAgLy8vIEFsbG93ZWQgYWJzZW5jZXMgYmVmb3JlINit2LHZhdin2YYgZm9yIHRoZSBzZW1lc3RlciAobWVldGluZ3Mvd2VlayDDlyB3ZWVrcyDDlyBsaW1pdCUpLgogICAgZnVuYyBhYnNlbmNlTGltaXQoZm9yIGNvZGU6IFN0cmluZykgLT4gSW50IHsKICAgICAgICBsZXQgcGVyV2VlayA9IHRpbWV0YWJsZS5zbG90cy5maWx0ZXIgeyAkMC5jb3Vyc2VDb2RlID09IGNvZGUgfS5jb3VudAogICAgICAgIGxldCB0b3RhbCA9IERvdWJsZShwZXJXZWVrICogc2V0dGluZ3Mud2Vla3NJblNlbWVzdGVyKQogICAgICAgIHJldHVybiBtYXgoSW50KCh0b3RhbCAqIHNldHRpbmdzLmFic2VuY2VMaW1pdFBlcmNlbnQgLyAxMDApLnJvdW5kZWQoLmRvd24pKSwgMSkKICAgIH0KCiAgICBmdW5jIGF0dGVuZGFuY2VSYXRlKGZvciBjb2RlOiBTdHJpbmcpIC0+IERvdWJsZT8gewogICAgICAgIGxldCBhID0gYXR0ZW5kZWQoZm9yOiBjb2RlKSwgYiA9IGFic2VuY2VzKGZvcjogY29kZSkKICAgICAgICBndWFyZCBhICsgYiA+IDAgZWxzZSB7IHJldHVybiBuaWwgfQogICAgICAgIHJldHVybiBEb3VibGUoYSkgLyBEb3VibGUoYSArIGIpCiAgICB9CgogICAgLy8gTUFSSzogLSBBY3Rpb25zCgogICAgZnVuYyBtYXJrQXR0ZW5kYW5jZShjb2RlOiBTdHJpbmcsIGF0dGVuZGVkOiBCb29sLCBkYXRlOiBEYXRlID0gLm5vdykgewogICAgICAgIGxldCBjYWwgPSBDYWxlbmRhci55YXJtb3VrCiAgICAgICAgYXR0ZW5kYW5jZS5yZW1vdmVBbGwgeyAkMC5jb3Vyc2VDb2RlID09IGNvZGUgJiYgY2FsLmlzRGF0ZSgkMC5kYXRlLCBpblNhbWVEYXlBczogZGF0ZSkgfQogICAgICAgIGF0dGVuZGFuY2UuYXBwZW5kKEF0dGVuZGFuY2VNYXJrKGNvdXJzZUNvZGU6IGNvZGUsIGRhdGU6IGRhdGUsIGF0dGVuZGVkOiBhdHRlbmRlZCkpCiAgICAgICAgaWYgIWF0dGVuZGVkIHsKICAgICAgICAgICAgbGV0IGxlZnQgPSBhYnNlbmNlTGltaXQoZm9yOiBjb2RlKSAtIGFic2VuY2VzKGZvcjogY29kZSkKICAgICAgICAgICAgaWYgbGVmdCA8PSAxIHsgTm90aWZpY2F0aW9uTWFuYWdlci5zaGFyZWQuYWJzZW5jZVdhcm5pbmcoY291cnNlOiBjb3Vyc2UoY29kZSk/Lm5hbWUgPz8gY29kZSwgbGVmdDogbWF4KGxlZnQsIDApKSB9CiAgICAgICAgfQogICAgfQoKICAgIGZ1bmMgYXBwbHlTSVMoXyByOiBTSVNSZXN1bHQpIHsKICAgICAgICB2YXIgcCA9IHIucHJvZmlsZQogICAgICAgIC8vIEtlZXAga25vd24gdmFsdWVzIHdoZW4gYSBwYWdlIGRpZCBub3Qgc2hvdyB0aGVtLgogICAgICAgIGlmIHAuZnVsbE5hbWUuaXNFbXB0eSB7IHAuZnVsbE5hbWUgPSBwcm9maWxlLmZ1bGxOYW1lIH0KICAgICAgICBpZiBwLmZpcnN0TmFtZS5pc0VtcHR5IHsgcC5maXJzdE5hbWUgPSBwLmZ1bGxOYW1lLnNwbGl0KHNlcGFyYXRvcjogIiAiKS5maXJzdC5tYXAoU3RyaW5nLmluaXQpID8/IHByb2ZpbGUuZmlyc3ROYW1lIH0KICAgICAgICBpZiBwLnN0dWRlbnROdW1iZXIuaXNFbXB0eSB7IHAuc3R1ZGVudE51bWJlciA9IHByb2ZpbGUuc3R1ZGVudE51bWJlciB9CiAgICAgICAgaWYgcC5tYWpvci5pc0VtcHR5IHsgcC5tYWpvciA9IHByb2ZpbGUubWFqb3IgfQogICAgICAgIGlmIHAuY29sbGVnZS5pc0VtcHR5IHsgcC5jb2xsZWdlID0gcHJvZmlsZS5jb2xsZWdlIH0KICAgICAgICBpZiBwLmVtYWlsLmlzRW1wdHkgeyBwLmVtYWlsID0gcHJvZmlsZS5lbWFpbCB9CiAgICAgICAgcC5ncGEgPSBwLmdwYSA/PyBwcm9maWxlLmdwYQogICAgICAgIHAucGFzc2VkSG91cnMgPSBwLnBhc3NlZEhvdXJzID8/IHByb2ZpbGUucGFzc2VkSG91cnMKICAgICAgICBwLmluUHJvZ3Jlc3NIb3VycyA9IHAuaW5Qcm9ncmVzc0hvdXJzID8/IHByb2ZpbGUuaW5Qcm9ncmVzc0hvdXJzCiAgICAgICAgcC5wbGFuUGVyY2VudCA9IHAucGxhblBlcmNlbnQgPz8gcHJvZmlsZS5wbGFuUGVyY2VudAogICAgICAgIHAuZXhwZWN0ZWRUb0dyYWR1YXRlID0gcC5leHBlY3RlZFRvR3JhZHVhdGUgPz8gcHJvZmlsZS5leHBlY3RlZFRvR3JhZHVhdGUKICAgICAgICBwcm9maWxlID0gcAogICAgICAgIHNpc1BhZ2VzLm1lcmdlKHIucGFnZXMpIHsgXywgbmV3IGluIG5ldyB9CiAgICAgICAgdmFyIG1lcmdlZCA9IHNpcwogICAgICAgIG1lcmdlZC5tZXJnZShyLmRhdGEpCiAgICAgICAgc2lzID0gbWVyZ2VkCiAgICAgICAgU0lTRGVidWdTdG9yZS5zYXZlKHIpCiAgICAgICAgc2lzTmVlZHNMb2dpbiA9IGZhbHNlCiAgICAgICAgaWYgIXIucGxhbkNhdGVnb3JpZXMuaXNFbXB0eSB7IHBsYW5DYXRlZ29yaWVzID0gci5wbGFuQ2F0ZWdvcmllcyB9CiAgICAgICAgaWYgIXIucm9vbXMuaXNFbXB0eSB7CiAgICAgICAgICAgIHZhciB0ID0gdGltZXRhYmxlCiAgICAgICAgICAgIGZvciBpIGluIHQuc2xvdHMuaW5kaWNlcyB3aGVyZSAhdC5zbG90c1tpXS5pc09ubGluZSB7CiAgICAgICAgICAgICAgICBpZiBsZXQgcm9vbSA9IHIucm9vbXNbdC5zbG90c1tpXS5jb3Vyc2VDb2RlXSwgIXJvb20uaXNFbXB0eSB7IHQuc2xvdHNbaV0ucm9vbSA9IHJvb20gfQogICAgICAgICAgICB9CiAgICAgICAgICAgIHRpbWV0YWJsZSA9IHQKICAgICAgICB9CiAgICAgICAgc2lzTGlua2VkID0gdHJ1ZQogICAgICAgIHJlc2NoZWR1bGVFdmVyeXRoaW5nKCkKICAgIH0KCiAgICAvLy8gUmVmcmVzaCBTSVMgaW4gdGhlIGJhY2tncm91bmQgd2l0aCB0aGUgc2F2ZWQgc2Vzc2lvbiAobm8gbG9naW4gc2NyZWVuKS4KICAgIC8vLyBSZXR1cm5zIGZhbHNlIHdoZW4gU0lTIHdhbnRzIGEgbmV3IGxvZ2luOyBjYWNoZWQgZGF0YSBzdGF5cyBvbiBzY3JlZW4gZWl0aGVyIHdheS4KICAgIEBkaXNjYXJkYWJsZVJlc3VsdAogICAgZnVuYyByZWZyZXNoU0lTKCkgYXN5bmMgLT4gQm9vbCB7CiAgICAgICAgaWYgc2lzUmVmcmVzaGluZyB7IHJldHVybiB0cnVlIH0KICAgICAgICBndWFyZCBsZXQgcyA9IFNJU1N5bmMuc2F2ZWRTZXNzaW9uLCAhcy5pc0VtcHR5IGVsc2UgeyBzaXNOZWVkc0xvZ2luID0gc2lzTGlua2VkOyByZXR1cm4gZmFsc2UgfQogICAgICAgIHNpc1JlZnJlc2hpbmcgPSB0cnVlCiAgICAgICAgZGVmZXIgeyBzaXNSZWZyZXNoaW5nID0gZmFsc2U7IGJhY2tncm91bmRTSVMgPSBuaWwgfQogICAgICAgIGxldCBvazogQm9vbCA9IGF3YWl0IHdpdGhDaGVja2VkQ29udGludWF0aW9uIHsgKGM6IENoZWNrZWRDb250aW51YXRpb248Qm9vbCwgTmV2ZXI+KSBpbgogICAgICAgICAgICBsZXQgc3luYyA9IFNJU1N5bmMoaW50ZXJhY3RpdmU6IGZhbHNlKQogICAgICAgICAgICBiYWNrZ3JvdW5kU0lTID0gc3luYwogICAgICAgICAgICBsZXQgb25jZSA9IFJlc3VtZU9uY2UoYykKICAgICAgICAgICAgc3luYy5vbkZpbmlzaGVkID0geyBbd2VhayBzZWxmXSByZXN1bHQgaW4KICAgICAgICAgICAgICAgIHNlbGY/LmFwcGx5U0lTKHJlc3VsdCkKICAgICAgICAgICAgICAgIG9uY2UucmVzdW1lKHRydWUpCiAgICAgICAgICAgIH0KICAgICAgICAgICAgc3luYy5vbk5lZWRzTG9naW4gPSB7IG9uY2UucmVzdW1lKGZhbHNlKSB9CiAgICAgICAgICAgIHN5bmMuc3RhcnQoKQogICAgICAgICAgICBUYXNrIHsgQE1haW5BY3RvciBpbgogICAgICAgICAgICAgICAgdHJ5PyBhd2FpdCBUYXNrLnNsZWVwKGZvcjogLnNlY29uZHMoOTApKQogICAgICAgICAgICAgICAgb25jZS5yZXN1bWUoZmFsc2UpCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgaWYgIW9rIHsgc2lzTmVlZHNMb2dpbiA9IFNJU1N5bmMuc2F2ZWRTZXNzaW9uID09IG5pbCB9CiAgICAgICAgcmV0dXJuIG9rCiAgICB9CgogICAgLy8vIFdoZW4gdGhlIGFwcCBjb21lcyB0byB0aGUgZnJvbnQ6IHJlZnJlc2ggU0lTIHF1aWV0bHkgaWYgdGhlIGRhdGEgaXMgb2xkZXIgdGhhbiAyMCBtaW51dGVzLgogICAgZnVuYyByZWZyZXNoU0lTSWZTdGFsZSgpIGFzeW5jIHsKICAgICAgICBndWFyZCBzaXNMaW5rZWQgZWxzZSB7IHJldHVybiB9CiAgICAgICAgaWYgbGV0IGQgPSBzaXMudXBkYXRlZEF0LCBEYXRlLm5vdy50aW1lSW50ZXJ2YWxTaW5jZShkKSA8IDIwICogNjAgeyByZXR1cm4gfQogICAgICAgIGF3YWl0IHJlZnJlc2hTSVMoKQogICAgfQoKICAgIC8vLyBQdWxsIGZyZXNoIGUtbGVhcm5pbmcgZGF0YS4gUmV0dXJucyB0aGUgZGVhZGxpbmVzIHRoYXQgYXJlIG5ldyBzaW5jZSBsYXN0IHRpbWUuCiAgICBAZGlzY2FyZGFibGVSZXN1bHQKICAgIGZ1bmMgcmVmcmVzaE1vb2RsZShiYWNrZ3JvdW5kOiBCb29sID0gZmFsc2UpIGFzeW5jIC0+IFtEZWFkbGluZV0gewogICAgICAgIGlmIGlzUmVmcmVzaGluZyB7IHJldHVybiBbXSB9CiAgICAgICAgaXNSZWZyZXNoaW5nID0gdHJ1ZQogICAgICAgIGRlZmVyIHsgaXNSZWZyZXNoaW5nID0gZmFsc2UgfQogICAgICAgIGxldCBjbGllbnQgPSBNb29kbGVDbGllbnQuc2hhcmVkCiAgICAgICAgZG8gewogICAgICAgICAgICBkbyB7IHRyeSBhd2FpdCBjbGllbnQuZW5zdXJlU2Vzc2lvbigpIH0gY2F0Y2ggTW9vZGxlRXJyb3IubmVlZHNMb2dpbiB7CiAgICAgICAgICAgICAgICBpZiBiYWNrZ3JvdW5kIHsgdGhyb3cgTW9vZGxlRXJyb3IubmVlZHNMb2dpbiB9CiAgICAgICAgICAgICAgICBndWFyZCBhd2FpdCBjbGllbnQuc2lsZW50UmVhdXRoKCkgZWxzZSB7IHRocm93IE1vb2RsZUVycm9yLm5lZWRzTG9naW4gfQogICAgICAgICAgICAgICAgdHJ5IGF3YWl0IGNsaWVudC5lbnN1cmVTZXNzaW9uKCkKICAgICAgICAgICAgfQogICAgICAgICAgICBsZXQgb2xkSWRzID0gU2V0KGRlYWRsaW5lcy5tYXAoXC5pZCkpCiAgICAgICAgICAgIGFzeW5jIGxldCBjID0gY2xpZW50LmNvdXJzZXMoKQogICAgICAgICAgICBhc3luYyBsZXQgZCA9IGNsaWVudC5kZWFkbGluZXMoa25vd246IGRlYWRsaW5lcykKICAgICAgICAgICAgYXN5bmMgbGV0IG4gPSBjbGllbnQubm90aWNlcygpCiAgICAgICAgICAgIGxldCAoY291cnNlcywgZGwsIG50KSA9IHRyeSBhd2FpdCAoYywgZCwgbikKICAgICAgICAgICAgaWYgIWNvdXJzZXMuaXNFbXB0eSB7IG1vb2RsZUNvdXJzZXMgPSBjb3Vyc2VzIH0KICAgICAgICAgICAgZGVhZGxpbmVzID0gZGwKICAgICAgICAgICAgbm90aWNlcyA9IG50CiAgICAgICAgICAgIGlmIGxldCBwcm9mID0gdHJ5PyBhd2FpdCBjbGllbnQucHJvZmlsZSgpIHsKICAgICAgICAgICAgICAgIGlmICFwcm9mLmZ1bGxOYW1lLmlzRW1wdHkgeyBwcm9maWxlLmZ1bGxOYW1lID0gcHJvZi5mdWxsTmFtZSB9CiAgICAgICAgICAgICAgICBpZiAhcHJvZi5maXJzdE5hbWUuaXNFbXB0eSB7IHByb2ZpbGUuZmlyc3ROYW1lID0gcHJvZi5maXJzdE5hbWUgfQogICAgICAgICAgICAgICAgaWYgIXByb2YuaWROdW1iZXIuaXNFbXB0eSB7IHByb2ZpbGUuc3R1ZGVudE51bWJlciA9IHByb2YuaWROdW1iZXIgfQogICAgICAgICAgICAgICAgaWYgIXByb2YuZW1haWwuaXNFbXB0eSB7IHByb2ZpbGUuZW1haWwgPSBwcm9mLmVtYWlsIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBtb29kbGVMaW5rZWQgPSB0cnVlCiAgICAgICAgICAgIG1vb2RsZU5lZWRzTG9naW4gPSBmYWxzZQogICAgICAgICAgICBsYXN0TW9vZGxlU3luYyA9IC5ub3cKICAgICAgICAgICAgbGFzdEVycm9yID0gbmlsCiAgICAgICAgICAgIGxldCBmcmVzaCA9IGRsLmZpbHRlciB7ICFvbGRJZHMuY29udGFpbnMoJDAuaWQpICYmICEkMC5zdWJtaXR0ZWQgJiYgJDAuZHVlID4gLm5vdyB9CiAgICAgICAgICAgIGlmICFvbGRJZHMuaXNFbXB0eSwgIWZyZXNoLmlzRW1wdHkgewogICAgICAgICAgICAgICAgZm9yIGYgaW4gZnJlc2ggeyBOb3RpZmljYXRpb25NYW5hZ2VyLnNoYXJlZC5uZXdBc3NpZ25tZW50KGYsIGNvdXJzZTogY291cnNlKG1vb2RsZUlkOiBmLmNvdXJzZUlkKT8ubmFtZSkgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIHJlc2NoZWR1bGVFdmVyeXRoaW5nKCkKICAgICAgICAgICAgcmV0dXJuIGZyZXNoCiAgICAgICAgfSBjYXRjaCBNb29kbGVFcnJvci5uZWVkc0xvZ2luIHsKICAgICAgICAgICAgbW9vZGxlTmVlZHNMb2dpbiA9IHRydWUKICAgICAgICAgICAgcmV0dXJuIFtdCiAgICAgICAgfSBjYXRjaCB7CiAgICAgICAgICAgIGxhc3RFcnJvciA9ICLZhdinINmC2K/YsdmG2Kcg2YbYrdiv2ZHYqyDZhdmGINin2YTYp9mK2YTZitix2YbZitmG2Log2YfZhNijIgogICAgICAgICAgICByZXR1cm4gW10KICAgICAgICB9CiAgICB9CgogICAgZnVuYyBsb2FkU2VjdGlvbnMoY291cnNlSWQ6IEludCkgYXN5bmMgewogICAgICAgIGlmIGxldCBzID0gdHJ5PyBhd2FpdCBNb29kbGVDbGllbnQuc2hhcmVkLnNlY3Rpb25zKGNvdXJzZUlkOiBjb3Vyc2VJZCkgeyBzZWN0aW9uc1tjb3Vyc2VJZF0gPSBzIH0KICAgIH0KCiAgICBmdW5jIHJlc2NoZWR1bGVFdmVyeXRoaW5nKCkgewogICAgICAgIE5vdGlmaWNhdGlvbk1hbmFnZXIuc2hhcmVkLnJlc2NoZWR1bGVBbGwoc3RvcmU6IHNlbGYpCiAgICAgICAgaWYgc2V0dGluZ3MudXNlQWxhcm1zIHsgVGFzayB7IGF3YWl0IEFsYXJtU2NoZWR1bGVyLnNoYXJlZC5zeW5jKHN0b3JlOiBzZWxmKSB9IH0KICAgICAgICBMb2NhdGlvbk1hbmFnZXIuc2hhcmVkLmFwcGx5KGVuYWJsZWQ6IHNldHRpbmdzLmdlb2ZlbmNlKQogICAgICAgIExpdmVBY3Rpdml0eU1hbmFnZXIuc2hhcmVkLnJlZnJlc2goc3RvcmU6IHNlbGYpCiAgICAgICAgV2lkZ2V0Q2VudGVyLnNoYXJlZC5yZWxvYWRBbGxUaW1lbGluZXMoKQogICAgfQoKICAgIGZ1bmMgc2lnbk91dCgpIGFzeW5jIHsKICAgICAgICBhd2FpdCBXZWJTZXNzaW9uLnNoYXJlZC5zaWduT3V0RXZlcnl0aGluZygpCiAgICAgICAgS2V5Y2hhaW4uZGVsZXRlKCkKICAgICAgICBTSVNTeW5jLnNhdmVkU2Vzc2lvbiA9IG5pbAogICAgICAgIHNpcyA9IFNJU0RhdGEoKTsgc2lzTmVlZHNMb2dpbiA9IGZhbHNlCiAgICAgICAgdHJ5PyBGaWxlTWFuYWdlci5kZWZhdWx0LnJlbW92ZUl0ZW0oYXQ6IFNJU0RlYnVnU3RvcmUuZGlyKQogICAgICAgIG1vb2RsZUxpbmtlZCA9IGZhbHNlOyBzaXNMaW5rZWQgPSBmYWxzZTsgb25ib2FyZGVkID0gZmFsc2UKICAgICAgICBtb29kbGVDb3Vyc2VzID0gW107IGRlYWRsaW5lcyA9IFtdOyBub3RpY2VzID0gW107IHNlY3Rpb25zID0gWzpdCiAgICB9Cn0KCi8vLyBSZXN1bWVzIGEgY29udGludWF0aW9uIGV4YWN0bHkgb25jZSAoZmluaXNoLCBuZWVkcy1sb2dpbiBvciB0aW1lb3V0IOKAlCB3aGljaGV2ZXIgY29tZXMgZmlyc3QpLgpmaW5hbCBjbGFzcyBSZXN1bWVPbmNlOiBAdW5jaGVja2VkIFNlbmRhYmxlIHsKICAgIHByaXZhdGUgdmFyIGM6IENoZWNrZWRDb250aW51YXRpb248Qm9vbCwgTmV2ZXI+PwogICAgaW5pdChfIGM6IENoZWNrZWRDb250aW51YXRpb248Qm9vbCwgTmV2ZXI+KSB7IHNlbGYuYyA9IGMgfQogICAgZnVuYyByZXN1bWUoXyB2OiBCb29sKSB7IGM/LnJlc3VtZShyZXR1cm5pbmc6IHYpOyBjID0gbmlsIH0KfQo=
+import Foundation
+import SwiftUI
+import WidgetKit
+
+/// Everything the app knows, saved on the phone. Screens read from here.
+@MainActor
+final class AppStore: ObservableObject {
+    static let shared = AppStore()
+
+    @Published var timetable: Timetable = SharedStore.loadTimetable() { didSet { SharedStore.saveTimetable(timetable); WidgetCenter.shared.reloadAllTimelines() } }
+    @Published var profile = StudentProfile() { didSet { save() } }
+    @Published var planCategories: [PlanCategory] = [] { didSet { save() } }
+    @Published var sisPages: [String: SISPage] = [:] { didSet { save() } }
+    @Published var moodleCourses: [MoodleCourse] = [] { didSet { save() } }
+    @Published var sections: [Int: [MoodleSection]] = [:] { didSet { save() } }
+    @Published var deadlines: [Deadline] = [] { didSet { save() } }
+    @Published var notices: [MoodleNotice] = [] { didSet { save() } }
+    @Published var exams: [Exam] = [] { didSet { save() } }
+    @Published var attendance: [AttendanceMark] = [] { didSet { save() } }
+    @Published var notes: [CourseNote] = [] { didSet { save() } }
+    @Published var settings = AppSettings() { didSet { save() } }
+    @Published var moodleLinked = false { didSet { save() } }
+    @Published var sisLinked = false { didSet { save() } }
+    @Published var sis = SISData.load() { didSet { if !loading { sis.save() } } }
+    @Published var sisNeedsLogin = false
+    @Published var sisRefreshing = false
+    private var backgroundSIS: SISSync?
+    @Published var onboarded = false { didSet { save() } }
+    @Published var lastMoodleSync: Date? { didSet { save() } }
+
+    @Published var isRefreshing = false
+    @Published var moodleNeedsLogin = false
+    @Published var lastError: String?
+
+    private var loading = true
+    private let fileURL: URL = {
+        let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir.appendingPathComponent("store.json")
+    }()
+    static var mediaDir: URL {
+        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("Notes")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir
+    }
+
+    private struct Snapshot: Codable {
+        var profile: StudentProfile
+        var planCategories: [PlanCategory]
+        var sisPages: [String: SISPage]
+        var moodleCourses: [MoodleCourse]
+        var sections: [Int: [MoodleSection]]
+        var deadlines: [Deadline]
+        var notices: [MoodleNotice]
+        var exams: [Exam]
+        var attendance: [AttendanceMark]
+        var notes: [CourseNote]
+        var settings: AppSettings
+        var moodleLinked: Bool
+        var sisLinked: Bool
+        var onboarded: Bool
+        var lastMoodleSync: Date?
+    }
+
+    init() {
+        if let data = try? Data(contentsOf: fileURL), let s = try? JSONDecoder().decode(Snapshot.self, from: data) {
+            profile = s.profile; planCategories = s.planCategories; sisPages = s.sisPages
+            moodleCourses = s.moodleCourses; sections = s.sections; deadlines = s.deadlines; notices = s.notices
+            exams = s.exams; attendance = s.attendance; notes = s.notes; settings = s.settings
+            moodleLinked = s.moodleLinked; sisLinked = s.sisLinked; onboarded = s.onboarded; lastMoodleSync = s.lastMoodleSync
+        } else {
+            seed()
+        }
+        loading = false
+    }
+
+    /// Timetable + known exam so the app is useful before the first sync.
+    private func seed() {
+        // Personal details (name, number, GPA, hours) arrive from SIS / e-learning after he signs in.
+        profile = StudentProfile(planTotalHours: 132)
+        let cal = Calendar.yarmouk
+        if let mid = cal.date(from: DateComponents(year: 2026, month: 11, day: 22, hour: 9, minute: 30)) {
+            exams = [Exam(courseCode: "AR422", title: "الامتحان النصفي", date: mid,
+                          notes: "محذوف: صفحات 52–72 · للقراءة فقط: 82–93")]
+        }
+    }
+
+    private func save() {
+        guard !loading else { return }
+        let s = Snapshot(profile: profile, planCategories: planCategories, sisPages: sisPages, moodleCourses: moodleCourses,
+                         sections: sections, deadlines: deadlines, notices: notices, exams: exams, attendance: attendance,
+                         notes: notes, settings: settings, moodleLinked: moodleLinked, sisLinked: sisLinked,
+                         onboarded: onboarded, lastMoodleSync: lastMoodleSync)
+        if let data = try? JSONEncoder().encode(s) {
+            try? data.write(to: fileURL, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+        }
+    }
+
+    // MARK: - Derived
+
+    var firstName: String { profile.firstName.isEmpty ? (profile.fullName.split(separator: " ").first.map(String.init) ?? "") : profile.firstName }
+    var avatarLetter: String { firstName.isEmpty ? "ط" : String(firstName.prefix(1)) }
+    var greeting: String { firstName.isEmpty ? "أهلاً وسهلاً" : "أهلاً \(firstName)" }
+
+    func course(_ code: String) -> CourseInfo? { timetable.course(code) }
+    func course(moodleId: Int) -> CourseInfo? { timetable.courses.first { $0.moodleId == moodleId } }
+
+    var todaysSlots: [LectureSlot] { timetable.slots(on: .now) }
+
+    var pendingDeadlines: [Deadline] {
+        deadlines.filter { !$0.submitted && $0.due > .now }.sorted { $0.due < $1.due }
+    }
+    var submittedCount: Int { deadlines.filter(\.submitted).count }
+
+    var upcomingExams: [Exam] { exams.filter { $0.date > .now.addingTimeInterval(-3600 * 3) }.sorted { $0.date < $1.date } }
+
+    func absences(for code: String) -> Int { attendance.filter { $0.courseCode == code && !$0.attended }.count }
+    func attended(for code: String) -> Int { attendance.filter { $0.courseCode == code && $0.attended }.count }
+
+    /// Allowed absences before حرمان for the semester (meetings/week × weeks × limit%).
+    func absenceLimit(for code: String) -> Int {
+        let perWeek = timetable.slots.filter { $0.courseCode == code }.count
+        let total = Double(perWeek * settings.weeksInSemester)
+        return max(Int((total * settings.absenceLimitPercent / 100).rounded(.down)), 1)
+    }
+
+    func attendanceRate(for code: String) -> Double? {
+        let a = attended(for: code), b = absences(for: code)
+        guard a + b > 0 else { return nil }
+        return Double(a) / Double(a + b)
+    }
+
+    // MARK: - Actions
+
+    func markAttendance(code: String, attended: Bool, date: Date = .now) {
+        let cal = Calendar.yarmouk
+        attendance.removeAll { $0.courseCode == code && cal.isDate($0.date, inSameDayAs: date) }
+        attendance.append(AttendanceMark(courseCode: code, date: date, attended: attended))
+        if !attended {
+            let left = absenceLimit(for: code) - absences(for: code)
+            if left <= 1 { NotificationManager.shared.absenceWarning(course: course(code)?.name ?? code, left: max(left, 0)) }
+        }
+    }
+
+    func applySIS(_ r: SISResult) {
+        var p = r.profile
+        // Keep known values when a page did not show them.
+        if p.fullName.isEmpty { p.fullName = profile.fullName }
+        if p.firstName.isEmpty { p.firstName = p.fullName.split(separator: " ").first.map(String.init) ?? profile.firstName }
+        if p.studentNumber.isEmpty { p.studentNumber = profile.studentNumber }
+        if p.major.isEmpty { p.major = profile.major }
+        if p.college.isEmpty { p.college = profile.college }
+        if p.email.isEmpty { p.email = profile.email }
+        p.gpa = p.gpa ?? profile.gpa
+        p.passedHours = p.passedHours ?? profile.passedHours
+        p.inProgressHours = p.inProgressHours ?? profile.inProgressHours
+        p.planPercent = p.planPercent ?? profile.planPercent
+        p.expectedToGraduate = p.expectedToGraduate ?? profile.expectedToGraduate
+        profile = p
+        sisPages.merge(r.pages) { _, new in new }
+        var merged = sis
+        merged.merge(r.data)
+        sis = merged
+        SISDebugStore.save(r)
+        sisNeedsLogin = false
+        if !r.planCategories.isEmpty { planCategories = r.planCategories }
+        if !r.rooms.isEmpty {
+            var t = timetable
+            for i in t.slots.indices where !t.slots[i].isOnline {
+                if let room = r.rooms[t.slots[i].courseCode], !room.isEmpty { t.slots[i].room = room }
+            }
+            timetable = t
+        }
+        sisLinked = true
+        rescheduleEverything()
+    }
+
+    /// Refresh SIS in the background with the saved session (no login screen).
+    /// Returns false when SIS wants a new login; cached data stays on screen either way.
+    @discardableResult
+    func refreshSIS() async -> Bool {
+        if sisRefreshing { return true }
+        guard let s = SISSync.savedSession, !s.isEmpty else { sisNeedsLogin = sisLinked; return false }
+        sisRefreshing = true
+        defer { sisRefreshing = false; backgroundSIS = nil }
+        let ok: Bool = await withCheckedContinuation { (c: CheckedContinuation<Bool, Never>) in
+            let sync = SISSync(interactive: false)
+            backgroundSIS = sync
+            let once = ResumeOnce(c)
+            sync.onFinished = { [weak self] result in
+                self?.applySIS(result)
+                once.resume(true)
+            }
+            sync.onNeedsLogin = { once.resume(false) }
+            sync.start()
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(90))
+                once.resume(false)
+            }
+        }
+        if !ok { sisNeedsLogin = SISSync.savedSession == nil }
+        return ok
+    }
+
+    /// When the app comes to the front: refresh SIS quietly if the data is older than 20 minutes.
+    func refreshSISIfStale() async {
+        guard sisLinked else { return }
+        if let d = sis.updatedAt, Date.now.timeIntervalSince(d) < 20 * 60 { return }
+        await refreshSIS()
+    }
+
+    /// Pull fresh e-learning data. Returns the deadlines that are new since last time.
+    @discardableResult
+    func refreshMoodle(background: Bool = false) async -> [Deadline] {
+        if isRefreshing { return [] }
+        isRefreshing = true
+        defer { isRefreshing = false }
+        let client = MoodleClient.shared
+        do {
+            do { try await client.ensureSession() } catch MoodleError.needsLogin {
+                if background { throw MoodleError.needsLogin }
+                guard await client.silentReauth() else { throw MoodleError.needsLogin }
+                try await client.ensureSession()
+            }
+            let oldIds = Set(deadlines.map(\.id))
+            async let c = client.courses()
+            async let d = client.deadlines(known: deadlines)
+            async let n = client.notices()
+            let (courses, dl, nt) = try await (c, d, n)
+            if !courses.isEmpty { moodleCourses = courses }
+            deadlines = dl
+            notices = nt
+            if let prof = try? await client.profile() {
+                if !prof.fullName.isEmpty { profile.fullName = prof.fullName }
+                if !prof.firstName.isEmpty { profile.firstName = prof.firstName }
+                if !prof.idNumber.isEmpty { profile.studentNumber = prof.idNumber }
+                if !prof.email.isEmpty { profile.email = prof.email }
+            }
+            moodleLinked = true
+            moodleNeedsLogin = false
+            lastMoodleSync = .now
+            lastError = nil
+            let fresh = dl.filter { !oldIds.contains($0.id) && !$0.submitted && $0.due > .now }
+            if !oldIds.isEmpty, !fresh.isEmpty {
+                for f in fresh { NotificationManager.shared.newAssignment(f, course: course(moodleId: f.courseId)?.name) }
+            }
+            rescheduleEverything()
+            return fresh
+        } catch MoodleError.needsLogin {
+            moodleNeedsLogin = true
+            return []
+        } catch {
+            lastError = "ما قدرنا نحدّث من الايليرنينغ هلأ"
+            return []
+        }
+    }
+
+    func loadSections(courseId: Int) async {
+        if let s = try? await MoodleClient.shared.sections(courseId: courseId) { sections[courseId] = s }
+    }
+
+    func rescheduleEverything() {
+        NotificationManager.shared.rescheduleAll(store: self)
+        if settings.useAlarms { Task { await AlarmScheduler.shared.sync(store: self) } }
+        LocationManager.shared.apply(enabled: settings.geofence)
+        LiveActivityManager.shared.refresh(store: self)
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+
+    func signOut() async {
+        await WebSession.shared.signOutEverything()
+        Keychain.delete()
+        SISSync.savedSession = nil
+        sis = SISData(); sisNeedsLogin = false
+        try? FileManager.default.removeItem(at: SISDebugStore.dir)
+        moodleLinked = false; sisLinked = false; onboarded = false
+        moodleCourses = []; deadlines = []; notices = []; sections = [:]
+    }
+}
+
+/// Resumes a continuation exactly once (finish, needs-login or timeout — whichever comes first).
+final class ResumeOnce: @unchecked Sendable {
+    private var c: CheckedContinuation<Bool, Never>?
+    init(_ c: CheckedContinuation<Bool, Never>) { self.c = c }
+    func resume(_ v: Bool) { c?.resume(returning: v); c = nil }
+}

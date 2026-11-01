@@ -1,1 +1,79 @@
-aW1wb3J0IFN3aWZ0VUkKaW1wb3J0IEJhY2tncm91bmRUYXNrcwoKQG1haW4Kc3RydWN0IFlhcm1vdWtTdHVkZW50QXBwOiBBcHAgewogICAgQFVJQXBwbGljYXRpb25EZWxlZ2F0ZUFkYXB0b3IoQXBwRGVsZWdhdGUuc2VsZikgdmFyIGRlbGVnYXRlCiAgICBAU3RhdGVPYmplY3QgcHJpdmF0ZSB2YXIgc3RvcmUgPSBBcHBTdG9yZS5zaGFyZWQKICAgIEBTdGF0ZU9iamVjdCBwcml2YXRlIHZhciByb3V0ZXIgPSBSb3V0ZXIuc2hhcmVkCiAgICBARW52aXJvbm1lbnQoXC5zY2VuZVBoYXNlKSBwcml2YXRlIHZhciBzY2VuZVBoYXNlCgogICAgdmFyIGJvZHk6IHNvbWUgU2NlbmUgewogICAgICAgIFdpbmRvd0dyb3VwIHsKICAgICAgICAgICAgR3JvdXAgewogICAgICAgICAgICAgICAgaWYgc3RvcmUub25ib2FyZGVkIHsKICAgICAgICAgICAgICAgICAgICBSb290VmlldygpCiAgICAgICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgICAgICAgIE9uYm9hcmRpbmdWaWV3KCkKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAuZW52aXJvbm1lbnRPYmplY3Qoc3RvcmUpCiAgICAgICAgICAgIC5lbnZpcm9ubWVudE9iamVjdChyb3V0ZXIpCiAgICAgICAgICAgIC5lbnZpcm9ubWVudChcLmxheW91dERpcmVjdGlvbiwgLnJpZ2h0VG9MZWZ0KQogICAgICAgICAgICAuZW52aXJvbm1lbnQoXC5sb2NhbGUsIExvY2FsZShpZGVudGlmaWVyOiAiYXJfSk8iKSkKICAgICAgICAgICAgLnRpbnQoQnJhbmQuZ3JlZW4pCiAgICAgICAgICAgIC5zaGVldChpdGVtOiAkcm91dGVyLndlYikgeyBsaW5rIGluCiAgICAgICAgICAgICAgICBJbkFwcEJyb3dzZXIodXJsOiBsaW5rLnVybCwgdGl0bGU6IGxpbmsudGl0bGUpCiAgICAgICAgICAgIH0KICAgICAgICAgICAgLnNoZWV0KGl0ZW06IEJpbmRpbmcoZ2V0OiB7IHJvdXRlci5ub3Rlc0Zvci5tYXAgeyBDb3Vyc2VSb3V0ZShjb2RlOiAkMCkgfSB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzZXQ6IHsgcm91dGVyLm5vdGVzRm9yID0gJDA/LmNvZGUgfSkpIHsgcm91dGUgaW4KICAgICAgICAgICAgICAgIE5hdmlnYXRpb25TdGFjayB7IE5vdGVzVmlldyhjb3Vyc2VDb2RlOiByb3V0ZS5jb2RlKSB9CiAgICAgICAgICAgICAgICAgICAgLmVudmlyb25tZW50T2JqZWN0KHN0b3JlKQogICAgICAgICAgICAgICAgICAgIC5lbnZpcm9ubWVudChcLmxheW91dERpcmVjdGlvbiwgLnJpZ2h0VG9MZWZ0KQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIC5vbkNoYW5nZShvZjogc2NlbmVQaGFzZSkgeyBfLCBwaGFzZSBpbgogICAgICAgICAgICBpZiBwaGFzZSA9PSAuYWN0aXZlLCBzdG9yZS5vbmJvYXJkZWQgewogICAgICAgICAgICAgICAgVGFzayB7IGF3YWl0IHN0b3JlLnJlZnJlc2hNb29kbGUoKSB9CiAgICAgICAgICAgICAgICBUYXNrIHsgYXdhaXQgc3RvcmUucmVmcmVzaFNJU0lmU3RhbGUoKSB9CiAgICAgICAgICAgICAgICBMaXZlQWN0aXZpdHlNYW5hZ2VyLnNoYXJlZC5yZWZyZXNoKHN0b3JlOiBzdG9yZSkKICAgICAgICAgICAgfQogICAgICAgICAgICBpZiBwaGFzZSA9PSAuYmFja2dyb3VuZCB7IEJhY2tncm91bmRSZWZyZXNoLnNjaGVkdWxlKCkgfQogICAgICAgIH0KICAgIH0KfQoKZXh0ZW5zaW9uIENvdXJzZVJvdXRlOiBJZGVudGlmaWFibGUgeyB2YXIgaWQ6IFN0cmluZyB7IGNvZGUgfSB9CgpmaW5hbCBjbGFzcyBBcHBEZWxlZ2F0ZTogTlNPYmplY3QsIFVJQXBwbGljYXRpb25EZWxlZ2F0ZSB7CiAgICBmdW5jIGFwcGxpY2F0aW9uKF8gYXBwbGljYXRpb246IFVJQXBwbGljYXRpb24sIGRpZEZpbmlzaExhdW5jaGluZ1dpdGhPcHRpb25zIGxhdW5jaE9wdGlvbnM6IFtVSUFwcGxpY2F0aW9uLkxhdW5jaE9wdGlvbnNLZXk6IEFueV0/ID0gbmlsKSAtPiBCb29sIHsKICAgICAgICBOb3RpZmljYXRpb25NYW5hZ2VyLnNoYXJlZC5zZXR1cCgpCiAgICAgICAgQmFja2dyb3VuZFJlZnJlc2gucmVnaXN0ZXIoKQogICAgICAgIFRhc2sgeyBATWFpbkFjdG9yIGluCiAgICAgICAgICAgIGF3YWl0IFdlYlNlc3Npb24uc2hhcmVkLnJlc3RvcmVDb29raWVzKCkKICAgICAgICAgICAgTG9jYXRpb25NYW5hZ2VyLnNoYXJlZC5hcHBseShlbmFibGVkOiBBcHBTdG9yZS5zaGFyZWQuc2V0dGluZ3MuZ2VvZmVuY2UpCiAgICAgICAgfQogICAgICAgIHJldHVybiB0cnVlCiAgICB9Cn0KCmVudW0gQmFja2dyb3VuZFJlZnJlc2ggewogICAgc3RhdGljIGxldCBpZCA9ICJjb20uYmFpaGFzLnlhcm1vdWtzdHVkZW50LnJlZnJlc2giCgogICAgc3RhdGljIGZ1bmMgcmVnaXN0ZXIoKSB7CiAgICAgICAgQkdUYXNrU2NoZWR1bGVyLnNoYXJlZC5yZWdpc3Rlcihmb3JUYXNrV2l0aElkZW50aWZpZXI6IGlkLCB1c2luZzogbmlsKSB7IHRhc2sgaW4KICAgICAgICAgICAgc2NoZWR1bGUoKQogICAgICAgICAgICBsZXQgd29yayA9IFRhc2sgeyBATWFpbkFjdG9yIGluCiAgICAgICAgICAgICAgICBfID0gYXdhaXQgQXBwU3RvcmUuc2hhcmVkLnJlZnJlc2hNb29kbGUoYmFja2dyb3VuZDogdHJ1ZSkKICAgICAgICAgICAgICAgIHRhc2suc2V0VGFza0NvbXBsZXRlZChzdWNjZXNzOiB0cnVlKQogICAgICAgICAgICB9CiAgICAgICAgICAgIHRhc2suZXhwaXJhdGlvbkhhbmRsZXIgPSB7IHdvcmsuY2FuY2VsKCkgfQogICAgICAgIH0KICAgIH0KCiAgICBzdGF0aWMgZnVuYyBzY2hlZHVsZSgpIHsKICAgICAgICBsZXQgcmVxID0gQkdBcHBSZWZyZXNoVGFza1JlcXVlc3QoaWRlbnRpZmllcjogaWQpCiAgICAgICAgcmVxLmVhcmxpZXN0QmVnaW5EYXRlID0gRGF0ZSh0aW1lSW50ZXJ2YWxTaW5jZU5vdzogNjAgKiA2MCkKICAgICAgICB0cnk/IEJHVGFza1NjaGVkdWxlci5zaGFyZWQuc3VibWl0KHJlcSkKICAgIH0KfQo=
+import SwiftUI
+import BackgroundTasks
+
+@main
+struct YarmoukStudentApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var store = AppStore.shared
+    @StateObject private var router = Router.shared
+    @Environment(\.scenePhase) private var scenePhase
+
+    var body: some Scene {
+        WindowGroup {
+            Group {
+                if store.onboarded {
+                    RootView()
+                } else {
+                    OnboardingView()
+                }
+            }
+            .environmentObject(store)
+            .environmentObject(router)
+            .environment(\.layoutDirection, .rightToLeft)
+            .environment(\.locale, Locale(identifier: "ar_JO"))
+            .tint(Brand.green)
+            .sheet(item: $router.web) { link in
+                InAppBrowser(url: link.url, title: link.title)
+            }
+            .sheet(item: Binding(get: { router.notesFor.map { CourseRoute(code: $0) } },
+                                 set: { router.notesFor = $0?.code })) { route in
+                NavigationStack { NotesView(courseCode: route.code) }
+                    .environmentObject(store)
+                    .environment(\.layoutDirection, .rightToLeft)
+            }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active, store.onboarded {
+                Task { await store.refreshMoodle() }
+                Task { await store.refreshSISIfStale() }
+                LiveActivityManager.shared.refresh(store: store)
+            }
+            if phase == .background { BackgroundRefresh.schedule() }
+        }
+    }
+}
+
+extension CourseRoute: Identifiable { var id: String { code } }
+
+final class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        NotificationManager.shared.setup()
+        BackgroundRefresh.register()
+        Task { @MainActor in
+            await WebSession.shared.restoreCookies()
+            LocationManager.shared.apply(enabled: AppStore.shared.settings.geofence)
+        }
+        return true
+    }
+}
+
+enum BackgroundRefresh {
+    static let id = "com.baihas.yarmoukstudent.refresh"
+
+    static func register() {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: id, using: nil) { task in
+            schedule()
+            let work = Task { @MainActor in
+                _ = await AppStore.shared.refreshMoodle(background: true)
+                task.setTaskCompleted(success: true)
+            }
+            task.expirationHandler = { work.cancel() }
+        }
+    }
+
+    static func schedule() {
+        let req = BGAppRefreshTaskRequest(identifier: id)
+        req.earliestBeginDate = Date(timeIntervalSinceNow: 60 * 60)
+        try? BGTaskScheduler.shared.submit(req)
+    }
+}

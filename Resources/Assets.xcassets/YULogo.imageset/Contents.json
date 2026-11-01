@@ -1,1 +1,15 @@
-ewogICJpbWFnZXMiOiBbCiAgICB7CiAgICAgICJmaWxlbmFtZSI6ICJ5dS1sb2dvLnBuZyIsCiAgICAgICJpZGlvbSI6ICJ1bml2ZXJzYWwiCiAgICB9CiAgXSwKICAiaW5mbyI6IHsKICAgICJhdXRob3IiOiAieGNvZGUiLAogICAgInZlcnNpb24iOiAxCiAgfSwKICAicHJvcGVydGllcyI6IHsKICAgICJwcmVzZXJ2ZXMtdmVjdG9yLXJlcHJlc2VudGF0aW9uIjogZmFsc2UKICB9Cn0=
+{
+  "images": [
+    {
+      "filename": "yu-logo.png",
+      "idiom": "universal"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  },
+  "properties": {
+    "preserves-vector-representation": false
+  }
+}

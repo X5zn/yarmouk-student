@@ -1,1 +1,444 @@
-aW1wb3J0IEZvdW5kYXRpb24KCi8vIFB1cmUgcGFyc2luZyBvZiBTSVMgcGFnZXMgKG5vIFVJLCBubyBXZWJLaXQpIHNvIGl0IGNhbiBiZSB0ZXN0ZWQgb24gaXRzIG93bi4KCi8vIE1BUks6IC0gV2hhdCB0aGUgcGFnZSBleHRyYWN0b3IgcmV0dXJucwoKc3RydWN0IFNJU0V4dHJhY3Q6IENvZGFibGUsIEhhc2hhYmxlIHsKICAgIHN0cnVjdCBUYWJsZTogQ29kYWJsZSwgSGFzaGFibGUgewogICAgICAgIHZhciB0aXRsZTogU3RyaW5nID0gIiIKICAgICAgICB2YXIgaWQ6IFN0cmluZyA9ICIiCiAgICAgICAgdmFyIGhlYWRlcnM6IFtTdHJpbmddID0gW10KICAgICAgICB2YXIgcm93czogW1tTdHJpbmddXSA9IFtdCiAgICB9CiAgICBzdHJ1Y3QgTGluazogQ29kYWJsZSwgSGFzaGFibGUgeyB2YXIgdDogU3RyaW5nOyB2YXIgaDogU3RyaW5nIH0KICAgIHN0cnVjdCBDYXJkOiBDb2RhYmxlLCBIYXNoYWJsZSB7IHZhciB0OiBTdHJpbmc7IHZhciB4OiBTdHJpbmc7IHZhciBoOiBTdHJpbmcgfQoKICAgIHZhciB0aXRsZTogU3RyaW5nID0gIiIKICAgIHZhciB1cmw6IFN0cmluZyA9ICIiCiAgICB2YXIgcGFpcnM6IFtbU3RyaW5nXV0gPSBbXSAgICAgICAgLy8gW2xhYmVsLCB2YWx1ZSwgc2VjdGlvbl0KICAgIHZhciB0YWJsZXM6IFtUYWJsZV0gPSBbXQogICAgdmFyIGxpbmVzOiBbU3RyaW5nXSA9IFtdICAgICAgICAgIC8vIG1haW4gY29udGVudCBvbmx5LCBvbmUgdmlzdWFsIGxpbmUgZWFjaAogICAgdmFyIGxpbmtzOiBbTGlua10gPSBbXQogICAgdmFyIGNhcmRzOiBbQ2FyZF0gPSBbXQogICAgdmFyIGxvZ2luOiBCb29sID0gZmFsc2UKICAgIHZhciBlcnJvcjogU3RyaW5nID0gIiIKfQoKLy8gTUFSSzogLSBNb2RlbHMKCnN0cnVjdCBBY2FkZW1pY1N1bW1hcnk6IENvZGFibGUsIEhhc2hhYmxlIHsKICAgIHZhciBjdW11bGF0aXZlR1BBOiBEb3VibGU/CiAgICB2YXIgY3VtdWxhdGl2ZUhvdXJzOiBJbnQ/CiAgICB2YXIgdG90YWxNYXJrczogSW50PwogICAgdmFyIHBhc3NlZEhvdXJzOiBJbnQ/CiAgICB2YXIgaG9ub3JMaXN0OiBTdHJpbmc/Cn0KCnN0cnVjdCBBY2FkZW1pY1Rlcm06IENvZGFibGUsIEhhc2hhYmxlLCBJZGVudGlmaWFibGUgewogICAgdmFyIHRlcm06IFN0cmluZyAgICAgICAgICAgICAgLy8gIjIwMjUvMSIKICAgIHZhciB0ZXJtR1BBOiBEb3VibGU/CiAgICB2YXIgY3VtdWxhdGl2ZUdQQTogRG91YmxlPwogICAgdmFyIHRlcm1Ib3VyczogSW50PwogICAgdmFyIHN0dWRpZWRIb3Vyc1RvdGFsOiBJbnQ/CiAgICB2YXIgaG9ub3JMaXN0OiBCb29sID0gZmFsc2UKICAgIHZhciBpZDogU3RyaW5nIHsgdGVybSB9CgogICAgdmFyIHllYXI6IEludCB7IEludCh0ZXJtLnNwbGl0KHNlcGFyYXRvcjogIi8iKS5maXJzdCA/PyAiIikgPz8gMCB9CiAgICB2YXIgcGFydDogSW50IHsgSW50KHRlcm0uc3BsaXQoc2VwYXJhdG9yOiAiLyIpLmxhc3QgPz8gIiIpID8/IDAgfQoKICAgIC8vLyAi2KfZhNmB2LXZhCDYp9mE2KPZiNmEIiAvICLYp9mE2YHYtdmEINin2YTYq9in2YbZiiIgLyAi2KfZhNmB2LXZhCDYp9mE2LXZitmB2YoiCiAgICB2YXIgc2VtZXN0ZXJOYW1lOiBTdHJpbmcgewogICAgICAgIHN3aXRjaCBwYXJ0IHsKICAgICAgICBjYXNlIDE6IHJldHVybiAi2KfZhNmB2LXZhCDYp9mE2KPZiNmEIgogICAgICAgIGNhc2UgMjogcmV0dXJuICLYp9mE2YHYtdmEINin2YTYq9in2YbZiiIKICAgICAgICBjYXNlIDM6IHJldHVybiAi2KfZhNmB2LXZhCDYp9mE2LXZitmB2YoiCiAgICAgICAgZGVmYXVsdDogcmV0dXJuICLZhdmI2KfYryDYp9iz2KrYr9ix2KfZg9mK2KkiCiAgICAgICAgfQogICAgfQogICAgLy8vICIyMDI1LzIwMjYiIGZvciB0aGUgZmlyc3QgYW5kIHNlY29uZCBzZW1lc3RlcnMsICIyMDI2IiBmb3Igc3VtbWVyLgogICAgdmFyIGFjYWRlbWljWWVhcjogU3RyaW5nIHsKICAgICAgICBzd2l0Y2ggcGFydCB7CiAgICAgICAgY2FzZSAxLCAyOiByZXR1cm4gIlwoeWVhcikvXCh5ZWFyICsgMSkiCiAgICAgICAgY2FzZSAzOiByZXR1cm4gIlwoeWVhciArIDEpIgogICAgICAgIGRlZmF1bHQ6IHJldHVybiAiXCh5ZWFyKSIKICAgICAgICB9CiAgICB9CiAgICB2YXIgaXNQbGFjZWhvbGRlcjogQm9vbCB7ICh0ZXJtSG91cnMgPz8gMCkgPT0gMCAmJiAodGVybUdQQSA/PyAwKSA9PSAwIH0KfQoKc3RydWN0IEFjYWRlbWljUmVjb3JkOiBDb2RhYmxlLCBIYXNoYWJsZSB7CiAgICB2YXIgc3VtbWFyeSA9IEFjYWRlbWljU3VtbWFyeSgpCiAgICB2YXIgdGVybXM6IFtBY2FkZW1pY1Rlcm1dID0gW10gICAgICAvLyBvbGRlc3QgZmlyc3QKICAgIHZhciBpc0VtcHR5OiBCb29sIHsgdGVybXMuaXNFbXB0eSAmJiBzdW1tYXJ5LmN1bXVsYXRpdmVHUEEgPT0gbmlsIH0KfQoKc3RydWN0IEluZm9Sb3c6IENvZGFibGUsIEhhc2hhYmxlLCBJZGVudGlmaWFibGUgewogICAgdmFyIGxhYmVsOiBTdHJpbmcKICAgIHZhciB2YWx1ZTogU3RyaW5nCiAgICB2YXIgaWQ6IFN0cmluZyB7IGxhYmVsIH0KfQoKc3RydWN0IEluZm9Hcm91cDogQ29kYWJsZSwgSGFzaGFibGUsIElkZW50aWZpYWJsZSB7CiAgICB2YXIgdGl0bGU6IFN0cmluZwogICAgdmFyIHJvd3M6IFtJbmZvUm93XQogICAgdmFyIGlkOiBTdHJpbmcgeyB0aXRsZSB9Cn0KCnN0cnVjdCBTdHVkZW50SW5mbzogQ29kYWJsZSwgSGFzaGFibGUgewogICAgdmFyIG5hbWU6IFN0cmluZyA9ICIiCiAgICB2YXIgZGVncmVlOiBTdHJpbmcgPSAiIiAgICAgICAgICAvLyAi2KjZg9in2YTZiNix2YrZiNizIC8g2LnYp9iv2YoiCiAgICB2YXIgZGVwYXJ0bWVudDogU3RyaW5nID0gIiIgICAgICAvLyAi2YPZhNmK2Kkg2KfZhNii2K/Yp9ioIC8g2YLYs9mFINin2YTZhNi62Kkg2KfZhNi52LHYqNmK2Kkg2YjYotiv2KfYqNmH2KciCiAgICB2YXIgZ3JvdXBzOiBbSW5mb0dyb3VwXSA9IFtdCiAgICB2YXIgaXNFbXB0eTogQm9vbCB7IGdyb3Vwcy5hbGxTYXRpc2Z5IHsgJDAucm93cy5pc0VtcHR5IH0gfQogICAgZnVuYyB2YWx1ZShfIGxhYmVsOiBTdHJpbmcpIC0+IFN0cmluZz8gewogICAgICAgIGZvciBnIGluIGdyb3VwcyB7IGlmIGxldCByID0gZy5yb3dzLmZpcnN0KHdoZXJlOiB7ICQwLmxhYmVsID09IGxhYmVsIH0pLCAhci52YWx1ZS5pc0VtcHR5IHsgcmV0dXJuIHIudmFsdWUgfSB9CiAgICAgICAgcmV0dXJuIG5pbAogICAgfQp9CgpzdHJ1Y3QgUmVnaXN0ZXJlZENvdXJzZTogQ29kYWJsZSwgSGFzaGFibGUsIElkZW50aWZpYWJsZSB7CiAgICB2YXIgY29kZTogU3RyaW5nICAgICAgICAgICAgLy8gIkFSIDQyMiIKICAgIHZhciBuYW1lOiBTdHJpbmcKICAgIHZhciBzZWN0aW9uOiBTdHJpbmcKICAgIHZhciBob3VyczogSW50PwogICAgdmFyIGZyb206IFN0cmluZyAgICAgICAgICAgIC8vICIwOTozMCIKICAgIHZhciB0bzogU3RyaW5nCiAgICB2YXIgZGF5czogW0ludF0gICAgICAgICAgICAgLy8gMCA9IFNhdHVyZGF5IOKApiA2ID0gRnJpZGF5IChTSVMgY29sdW1uIG9yZGVyKQogICAgdmFyIHJvb206IFN0cmluZwogICAgdmFyIG1vZGU6IFN0cmluZyAgICAgICAgICAgIC8vINmI2KzYp9mH2YogLyDZhdiv2YXYrCAvINil2YTZg9iq2LHZiNmG2YoKICAgIHZhciBpbnN0cnVjdG9yOiBTdHJpbmcKICAgIHZhciBjYW5jZWxsZWQ6IEJvb2wKICAgIHZhciBpZDogU3RyaW5nIHsgY29kZSArICItIiArIHNlY3Rpb24gfQogICAgdmFyIGNvbXBhY3RDb2RlOiBTdHJpbmcgeyBjb2RlLnJlcGxhY2luZ09jY3VycmVuY2VzKG9mOiAiICIsIHdpdGg6ICIiKSB9CiAgICBzdGF0aWMgbGV0IGRheU5hbWVzID0gWyLYp9mE2LPYqNiqIiwgItin2YTYo9it2K8iLCAi2KfZhNil2KvZhtmK2YYiLCAi2KfZhNir2YTYp9ir2KfYoSIsICLYp9mE2KPYsdio2LnYp9ihIiwgItin2YTYrtmF2YrYsyIsICLYp9mE2KzZhdi52KkiXQogICAgc3RhdGljIGxldCBzaG9ydERheU5hbWVzID0gWyLYs9io2KoiLCAi2KPYrdivIiwgItil2KvZhtmK2YYiLCAi2KvZhNin2KvYp9ihIiwgItij2LHYqNi52KfYoSIsICLYrtmF2YrYsyIsICLYrNmF2LnYqSJdCn0KCnN0cnVjdCBNYXJrQ2VsbDogQ29kYWJsZSwgSGFzaGFibGUgeyB2YXIgbGFiZWw6IFN0cmluZzsgdmFyIHZhbHVlOiBTdHJpbmcgfQoKc3RydWN0IENvdXJzZU1hcmtzOiBDb2RhYmxlLCBIYXNoYWJsZSwgSWRlbnRpZmlhYmxlIHsKICAgIHZhciBjb2RlOiBTdHJpbmcKICAgIHZhciBuYW1lOiBTdHJpbmcKICAgIHZhciBjZWxsczogW01hcmtDZWxsXSAgICAgICAvLyBldmVyeSBvdGhlciBjb2x1bW4sIGluIHBhZ2Ugb3JkZXIKICAgIHZhciBtYWluOiBNYXJrQ2VsbD8gICAgICAgICAvLyB0aGUgZmluYWwgbWFyayAvIGdyYWRlIHdoZW4gdGhlIHBhZ2UgaGFzIG9uZQogICAgdmFyIGlkOiBTdHJpbmcgeyBjb2RlICsgbmFtZSB9Cn0KCnN0cnVjdCBNYXJrc1BhZ2U6IENvZGFibGUsIEhhc2hhYmxlIHsKICAgIHZhciB0ZXJtOiBTdHJpbmcgPSAiIgogICAgdmFyIGNvdXJzZXM6IFtDb3Vyc2VNYXJrc10gPSBbXQogICAgdmFyIGVtcHR5TWVzc2FnZTogU3RyaW5nID0gIiIKfQoKLy8gTUFSSzogLSBIZWxwZXJzCgplbnVtIFNJU1RleHQgewogICAgc3RhdGljIGxldCBmb290ZXJMaW5lczogU2V0PFN0cmluZz4gPSBbIlNraXAgdG8gTWFpbiBDb250ZW50IiwgItis2KfZhdi52Kkg2KfZhNmK2LHZhdmI2YMgLSDZhdix2YPYsiDYp9mE2K3Yp9iz2Kgg2YjYp9mE2YXYudmE2YjZhdin2KoiLCAi2YbYuNin2YUg2YXYudmE2YjZhdin2Kog2KfZhNi32YTYqNipIl0KCiAgICBzdGF0aWMgZnVuYyBub3JtYWxpemUoXyBzOiBTdHJpbmcpIC0+IFN0cmluZyB7CiAgICAgICAgdmFyIG91dCA9IHMucmVwbGFjaW5nT2NjdXJyZW5jZXMob2Y6ICJcdXswMGEwfSIsIHdpdGg6ICIgIikKICAgICAgICAvLyBBcmFiaWMtSW5kaWMgZGlnaXRzIOKGkiBMYXRpbgogICAgICAgIGxldCBtYXA6IFtDaGFyYWN0ZXI6IENoYXJhY3Rlcl0gPSBbItmgIjoiMCIsItmhIjoiMSIsItmiIjoiMiIsItmjIjoiMyIsItmkIjoiNCIsItmlIjoiNSIsItmmIjoiNiIsItmnIjoiNyIsItmoIjoiOCIsItmpIjoiOSIsItmrIjoiLiJdCiAgICAgICAgb3V0ID0gU3RyaW5nKG91dC5tYXAgeyBtYXBbJDBdID8/ICQwIH0pCiAgICAgICAgd2hpbGUgb3V0LmNvbnRhaW5zKCIgICIpIHsgb3V0ID0gb3V0LnJlcGxhY2luZ09jY3VycmVuY2VzKG9mOiAiICAiLCB3aXRoOiAiICIpIH0KICAgICAgICByZXR1cm4gb3V0LnRyaW1taW5nQ2hhcmFjdGVycyhpbjogLndoaXRlc3BhY2VzQW5kTmV3bGluZXMpCiAgICB9CgogICAgc3RhdGljIGZ1bmMgY2xlYW5MaW5lcyhfIGxpbmVzOiBbU3RyaW5nXSkgLT4gW1N0cmluZ10gewogICAgICAgIGxpbmVzLmZsYXRNYXAgeyAkMC5jb21wb25lbnRzKHNlcGFyYXRlZEJ5OiBDaGFyYWN0ZXJTZXQubmV3bGluZXMpIH0KICAgICAgICAgICAgLm1hcChub3JtYWxpemUpCiAgICAgICAgICAgIC5maWx0ZXIgeyAhJDAuaXNFbXB0eSAmJiAhZm9vdGVyTGluZXMuY29udGFpbnMoJDApIH0KICAgIH0KCiAgICBzdGF0aWMgZnVuYyBmaXJzdE1hdGNoKF8gcGF0dGVybjogU3RyaW5nLCBpbiB0ZXh0OiBTdHJpbmcsIGdyb3VwOiBJbnQgPSAxKSAtPiBTdHJpbmc/IHsKICAgICAgICBndWFyZCBsZXQgcmUgPSB0cnk/IE5TUmVndWxhckV4cHJlc3Npb24ocGF0dGVybjogcGF0dGVybiwgb3B0aW9uczogW10pIGVsc2UgeyByZXR1cm4gbmlsIH0KICAgICAgICBsZXQgbnMgPSB0ZXh0IGFzIE5TU3RyaW5nCiAgICAgICAgZ3VhcmQgbGV0IG0gPSByZS5maXJzdE1hdGNoKGluOiB0ZXh0LCBvcHRpb25zOiBbXSwgcmFuZ2U6IE5TUmFuZ2UobG9jYXRpb246IDAsIGxlbmd0aDogbnMubGVuZ3RoKSksCiAgICAgICAgICAgICAgbS5udW1iZXJPZlJhbmdlcyA+IGdyb3VwLCBtLnJhbmdlKGF0OiBncm91cCkubG9jYXRpb24gIT0gTlNOb3RGb3VuZCBlbHNlIHsgcmV0dXJuIG5pbCB9CiAgICAgICAgcmV0dXJuIG5zLnN1YnN0cmluZyh3aXRoOiBtLnJhbmdlKGF0OiBncm91cCkpCiAgICB9CgogICAgc3RhdGljIGZ1bmMgYWxsTWF0Y2hlcyhfIHBhdHRlcm46IFN0cmluZywgaW4gdGV4dDogU3RyaW5nKSAtPiBbKHJhbmdlOiBOU1JhbmdlLCBncm91cHM6IFtTdHJpbmddKV0gewogICAgICAgIGd1YXJkIGxldCByZSA9IHRyeT8gTlNSZWd1bGFyRXhwcmVzc2lvbihwYXR0ZXJuOiBwYXR0ZXJuLCBvcHRpb25zOiBbXSkgZWxzZSB7IHJldHVybiBbXSB9CiAgICAgICAgbGV0IG5zID0gdGV4dCBhcyBOU1N0cmluZwogICAgICAgIHJldHVybiByZS5tYXRjaGVzKGluOiB0ZXh0LCBvcHRpb25zOiBbXSwgcmFuZ2U6IE5TUmFuZ2UobG9jYXRpb246IDAsIGxlbmd0aDogbnMubGVuZ3RoKSkubWFwIHsgbSBpbgogICAgICAgICAgICB2YXIgZzogW1N0cmluZ10gPSBbXQogICAgICAgICAgICBmb3IgaSBpbiAwLi48bS5udW1iZXJPZlJhbmdlcyB7CiAgICAgICAgICAgICAgICBsZXQgciA9IG0ucmFuZ2UoYXQ6IGkpCiAgICAgICAgICAgICAgICBnLmFwcGVuZChyLmxvY2F0aW9uID09IE5TTm90Rm91bmQgPyAiIiA6IG5zLnN1YnN0cmluZyh3aXRoOiByKSkKICAgICAgICAgICAgfQogICAgICAgICAgICByZXR1cm4gKG0ucmFuZ2UsIGcpCiAgICAgICAgfQogICAgfQoKICAgIHN0YXRpYyBmdW5jIGRvdWJsZShfIHM6IFN0cmluZz8pIC0+IERvdWJsZT8gewogICAgICAgIGd1YXJkIGxldCBzIGVsc2UgeyByZXR1cm4gbmlsIH0KICAgICAgICBsZXQgbiA9IG5vcm1hbGl6ZShzKQogICAgICAgIGd1YXJkIGxldCBtID0gZmlyc3RNYXRjaCgjIihcZCsoPzpcLlxkKyk/KSIjLCBpbjogbikgZWxzZSB7IHJldHVybiBuaWwgfQogICAgICAgIHJldHVybiBEb3VibGUobSkKICAgIH0KICAgIHN0YXRpYyBmdW5jIGludChfIHM6IFN0cmluZz8pIC0+IEludD8gewogICAgICAgIGd1YXJkIGxldCBzIGVsc2UgeyByZXR1cm4gbmlsIH0KICAgICAgICBndWFyZCBsZXQgbSA9IGZpcnN0TWF0Y2goIyIoXGQrKSIjLCBpbjogbm9ybWFsaXplKHMpKSBlbHNlIHsgcmV0dXJuIG5pbCB9CiAgICAgICAgcmV0dXJuIEludChtKQogICAgfQp9CgovLyBNQVJLOiAtIEFjYWRlbWljIHJlY29yZCAowqvYp9mE2LPYrNmEINin2YTYo9mD2KfYr9mK2YXZisK7KQoKZW51bSBBY2FkZW1pY1JlY29yZFBhcnNlciB7CiAgICBzdGF0aWMgbGV0IHRlcm1QYXR0ZXJuID0gIyIoPzwhW1xkL10pKFxkezR9KVxzKi9ccyooWzAtNF0pKD8hW1xkL10pIiMKCiAgICAvLy8gV29ya3Mgb24gdGhlIG1haW4tY29udGVudCBsaW5lcywgYW5kIGFsc28gb24gdGhlIG9sZCBvbmUtbGluZSBibG9iICh3aGl0ZXNwYWNlIGNvbGxhcHNlZCkuCiAgICBzdGF0aWMgZnVuYyBwYXJzZShsaW5lczogW1N0cmluZ10sIHBhaXJzOiBbW1N0cmluZ11dID0gW10pIC0+IEFjYWRlbWljUmVjb3JkIHsKICAgICAgICBsZXQgdGV4dCA9IFNJU1RleHQuY2xlYW5MaW5lcyhsaW5lcykuam9pbmVkKHNlcGFyYXRvcjogIlxuIikKICAgICAgICByZXR1cm4gcGFyc2UodGV4dDogdGV4dCwgcGFpcnM6IHBhaXJzKQogICAgfQoKICAgIHN0YXRpYyBmdW5jIHBhcnNlKHRleHQgcmF3OiBTdHJpbmcsIHBhaXJzOiBbW1N0cmluZ11dID0gW10pIC0+IEFjYWRlbWljUmVjb3JkIHsKICAgICAgICBsZXQgdGV4dCA9IFNJU1RleHQubm9ybWFsaXplKHJhdy5yZXBsYWNpbmdPY2N1cnJlbmNlcyhvZjogIlxyIiwgd2l0aDogIiIpKQogICAgICAgIHZhciByZWNvcmQgPSBBY2FkZW1pY1JlY29yZCgpCgogICAgICAgIC8vIFNwbGl0IGludG86IFtzdW1tYXJ5XVt0ZXJtIGJsb2NrXVt0ZXJtIGJsb2NrXeKApgogICAgICAgIGxldCBoaXRzID0gU0lTVGV4dC5hbGxNYXRjaGVzKHRlcm1QYXR0ZXJuLCBpbjogdGV4dCkKICAgICAgICBsZXQgbnMgPSB0ZXh0IGFzIE5TU3RyaW5nCiAgICAgICAgbGV0IHN1bW1hcnlFbmQgPSBoaXRzLmZpcnN0Py5yYW5nZS5sb2NhdGlvbiA/PyBucy5sZW5ndGgKICAgICAgICBsZXQgc3VtbWFyeVRleHQgPSBucy5zdWJzdHJpbmcodG86IHN1bW1hcnlFbmQpCgogICAgICAgIGZ1bmMgbnVtKF8gbGFiZWw6IFN0cmluZywgXyBzcmM6IFN0cmluZykgLT4gU3RyaW5nPyB7CiAgICAgICAgICAgIFNJU1RleHQuZmlyc3RNYXRjaChOU1JlZ3VsYXJFeHByZXNzaW9uLmVzY2FwZWRQYXR0ZXJuKGZvcjogbGFiZWwpICsgIyJccypbOu+8ml0/XHMqXCg/XHMqKFxkKyg/OlwuXGQrKT8pIiMsIGluOiBzcmMpCiAgICAgICAgfQogICAgICAgIHZhciBzID0gQWNhZGVtaWNTdW1tYXJ5KCkKICAgICAgICBzLmN1bXVsYXRpdmVHUEEgPSBTSVNUZXh0LmRvdWJsZShudW0oItin2YTZhdi52K/ZhCDYp9mE2KrYsdin2YPZhdmKIiwgc3VtbWFyeVRleHQpKQogICAgICAgIHMuY3VtdWxhdGl2ZUhvdXJzID0gU0lTVGV4dC5pbnQobnVtKCLZhdis2YXZiNi5INin2YTYs9in2LnYp9iqINin2YTYqtix2KfZg9mF2YrYqSIsIHN1bW1hcnlUZXh0KSkKICAgICAgICBzLnRvdGFsTWFya3MgPSBTSVNUZXh0LmludChudW0oItmF2KzZhdmI2Lkg2KfZhNi52YTYp9mF2KfYqiDYp9mE2KrYsdin2YPZhdmK2KkiLCBzdW1tYXJ5VGV4dCkpCiAgICAgICAgcy5wYXNzZWRIb3VycyA9IFNJU1RleHQuaW50KG51bSgi2YXYrNmF2YjYuSDYp9mE2LPYp9i52KfYqiDYp9mE2KrZiiDZhtis2K0g2KjZh9inINin2YTYt9in2YTYqCIsIHN1bW1hcnlUZXh0KSkKICAgICAgICBpZiBsZXQgaCA9IFNJU1RleHQuZmlyc3RNYXRjaCgjIig/OtmE2KfYptit2Kl82YTZiNit2KkpINin2YTYtNix2YFccypbOu+8ml0/XHMqXCg/XHMqKNmG2LnZhXzZhNinKSIjLCBpbjogc3VtbWFyeVRleHQpIHsgcy5ob25vckxpc3QgPSBoIH0KICAgICAgICAvLyBQYWlycyBmcm9tIHRoZSBET00gd2luIHdoZW4gcHJlc2VudC4KICAgICAgICBmb3IgcCBpbiBwYWlycyB3aGVyZSBwLmNvdW50ID49IDIgewogICAgICAgICAgICBsZXQgbCA9IFNJU1RleHQubm9ybWFsaXplKHBbMF0pLCB2ID0gU0lTVGV4dC5ub3JtYWxpemUocFsxXSkKICAgICAgICAgICAgaWYgbC5jb250YWlucygi2KfZhNmF2LnYr9mEINin2YTYqtix2KfZg9mF2YoiKSwgbGV0IGQgPSBTSVNUZXh0LmRvdWJsZSh2KSB7IHMuY3VtdWxhdGl2ZUdQQSA9IGQgfQogICAgICAgICAgICBpZiBsLmNvbnRhaW5zKCLYp9mE2LPYp9i52KfYqiDYp9mE2KrYsdin2YPZhdmK2KkiKSwgbGV0IGkgPSBTSVNUZXh0LmludCh2KSB7IHMuY3VtdWxhdGl2ZUhvdXJzID0gaSB9CiAgICAgICAgICAgIGlmIGwuY29udGFpbnMoItin2YTYudmE2KfZhdin2Kog2KfZhNiq2LHYp9mD2YXZitipIiksIGxldCBpID0gU0lTVGV4dC5pbnQodikgeyBzLnRvdGFsTWFya3MgPSBpIH0KICAgICAgICAgICAgaWYgbC5jb250YWlucygi2YbYrNitIiksIGxldCBpID0gU0lTVGV4dC5pbnQodikgeyBzLnBhc3NlZEhvdXJzID0gaSB9CiAgICAgICAgfQogICAgICAgIHJlY29yZC5zdW1tYXJ5ID0gcwoKICAgICAgICAvLyBUZXJtIGJsb2NrczogYSBoZWFkZXIgbWF5IHJlcGVhdCAoIjIwMjQvMVxuMjAyNC8xIik7IG1lcmdlIGNvbnNlY3V0aXZlIGVxdWFsIGhlYWRlcnMuCiAgICAgICAgdmFyIGJsb2NrczogWyh0ZXJtOiBTdHJpbmcsIHN0YXJ0OiBJbnQpXSA9IFtdCiAgICAgICAgZm9yIGggaW4gaGl0cyB7CiAgICAgICAgICAgIGxldCB0ZXJtID0gIlwoaC5ncm91cHNbMV0pL1woaC5ncm91cHNbMl0pIgogICAgICAgICAgICBpZiBsZXQgbGFzdCA9IGJsb2Nrcy5sYXN0LCBsYXN0LnRlcm0gPT0gdGVybSB7CiAgICAgICAgICAgICAgICBsZXQgYmV0d2VlbiA9IG5zLnN1YnN0cmluZyh3aXRoOiBOU1JhbmdlKGxvY2F0aW9uOiBsYXN0LnN0YXJ0LCBsZW5ndGg6IGgucmFuZ2UubG9jYXRpb24gLSBsYXN0LnN0YXJ0KSkKICAgICAgICAgICAgICAgIC8vIFNhbWUgaGVhZGVyIHR3aWNlIHdpdGggbm90aGluZyBidXQgd2hpdGVzcGFjZS90aGUgaGVhZGVyIGl0c2VsZiBpbiBiZXR3ZWVuIOKGkiBzYW1lIGJsb2NrLgogICAgICAgICAgICAgICAgbGV0IHN0cmlwcGVkID0gYmV0d2Vlbi5yZXBsYWNpbmdPY2N1cnJlbmNlcyhvZjogdGVybSwgd2l0aDogIiIpLnRyaW1taW5nQ2hhcmFjdGVycyhpbjogLndoaXRlc3BhY2VzQW5kTmV3bGluZXMpCiAgICAgICAgICAgICAgICBpZiBzdHJpcHBlZC5pc0VtcHR5IHx8ICFzdHJpcHBlZC5jb250YWlucygi2KfZhNmF2LnYr9mEIikgeyBjb250aW51ZSB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgYmxvY2tzLmFwcGVuZCgodGVybSwgaC5yYW5nZS5sb2NhdGlvbikpCiAgICAgICAgfQogICAgICAgIGZvciAoaSwgYikgaW4gYmxvY2tzLmVudW1lcmF0ZWQoKSB7CiAgICAgICAgICAgIGxldCBlbmQgPSBpICsgMSA8IGJsb2Nrcy5jb3VudCA/IGJsb2Nrc1tpICsgMV0uc3RhcnQgOiBucy5sZW5ndGgKICAgICAgICAgICAgbGV0IGJvZHkgPSBucy5zdWJzdHJpbmcod2l0aDogTlNSYW5nZShsb2NhdGlvbjogYi5zdGFydCwgbGVuZ3RoOiBlbmQgLSBiLnN0YXJ0KSkKICAgICAgICAgICAgZ3VhcmQgYm9keS5jb250YWlucygi2KfZhNmF2LnYr9mEIikgfHwgYm9keS5jb250YWlucygi2LPYp9i52KfYqiIpIGVsc2UgeyBjb250aW51ZSB9CiAgICAgICAgICAgIHZhciB0ID0gQWNhZGVtaWNUZXJtKHRlcm06IGIudGVybSkKICAgICAgICAgICAgdC5jdW11bGF0aXZlR1BBID0gU0lTVGV4dC5kb3VibGUoU0lTVGV4dC5maXJzdE1hdGNoKCMi2KfZhNmF2LnYr9mEINin2YTYqtix2KfZg9mF2YpccypbOu+8ml0/XHMqKFxkKyg/OlwuXGQrKT8pIiMsIGluOiBib2R5KSkKICAgICAgICAgICAgdC50ZXJtR1BBID0gU0lTVGV4dC5kb3VibGUoU0lTVGV4dC5maXJzdE1hdGNoKCMi2KfZhNmF2LnYr9mEINin2YTZgdi12YTZilxzKls677yaXT9ccyooXGQrKD86XC5cZCspPykiIywgaW46IGJvZHkpKQogICAgICAgICAgICB0LnRlcm1Ib3VycyA9IFNJU1RleHQuaW50KFNJU1RleHQuZmlyc3RNYXRjaCgjIti52K/YryDYs9in2LnYp9iqINin2YTZgdi12YRccypbOu+8ml0/XHMqKFxkKykiIywgaW46IGJvZHkpKQogICAgICAgICAgICB0LnN0dWRpZWRIb3Vyc1RvdGFsID0gU0lTVGV4dC5pbnQoU0lTVGV4dC5maXJzdE1hdGNoKCMi2YXYrNmF2YjYuSDYp9mE2LPYp9i52KfYqiDYp9mE2KrZiiDYr9ix2LPZh9inINin2YTYt9in2YTYqFxzKls677yaXT9ccypcKD9ccyooXGQrKSIjLCBpbjogYm9keSkpCiAgICAgICAgICAgIHQuaG9ub3JMaXN0ID0gU0lTVGV4dC5maXJzdE1hdGNoKCMiKD862YTZiNit2Kl82YTYp9im2K3YqSkg2KfZhNi02LHZgVxzKls677yaXT9ccypcKD9ccyoo2YbYudmFKSIjLCBpbjogYm9keSkgIT0gbmlsCiAgICAgICAgICAgIGlmIGxldCBpZHggPSByZWNvcmQudGVybXMuZmlyc3RJbmRleCh3aGVyZTogeyAkMC50ZXJtID09IHQudGVybSB9KSB7IHJlY29yZC50ZXJtc1tpZHhdID0gdCB9IGVsc2UgeyByZWNvcmQudGVybXMuYXBwZW5kKHQpIH0KICAgICAgICB9CiAgICAgICAgcmVjb3JkLnRlcm1zLnNvcnQgeyAoJDAueWVhciwgJDAucGFydCkgPCAoJDEueWVhciwgJDEucGFydCkgfQogICAgICAgIHJldHVybiByZWNvcmQKICAgIH0KfQoKLy8gTUFSSzogLSBTdHVkZW50IGluZm9ybWF0aW9uICjCq9in2YTZhdi52YTZiNmF2KfYqiDYp9mE2KPYs9in2LPZitipwrspCgplbnVtIFN0dWRlbnRJbmZvUGFyc2VyIHsKICAgIHN0YXRpYyBsZXQgaWRlbnRpdHkgPSBbItin2YTYp9iz2YUg2KjYp9mE2LnYsdio2YrYqSIsICLYp9mE2KfYs9mFINio2KfZhNin2YbYrNmE2YrYstmK2KkiLCAi2KfZhNin2LPZhSDYqNin2YTYpdmG2KzZhNmK2LLZitipIiwgItin2YTYsdmC2YUg2KfZhNmI2LfZhtmKIiwgItin2YTYrNmG2LMiLCAi2KfZhNis2YbYs9mK2KkiLCAi2YXZg9in2YYg2KfZhNmI2YTYp9iv2KkiLCAi2KrYp9ix2YrYriDYp9mE2YjZhNin2K/YqSJdCiAgICBzdGF0aWMgbGV0IHN0dWR5ID0gWyLYp9mE2YPZhNmK2KkiLCAi2KfZhNiq2K7Ytdi1IiwgItin2YTYqtiu2LXYtSDYp9mE2YHYsdi52YoiLCAi2KfZhNiq2K7Ytdi1INin2YTYr9mC2YrZgiIsICLZhdiz2KfYsSDYp9mE2YTYutipINmB2Yog2K7Yt9ipINmF2KrYt9mE2KjYp9iqINin2YTYrNin2YXYudipINin2YTYp9iu2KrZitin2LHZitipIiwgItin2YTYrdin2YTYqSDYp9mE2KfZg9in2K/ZitmF2YrYqSIsICLYp9mE2K3Yp9mE2Kkg2KfZhNij2YPYp9iv2YrZhdmK2KkiLCAi2KfZhNmF2LnYr9mEINin2YTYqtix2KfZg9mF2YoiLCAi2YXYqtmI2YLYuSDYqtiu2LHYrNmH2J8iXQogICAgc3RhdGljIGxldCB0YWJzOiBTZXQ8U3RyaW5nPiA9IFsi2KfZhNmF2LnZhNmI2YXYp9iqINin2YTYsdim2YrYs9mK2KkiLCAi2KPZiNmC2KfYqiDYp9mE2KrYs9is2YrZhCIsICLYp9mE2YXYudmE2YjZhdin2Kog2KfZhNmF2KfZhNmK2KkiLCAi2YXYudmE2YjZhdin2Kog2K7Yr9mF2Kkg2KfZhNi52YTZhSJdCgogICAgc3RhdGljIGZ1bmMgcGFyc2UocGFpcnMgcmF3UGFpcnM6IFtbU3RyaW5nXV0sIGxpbmVzIHJhd0xpbmVzOiBbU3RyaW5nXSkgLT4gU3R1ZGVudEluZm8gewogICAgICAgIHZhciBpbmZvID0gU3R1ZGVudEluZm8oKQogICAgICAgIGxldCBsaW5lcyA9IFNJU1RleHQuY2xlYW5MaW5lcyhyYXdMaW5lcykKICAgICAgICAvLyBIZWFkZXI6IHRoZSBsaW5lcyBiZWZvcmUgdGhlIGZpcnN0IHRhYiBsYWJlbCBhcmUgbmFtZSAvIGRlZ3JlZSAvIGNvbGxlZ2UuCiAgICAgICAgbGV0IGhlYWQgPSBsaW5lcy5wcmVmaXggeyAhdGFicy5jb250YWlucygkMCkgJiYgIWlkZW50aXR5LmNvbnRhaW5zKCQwKSB9CiAgICAgICAgbGV0IGhlYWRMaXN0ID0gQXJyYXkoaGVhZC5wcmVmaXgoNCkpCiAgICAgICAgaWYgbGV0IG4gPSBoZWFkTGlzdC5maXJzdCh3aGVyZTogeyAhJDAuY29udGFpbnMoIi8iKSAmJiAhJDAuY29udGFpbnMoItmD2YTZitipIikgfSkgeyBpbmZvLm5hbWUgPSBuIH0KICAgICAgICBpZiBsZXQgZCA9IGhlYWRMaXN0LmZpcnN0KHdoZXJlOiB7ICQwLmNvbnRhaW5zKCLYqNmD2KfZhNmI2LHZitmI2LMiKSB8fCAkMC5jb250YWlucygi2YXYp9is2LPYqtmK2LEiKSB8fCAkMC5jb250YWlucygi2K/Zg9iq2YjYsdin2YciKSB8fCAkMC5jb250YWlucygi2K/YqNmE2YjZhSIpIH0pIHsgaW5mby5kZWdyZWUgPSBkIH0KICAgICAgICBpZiBsZXQgYyA9IGhlYWRMaXN0LmZpcnN0KHdoZXJlOiB7ICQwLmNvbnRhaW5zKCLZg9mE2YrYqSIpIH0pIHsgaW5mby5kZXBhcnRtZW50ID0gYyB9CgogICAgICAgIC8vIGxhYmVsIOKGkiB2YWx1ZSwgRE9NIHBhaXJzIGZpcnN0LCB0aGVuIGtub3duIGxhYmVscyBmcm9tIHRoZSBsaW5lcy4KICAgICAgICB2YXIgdmFsdWVzOiBbKGxhYmVsOiBTdHJpbmcsIHZhbHVlOiBTdHJpbmcsIHNlY3Rpb246IFN0cmluZyldID0gW10KICAgICAgICB2YXIgc2VlbiA9IFNldDxTdHJpbmc+KCkKICAgICAgICBmb3IgcCBpbiByYXdQYWlycyB3aGVyZSBwLmNvdW50ID49IDIgewogICAgICAgICAgICBsZXQgbCA9IFNJU1RleHQubm9ybWFsaXplKHBbMF0pLnRyaW1taW5nQ2hhcmFjdGVycyhpbjogQ2hhcmFjdGVyU2V0KGNoYXJhY3RlcnNJbjogIjrvvJogIikpCiAgICAgICAgICAgIGxldCB2ID0gU0lTVGV4dC5ub3JtYWxpemUocFsxXSkKICAgICAgICAgICAgbGV0IHNlYyA9IHAuY291bnQgPiAyID8gU0lTVGV4dC5ub3JtYWxpemUocFsyXSkgOiAiIgogICAgICAgICAgICBndWFyZCAhbC5pc0VtcHR5LCAhc2Vlbi5jb250YWlucyhsKSBlbHNlIHsgY29udGludWUgfQogICAgICAgICAgICBzZWVuLmluc2VydChsKTsgdmFsdWVzLmFwcGVuZCgobCwgdiwgc2VjKSkKICAgICAgICB9CiAgICAgICAgbGV0IGtub3duID0gaWRlbnRpdHkgKyBzdHVkeQogICAgICAgIGxldCBhbGxMYWJlbHMgPSBTZXQoa25vd24pLnVuaW9uKHRhYnMpCiAgICAgICAgZm9yIChpLCBsaW5lKSBpbiBsaW5lcy5lbnVtZXJhdGVkKCkgd2hlcmUga25vd24uY29udGFpbnMobGluZSkgJiYgIXNlZW4uY29udGFpbnMobGluZSkgewogICAgICAgICAgICB2YXIgdiA9ICIiCiAgICAgICAgICAgIGlmIGkgKyAxIDwgbGluZXMuY291bnQsICFhbGxMYWJlbHMuY29udGFpbnMobGluZXNbaSArIDFdKSB7IHYgPSBsaW5lc1tpICsgMV0gfQogICAgICAgICAgICBzZWVuLmluc2VydChsaW5lKTsgdmFsdWVzLmFwcGVuZCgobGluZSwgdiwgIiIpKQogICAgICAgIH0KICAgICAgICAvLyBMaW5lcyBsaWtlICLYp9mE2KzZhtizOiDYsNmD2LEiCiAgICAgICAgZm9yIGxpbmUgaW4gbGluZXMgewogICAgICAgICAgICBndWFyZCBsZXQgciA9IGxpbmUucmFuZ2Uob2Y6ICI6IikgZWxzZSB7IGNvbnRpbnVlIH0KICAgICAgICAgICAgbGV0IGwgPSBTdHJpbmcobGluZVsuLjxyLmxvd2VyQm91bmRdKS50cmltbWluZ0NoYXJhY3RlcnMoaW46IC53aGl0ZXNwYWNlcykKICAgICAgICAgICAgbGV0IHYgPSBTdHJpbmcobGluZVtyLnVwcGVyQm91bmQuLi5dKS50cmltbWluZ0NoYXJhY3RlcnMoaW46IC53aGl0ZXNwYWNlcykKICAgICAgICAgICAgaWYga25vd24uY29udGFpbnMobCksICFzZWVuLmNvbnRhaW5zKGwpIHsgc2Vlbi5pbnNlcnQobCk7IHZhbHVlcy5hcHBlbmQoKGwsIHYsICIiKSkgfQogICAgICAgIH0KCiAgICAgICAgZnVuYyByb3dzKF8gbGFiZWxzOiBbU3RyaW5nXSkgLT4gW0luZm9Sb3ddIHsKICAgICAgICAgICAgbGFiZWxzLmNvbXBhY3RNYXAgeyBsYWIgaW4gdmFsdWVzLmZpcnN0KHdoZXJlOiB7ICQwLmxhYmVsID09IGxhYiB9KS5tYXAgeyBJbmZvUm93KGxhYmVsOiBsYWIsIHZhbHVlOiAkMC52YWx1ZSkgfSB9CiAgICAgICAgICAgICAgICAuZmlsdGVyIHsgISQwLnZhbHVlLmlzRW1wdHkgfQogICAgICAgIH0KICAgICAgICBsZXQgdXNlZCA9IFNldChrbm93bikKICAgICAgICB2YXIgZ3JvdXBzOiBbSW5mb0dyb3VwXSA9IFsKICAgICAgICAgICAgSW5mb0dyb3VwKHRpdGxlOiAi2KfZhNmF2LnZhNmI2YXYp9iqINin2YTYtNiu2LXZitipIiwgcm93czogcm93cyhpZGVudGl0eSkpLAogICAgICAgICAgICBJbmZvR3JvdXAodGl0bGU6ICLYp9mE2K/Ysdin2LPYqSIsIHJvd3M6IHJvd3Moc3R1ZHkpKQogICAgICAgIF0KICAgICAgICAvLyBFdmVyeXRoaW5nIGVsc2UsIGdyb3VwZWQgYnkgaXRzIHNlY3Rpb24gb24gdGhlIHBhZ2UuCiAgICAgICAgdmFyIG90aGVyOiBbU3RyaW5nOiBbSW5mb1Jvd11dID0gWzpdCiAgICAgICAgdmFyIG9yZGVyOiBbU3RyaW5nXSA9IFtdCiAgICAgICAgZm9yIHYgaW4gdmFsdWVzIHdoZXJlICF1c2VkLmNvbnRhaW5zKHYubGFiZWwpICYmICF2LnZhbHVlLmlzRW1wdHkgJiYgdi5sYWJlbC5jb3VudCA8PSA2MCAmJiB2LnZhbHVlICE9IHYubGFiZWwgewogICAgICAgICAgICBsZXQgc2VjID0gKHYuc2VjdGlvbi5pc0VtcHR5IHx8IHYuc2VjdGlvbiA9PSAi2KfZhNmF2LnZhNmI2YXYp9iqINin2YTYsdim2YrYs9mK2KkiKSA/ICLZhdi52YTZiNmF2KfYqiDYo9iu2LHZiSIgOiB2LnNlY3Rpb24KICAgICAgICAgICAgaWYgb3RoZXJbc2VjXSA9PSBuaWwgeyBvdGhlcltzZWNdID0gW107IG9yZGVyLmFwcGVuZChzZWMpIH0KICAgICAgICAgICAgb3RoZXJbc2VjXT8uYXBwZW5kKEluZm9Sb3cobGFiZWw6IHYubGFiZWwsIHZhbHVlOiB2LnZhbHVlKSkKICAgICAgICB9CiAgICAgICAgZm9yIHNlYyBpbiBvcmRlciB7IGdyb3Vwcy5hcHBlbmQoSW5mb0dyb3VwKHRpdGxlOiBzZWMsIHJvd3M6IG90aGVyW3NlY10gPz8gW10pKSB9CiAgICAgICAgaW5mby5ncm91cHMgPSBncm91cHMuZmlsdGVyIHsgISQwLnJvd3MuaXNFbXB0eSB9CiAgICAgICAgaWYgaW5mby5uYW1lLmlzRW1wdHksIGxldCBuID0gaW5mby52YWx1ZSgi2KfZhNin2LPZhSDYqNin2YTYudix2KjZitipIikgeyBpbmZvLm5hbWUgPSBuIH0KICAgICAgICByZXR1cm4gaW5mbwogICAgfQp9CgovLyBNQVJLOiAtIFJlZ2lzdGVyZWQgY291cnNlcyAowqvYp9iz2KrYt9mE2KfYuSDYp9mE2YXZiNin2K8g2KfZhNmF2LPYrNmE2KnCuykKCmVudW0gUmVnaXN0ZXJlZENvdXJzZXNQYXJzZXIgewogICAgc3RhdGljIGZ1bmMgcGFyc2UodGFibGVzOiBbU0lTRXh0cmFjdC5UYWJsZV0pIC0+IFtSZWdpc3RlcmVkQ291cnNlXSB7CiAgICAgICAgZm9yIHQgaW4gdGFibGVzIHsKICAgICAgICAgICAgbGV0IGggPSB0LmhlYWRlcnMubWFwKFNJU1RleHQubm9ybWFsaXplKQogICAgICAgICAgICBmdW5jIGNvbChfIG5hbWVzOiBbU3RyaW5nXSkgLT4gSW50PyB7IGguZmlyc3RJbmRleCB7IGhoIGluIG5hbWVzLmNvbnRhaW5zIHsgaGggPT0gJDAgfSB9ID8/IGguZmlyc3RJbmRleCB7IGhoIGluIG5hbWVzLmNvbnRhaW5zIHsgaGguY29udGFpbnMoJDApIH0gfSB9CiAgICAgICAgICAgIGd1YXJkIGxldCBjb2RlSSA9IGNvbChbItix2YXYsiDYp9mE2YXYs9in2YIiXSksIGxldCBuYW1lSSA9IGNvbChbItin2LPZhSDYp9mE2YXYs9in2YIiXSkgZWxzZSB7IGNvbnRpbnVlIH0KICAgICAgICAgICAgbGV0IGRheUNvbHMgPSBbItin2YTYs9io2KoiLCAi2KfZhNin2K3YryIsICLYp9mE2KXYq9mG2YrZhiIsICLYp9mE2KvZhNin2KvYp9ihIiwgItin2YTYp9ix2KjYudin2KEiLCAi2KfZhNiu2YXZitizIiwgItin2YTYrNmF2LnYqSJdLm1hcCB7IGQgLT4gSW50PyBpbgogICAgICAgICAgICAgICAgaC5maXJzdEluZGV4IHsgaGggaW4gaGggPT0gZCB8fCBoaC5yZXBsYWNpbmdPY2N1cnJlbmNlcyhvZjogItijIiwgd2l0aDogItinIikucmVwbGFjaW5nT2NjdXJyZW5jZXMob2Y6ICLYpSIsIHdpdGg6ICLYpyIpID09IGQucmVwbGFjaW5nT2NjdXJyZW5jZXMob2Y6ICLYpSIsIHdpdGg6ICLYpyIpIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBsZXQgc2VjSSA9IGNvbChbItin2YTYtNi52KjYqSJdKSwgaHJzSSA9IGNvbChbIti52K/YryDYp9mE2LPYp9i52KfYqiJdKSwgZnJvbUkgPSBjb2woWyLZhdmGIl0pLCB0b0kgPSBjb2woWyLYp9mE2YkiLCAi2KXZhNmJIl0pCiAgICAgICAgICAgIGxldCByb29tSSA9IGNvbChbItin2YTZgtin2LnYqSJdKSwgbW9kZUkgPSBjb2woWyLYt9ix2YrZgtipINiq2K/YsdmK2LMiXSksIGluc0kgPSBjb2woWyLYp9mE2YXYr9ix2LMiXSksIGNhbmNJID0gY29sKFsi2KfZhNi02LnYqNipINmF2YTYutin2KkiXSkKICAgICAgICAgICAgdmFyIG91dDogW1JlZ2lzdGVyZWRDb3Vyc2VdID0gW10KICAgICAgICAgICAgZm9yIHJvdyBpbiB0LnJvd3MgewogICAgICAgICAgICAgICAgZnVuYyBjZWxsKF8gaTogSW50PykgLT4gU3RyaW5nIHsgZ3VhcmQgbGV0IGksIGkgPCByb3cuY291bnQgZWxzZSB7IHJldHVybiAiIiB9OyByZXR1cm4gU0lTVGV4dC5ub3JtYWxpemUocm93W2ldKSB9CiAgICAgICAgICAgICAgICBsZXQgY29kZSA9IGNlbGwoY29kZUkpCiAgICAgICAgICAgICAgICBndWFyZCAhY29kZS5pc0VtcHR5LCBjb2RlLnJhbmdlT2ZDaGFyYWN0ZXIoZnJvbTogLmxldHRlcnMpICE9IG5pbCBlbHNlIHsgY29udGludWUgfQogICAgICAgICAgICAgICAgdmFyIGRheXM6IFtJbnRdID0gW10KICAgICAgICAgICAgICAgIGZvciAoZCwgY2kpIGluIGRheUNvbHMuZW51bWVyYXRlZCgpIHsKICAgICAgICAgICAgICAgICAgICBsZXQgdiA9IGNlbGwoY2kpCiAgICAgICAgICAgICAgICAgICAgaWYgIXYuaXNFbXB0eSAmJiB2ICE9ICItIiB7IGRheXMuYXBwZW5kKGQpIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIG91dC5hcHBlbmQoUmVnaXN0ZXJlZENvdXJzZShjb2RlOiBjb2RlLCBuYW1lOiBjZWxsKG5hbWVJKSwgc2VjdGlvbjogY2VsbChzZWNJKSwgaG91cnM6IFNJU1RleHQuaW50KGNlbGwoaHJzSSkpLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyb206IGNlbGwoZnJvbUkpLCB0bzogY2VsbCh0b0kpLCBkYXlzOiBkYXlzLCByb29tOiBjZWxsKHJvb21JKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb2RlOiBjZWxsKG1vZGVJKSwgaW5zdHJ1Y3RvcjogY2VsbChpbnNJKSwgY2FuY2VsbGVkOiBjZWxsKGNhbmNJKSA9PSAi2YbYudmFIikpCiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgIW91dC5pc0VtcHR5IHsgcmV0dXJuIG91dCB9CiAgICAgICAgfQogICAgICAgIHJldHVybiBbXQogICAgfQp9CgovLyBNQVJLOiAtIE1hcmtzICjCq9il2LPYqti32YTYp9i5INin2YTYudmE2KfZhdin2KrCuykKCmVudW0gTWFya3NQYXJzZXIgewogICAgc3RhdGljIGxldCBtYWluSGVhZGVycyA9IFsi2KfZhNi52YTYp9mF2Kkg2KfZhNmG2YfYp9im2YrYqSIsICLYp9mE2YXYrNmF2YjYuSIsICLYp9mE2LnZhNin2YXYqSIsICLYudmE2KfZhdipIiwgItin2YTYqtmC2K/ZitixIiwgItin2YTZhtiq2YrYrNipIl0KCiAgICBzdGF0aWMgZnVuYyBwYXJzZSh0YWJsZXM6IFtTSVNFeHRyYWN0LlRhYmxlXSwgbGluZXM6IFtTdHJpbmddKSAtPiBNYXJrc1BhZ2UgewogICAgICAgIHZhciBwYWdlID0gTWFya3NQYWdlKCkKICAgICAgICBsZXQgY2xlYW4gPSBTSVNUZXh0LmNsZWFuTGluZXMobGluZXMpCiAgICAgICAgaWYgbGV0IHQgPSBjbGVhbi5maXJzdCh3aGVyZTogeyAkMC5yYW5nZShvZjogIyIo2KfZhNin2YjZhHzYp9mE2KPZiNmEfNin2YTYq9in2YbZinzYp9mE2LXZitmB2YopXHMrXGR7NH0iIywgb3B0aW9uczogLnJlZ3VsYXJFeHByZXNzaW9uKSAhPSBuaWwgJiYgJDAuY291bnQgPCAyNSB9KSB7CiAgICAgICAgICAgIHBhZ2UudGVybSA9IHQKICAgICAgICB9CiAgICAgICAgZm9yIHQgaW4gdGFibGVzIHsKICAgICAgICAgICAgbGV0IGggPSB0LmhlYWRlcnMubWFwKFNJU1RleHQubm9ybWFsaXplKQogICAgICAgICAgICBndWFyZCAhaC5pc0VtcHR5IGVsc2UgeyBjb250aW51ZSB9CiAgICAgICAgICAgIGxldCBjb2RlSSA9IGguZmlyc3RJbmRleCB7ICQwLmNvbnRhaW5zKCLYsdmF2LIiKSB9CiAgICAgICAgICAgIGxldCBuYW1lSSA9IGguZmlyc3RJbmRleCB7ICQwLmNvbnRhaW5zKCLYp9iz2YUg2KfZhNmF2LPYp9mCIikgfHwgJDAgPT0gItin2YTZhdiz2KfZgiIgfHwgJDAuY29udGFpbnMoItin2LPZhSDYp9mE2YXYp9iv2KkiKSB9CiAgICAgICAgICAgIGd1YXJkIGNvZGVJICE9IG5pbCB8fCBuYW1lSSAhPSBuaWwgZWxzZSB7IGNvbnRpbnVlIH0KICAgICAgICAgICAgZm9yIHJvdyBpbiB0LnJvd3MgewogICAgICAgICAgICAgICAgZnVuYyBjZWxsKF8gaTogSW50PykgLT4gU3RyaW5nIHsgZ3VhcmQgbGV0IGksIGkgPCByb3cuY291bnQgZWxzZSB7IHJldHVybiAiIiB9OyByZXR1cm4gU0lTVGV4dC5ub3JtYWxpemUocm93W2ldKSB9CiAgICAgICAgICAgICAgICBsZXQgY29kZSA9IGNlbGwoY29kZUkpLCBuYW1lID0gY2VsbChuYW1lSSkKICAgICAgICAgICAgICAgIGd1YXJkICEoY29kZS5pc0VtcHR5ICYmIG5hbWUuaXNFbXB0eSkgZWxzZSB7IGNvbnRpbnVlIH0KICAgICAgICAgICAgICAgIHZhciBjZWxsczogW01hcmtDZWxsXSA9IFtdCiAgICAgICAgICAgICAgICBmb3IgKGksIHYpIGluIHJvdy5lbnVtZXJhdGVkKCkgd2hlcmUgaSAhPSBjb2RlSSAmJiBpICE9IG5hbWVJICYmIGkgPCBoLmNvdW50IHsKICAgICAgICAgICAgICAgICAgICBsZXQgdmFsdWUgPSBTSVNUZXh0Lm5vcm1hbGl6ZSh2KQogICAgICAgICAgICAgICAgICAgIGxldCBsYWJlbCA9IGhbaV0KICAgICAgICAgICAgICAgICAgICBpZiBsYWJlbC5pc0VtcHR5IHx8IHZhbHVlLmlzRW1wdHkgeyBjb250aW51ZSB9CiAgICAgICAgICAgICAgICAgICAgY2VsbHMuYXBwZW5kKE1hcmtDZWxsKGxhYmVsOiBsYWJlbCwgdmFsdWU6IHZhbHVlKSkKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHZhciBtYWluOiBNYXJrQ2VsbD8KICAgICAgICAgICAgICAgIGZvciBrZXkgaW4gbWFpbkhlYWRlcnMgeyBpZiBsZXQgYyA9IGNlbGxzLmxhc3Qod2hlcmU6IHsgJDAubGFiZWwuY29udGFpbnMoa2V5KSB9KSB7IG1haW4gPSBjOyBicmVhayB9IH0KICAgICAgICAgICAgICAgIHBhZ2UuY291cnNlcy5hcHBlbmQoQ291cnNlTWFya3MoY29kZTogY29kZSwgbmFtZTogbmFtZSwgY2VsbHM6IGNlbGxzLCBtYWluOiBtYWluKSkKICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAhcGFnZS5jb3Vyc2VzLmlzRW1wdHkgeyBicmVhayB9CiAgICAgICAgfQogICAgICAgIGlmIHBhZ2UuY291cnNlcy5pc0VtcHR5IHsKICAgICAgICAgICAgcGFnZS5lbXB0eU1lc3NhZ2UgPSBjbGVhbi5maXJzdCh3aGVyZTogeyAkMC5jb250YWlucygi2YTYpyDZitmI2KzYryIpIHx8ICQwLmNvbnRhaW5zKCLZhNinINiq2YjYrNivIikgfHwgJDAubG93ZXJjYXNlZCgpLmNvbnRhaW5zKCJubyBkYXRhIikgfSkgPz8gIiIKICAgICAgICB9CiAgICAgICAgcmV0dXJuIHBhZ2UKICAgIH0KfQoKLy8gTUFSSzogLSBIb21lICjCq9mG2LPYqNipINil2YbYrNin2LLZg8K7KSwgc3R1ZGVudCBudW1iZXIKCmVudW0gU0lTSG9tZVBhcnNlciB7CiAgICBzdGF0aWMgZnVuYyBwbGFuUGVyY2VudChsaW5lczogW1N0cmluZ10pIC0+IEludD8gewogICAgICAgIGxldCBsID0gU0lTVGV4dC5jbGVhbkxpbmVzKGxpbmVzKQogICAgICAgIGd1YXJkIGxldCBpID0gbC5maXJzdEluZGV4KHdoZXJlOiB7ICQwLmNvbnRhaW5zKCLZhtiz2KjYqSDYpdmG2KzYp9iy2YMiKSB8fCAkMC5jb250YWlucygi2YbYs9io2Kkg2KfZhtis2KfYstmDIikgfSkgZWxzZSB7IHJldHVybiBuaWwgfQogICAgICAgIGZvciBqIGluIGkuLjxtaW4oaSArIDQsIGwuY291bnQpIHsKICAgICAgICAgICAgaWYgbGV0IG4gPSBTSVNUZXh0LmZpcnN0TWF0Y2goIyJeJT9ccyooXGR7MSwzfSlccyolPyQiIywgaW46IGxbal0pID8/IChqID09IGkgPyBTSVNUZXh0LmZpcnN0TWF0Y2goIyIoXGR7MSwzfSlccyolIiMsIGluOiBsW2pdKSA6IG5pbCksCiAgICAgICAgICAgICAgIGxldCB2ID0gSW50KG4pLCB2IDw9IDEwMCB7IHJldHVybiB2IH0KICAgICAgICB9CiAgICAgICAgcmV0dXJuIG5pbAogICAgfQogICAgc3RhdGljIGZ1bmMgc3R1ZGVudE51bWJlcihpbiB0ZXh0OiBTdHJpbmcpIC0+IFN0cmluZz8gewogICAgICAgIFNJU1RleHQuZmlyc3RNYXRjaCgjIig/PCFcZCkoMjBcZHs4fSkoPyFcZCkiIywgaW46IFNJU1RleHQubm9ybWFsaXplKHRleHQpKQogICAgfQp9CgovLyBNQVJLOiAtIE1hc2tpbmcgZm9yIHRoZSBkZXZlbG9wZXIgZXhwb3J0CgplbnVtIFNJU01hc2sgewogICAgLy8vIEhpZGVzIG5hbWVzLCBuYXRpb25hbC9zdHVkZW50IG51bWJlcnMsIGJpcnRoIGRhdGEgYW5kIHNlc3Npb24gaWRzIGluIGEgc2F2ZWQgcGFnZS4KICAgIHN0YXRpYyBmdW5jIG1hc2soXyBodG1sOiBTdHJpbmcsIHNlY3JldHM6IFtTdHJpbmddKSAtPiBTdHJpbmcgewogICAgICAgIHZhciBvdXQgPSBodG1sCiAgICAgICAgdmFyIHdvcmRzID0gU2V0PFN0cmluZz4oKQogICAgICAgIGZvciBzIGluIHNlY3JldHMgewogICAgICAgICAgICBsZXQgdCA9IHMudHJpbW1pbmdDaGFyYWN0ZXJzKGluOiAud2hpdGVzcGFjZXNBbmROZXdsaW5lcykKICAgICAgICAgICAgZ3VhcmQgdC5jb3VudCA+PSAyIGVsc2UgeyBjb250aW51ZSB9CiAgICAgICAgICAgIHdvcmRzLmluc2VydCh0KQogICAgICAgICAgICBpZiB0LnJhbmdlT2ZDaGFyYWN0ZXIoZnJvbTogLmRlY2ltYWxEaWdpdHMpID09IG5pbCB7CiAgICAgICAgICAgICAgICBmb3IgcGFydCBpbiB0LnNwbGl0KHNlcGFyYXRvcjogIiAiKSB3aGVyZSBwYXJ0LmNvdW50ID49IDMgeyB3b3Jkcy5pbnNlcnQoU3RyaW5nKHBhcnQpKSB9CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgZm9yIHcgaW4gd29yZHMuc29ydGVkKGJ5OiB7ICQwLmNvdW50ID4gJDEuY291bnQgfSkgewogICAgICAgICAgICBvdXQgPSBvdXQucmVwbGFjaW5nT2NjdXJyZW5jZXMob2Y6IHcsIHdpdGg6ICLigKLigKLigKIiKQogICAgICAgIH0KICAgICAgICBsZXQgcnVsZXM6IFsoU3RyaW5nLCBTdHJpbmcpXSA9IFsKICAgICAgICAgICAgKCMiKD88IVxkKVxkezEwfSg/IVxkKSIjLCAi4oCi4oCi4oCi4oCi4oCi4oCi4oCi4oCi4oCi4oCiIiksICAgICAgICAgICAgICAgICAvLyBuYXRpb25hbCBpZCAvIHN0dWRlbnQgbnVtYmVyCiAgICAgICAgICAgICgjInNlc3Npb249XGQrIiMsICJzZXNzaW9uPTAiKSwKICAgICAgICAgICAgKCMiKFA5OTk5X1BBU1NXT1JEW14+XSp2YWx1ZT0iKVteIl0qIiIjLCAiJDFcIiIpLAogICAgICAgIF0KICAgICAgICBmb3IgKHAsIHIpIGluIHJ1bGVzIHsKICAgICAgICAgICAgaWYgbGV0IHJlID0gdHJ5PyBOU1JlZ3VsYXJFeHByZXNzaW9uKHBhdHRlcm46IHApIHsKICAgICAgICAgICAgICAgIG91dCA9IHJlLnN0cmluZ0J5UmVwbGFjaW5nTWF0Y2hlcyhpbjogb3V0LCByYW5nZTogTlNSYW5nZShsb2NhdGlvbjogMCwgbGVuZ3RoOiAob3V0IGFzIE5TU3RyaW5nKS5sZW5ndGgpLCB3aXRoVGVtcGxhdGU6IHIpCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgcmV0dXJuIG91dAogICAgfQp9Cg==
+import Foundation
+
+// Pure parsing of SIS pages (no UI, no WebKit) so it can be tested on its own.
+
+// MARK: - What the page extractor returns
+
+struct SISExtract: Codable, Hashable {
+    struct Table: Codable, Hashable {
+        var title: String = ""
+        var id: String = ""
+        var headers: [String] = []
+        var rows: [[String]] = []
+    }
+    struct Link: Codable, Hashable { var t: String; var h: String }
+    struct Card: Codable, Hashable { var t: String; var x: String; var h: String }
+
+    var title: String = ""
+    var url: String = ""
+    var pairs: [[String]] = []        // [label, value, section]
+    var tables: [Table] = []
+    var lines: [String] = []          // main content only, one visual line each
+    var links: [Link] = []
+    var cards: [Card] = []
+    var login: Bool = false
+    var error: String = ""
+}
+
+// MARK: - Models
+
+struct AcademicSummary: Codable, Hashable {
+    var cumulativeGPA: Double?
+    var cumulativeHours: Int?
+    var totalMarks: Int?
+    var passedHours: Int?
+    var honorList: String?
+}
+
+struct AcademicTerm: Codable, Hashable, Identifiable {
+    var term: String              // "2025/1"
+    var termGPA: Double?
+    var cumulativeGPA: Double?
+    var termHours: Int?
+    var studiedHoursTotal: Int?
+    var honorList: Bool = false
+    var id: String { term }
+
+    var year: Int { Int(term.split(separator: "/").first ?? "") ?? 0 }
+    var part: Int { Int(term.split(separator: "/").last ?? "") ?? 0 }
+
+    /// "الفصل الأول" / "الفصل الثاني" / "الفصل الصيفي"
+    var semesterName: String {
+        switch part {
+        case 1: return "الفصل الأول"
+        case 2: return "الفصل الثاني"
+        case 3: return "الفصل الصيفي"
+        default: return "مواد استدراكية"
+        }
+    }
+    /// "2025/2026" for the first and second semesters, "2026" for summer.
+    var academicYear: String {
+        switch part {
+        case 1, 2: return "\(year)/\(year + 1)"
+        case 3: return "\(year + 1)"
+        default: return "\(year)"
+        }
+    }
+    var isPlaceholder: Bool { (termHours ?? 0) == 0 && (termGPA ?? 0) == 0 }
+}
+
+struct AcademicRecord: Codable, Hashable {
+    var summary = AcademicSummary()
+    var terms: [AcademicTerm] = []      // oldest first
+    var isEmpty: Bool { terms.isEmpty && summary.cumulativeGPA == nil }
+}
+
+struct InfoRow: Codable, Hashable, Identifiable {
+    var label: String
+    var value: String
+    var id: String { label }
+}
+
+struct InfoGroup: Codable, Hashable, Identifiable {
+    var title: String
+    var rows: [InfoRow]
+    var id: String { title }
+}
+
+struct StudentInfo: Codable, Hashable {
+    var name: String = ""
+    var degree: String = ""          // "بكالوريوس / عادي"
+    var department: String = ""      // "كلية الآداب / قسم اللغة العربية وآدابها"
+    var groups: [InfoGroup] = []
+    var isEmpty: Bool { groups.allSatisfy { $0.rows.isEmpty } }
+    func value(_ label: String) -> String? {
+        for g in groups { if let r = g.rows.first(where: { $0.label == label }), !r.value.isEmpty { return r.value } }
+        return nil
+    }
+}
+
+struct RegisteredCourse: Codable, Hashable, Identifiable {
+    var code: String            // "AR 422"
+    var name: String
+    var section: String
+    var hours: Int?
+    var from: String            // "09:30"
+    var to: String
+    var days: [Int]             // 0 = Saturday … 6 = Friday (SIS column order)
+    var room: String
+    var mode: String            // وجاهي / مدمج / إلكتروني
+    var instructor: String
+    var cancelled: Bool
+    var id: String { code + "-" + section }
+    var compactCode: String { code.replacingOccurrences(of: " ", with: "") }
+    static let dayNames = ["السبت", "الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة"]
+    static let shortDayNames = ["سبت", "أحد", "إثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة"]
+}
+
+struct MarkCell: Codable, Hashable { var label: String; var value: String }
+
+struct CourseMarks: Codable, Hashable, Identifiable {
+    var code: String
+    var name: String
+    var cells: [MarkCell]       // every other column, in page order
+    var main: MarkCell?         // the final mark / grade when the page has one
+    var id: String { code + name }
+}
+
+struct MarksPage: Codable, Hashable {
+    var term: String = ""
+    var courses: [CourseMarks] = []
+    var emptyMessage: String = ""
+}
+
+// MARK: - Helpers
+
+enum SISText {
+    static let footerLines: Set<String> = ["Skip to Main Content", "جامعة اليرموك - مركز الحاسب والمعلومات", "نظام معلومات الطلبة"]
+
+    static func normalize(_ s: String) -> String {
+        var out = s.replacingOccurrences(of: "\u{00a0}", with: " ")
+        // Arabic-Indic digits → Latin
+        let map: [Character: Character] = ["٠":"0","١":"1","٢":"2","٣":"3","٤":"4","٥":"5","٦":"6","٧":"7","٨":"8","٩":"9","٫":"."]
+        out = String(out.map { map[$0] ?? $0 })
+        while out.contains("  ") { out = out.replacingOccurrences(of: "  ", with: " ") }
+        return out.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    static func cleanLines(_ lines: [String]) -> [String] {
+        lines.flatMap { $0.components(separatedBy: CharacterSet.newlines) }
+            .map(normalize)
+            .filter { !$0.isEmpty && !footerLines.contains($0) }
+    }
+
+    static func firstMatch(_ pattern: String, in text: String, group: Int = 1) -> String? {
+        guard let re = try? NSRegularExpression(pattern: pattern, options: []) else { return nil }
+        let ns = text as NSString
+        guard let m = re.firstMatch(in: text, options: [], range: NSRange(location: 0, length: ns.length)),
+              m.numberOfRanges > group, m.range(at: group).location != NSNotFound else { return nil }
+        return ns.substring(with: m.range(at: group))
+    }
+
+    static func allMatches(_ pattern: String, in text: String) -> [(range: NSRange, groups: [String])] {
+        guard let re = try? NSRegularExpression(pattern: pattern, options: []) else { return [] }
+        let ns = text as NSString
+        return re.matches(in: text, options: [], range: NSRange(location: 0, length: ns.length)).map { m in
+            var g: [String] = []
+            for i in 0..<m.numberOfRanges {
+                let r = m.range(at: i)
+                g.append(r.location == NSNotFound ? "" : ns.substring(with: r))
+            }
+            return (m.range, g)
+        }
+    }
+
+    static func double(_ s: String?) -> Double? {
+        guard let s else { return nil }
+        let n = normalize(s)
+        guard let m = firstMatch(#"(\d+(?:\.\d+)?)"#, in: n) else { return nil }
+        return Double(m)
+    }
+    static func int(_ s: String?) -> Int? {
+        guard let s else { return nil }
+        guard let m = firstMatch(#"(\d+)"#, in: normalize(s)) else { return nil }
+        return Int(m)
+    }
+}
+
+// MARK: - Academic record («السجل الأكاديمي»)
+
+enum AcademicRecordParser {
+    static let termPattern = #"(?<![\d/])(\d{4})\s*/\s*([0-4])(?![\d/])"#
+
+    /// Works on the main-content lines, and also on the old one-line blob (whitespace collapsed).
+    static func parse(lines: [String], pairs: [[String]] = []) -> AcademicRecord {
+        let text = SISText.cleanLines(lines).joined(separator: "\n")
+        return parse(text: text, pairs: pairs)
+    }
+
+    static func parse(text raw: String, pairs: [[String]] = []) -> AcademicRecord {
+        let text = SISText.normalize(raw.replacingOccurrences(of: "\r", with: ""))
+        var record = AcademicRecord()
+
+        // Split into: [summary][term block][term block]…
+        let hits = SISText.allMatches(termPattern, in: text)
+        let ns = text as NSString
+        let summaryEnd = hits.first?.range.location ?? ns.length
+        let summaryText = ns.substring(to: summaryEnd)
+
+        func num(_ label: String, _ src: String) -> String? {
+            SISText.firstMatch(NSRegularExpression.escapedPattern(for: label) + #"\s*[:：]?\s*\(?\s*(\d+(?:\.\d+)?)"#, in: src)
+        }
+        var s = AcademicSummary()
+        s.cumulativeGPA = SISText.double(num("المعدل التراكمي", summaryText))
+        s.cumulativeHours = SISText.int(num("مجموع الساعات التراكمية", summaryText))
+        s.totalMarks = SISText.int(num("مجموع العلامات التراكمية", summaryText))
+        s.passedHours = SISText.int(num("مجموع الساعات التي نجح بها الطالب", summaryText))
+        if let h = SISText.firstMatch(#"(?:لائحة|لوحة) الشرف\s*[:：]?\s*\(?\s*(نعم|لا)"#, in: summaryText) { s.honorList = h }
+        // Pairs from the DOM win when present.
+        for p in pairs where p.count >= 2 {
+            let l = SISText.normalize(p[0]), v = SISText.normalize(p[1])
+            if l.contains("المعدل التراكمي"), let d = SISText.double(v) { s.cumulativeGPA = d }
+            if l.contains("الساعات التراكمية"), let i = SISText.int(v) { s.cumulativeHours = i }
+            if l.contains("العلامات التراكمية"), let i = SISText.int(v) { s.totalMarks = i }
+            if l.contains("نجح"), let i = SISText.int(v) { s.passedHours = i }
+        }
+        record.summary = s
+
+        // Term blocks: a header may repeat ("2024/1\n2024/1"); merge consecutive equal headers.
+        var blocks: [(term: String, start: Int)] = []
+        for h in hits {
+            let term = "\(h.groups[1])/\(h.groups[2])"
+            if let last = blocks.last, last.term == term {
+                let between = ns.substring(with: NSRange(location: last.start, length: h.range.location - last.start))
+                // Same header twice with nothing but whitespace/the header itself in between → same block.
+                let stripped = between.replacingOccurrences(of: term, with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                if stripped.isEmpty || !stripped.contains("المعدل") { continue }
+            }
+            blocks.append((term, h.range.location))
+        }
+        for (i, b) in blocks.enumerated() {
+            let end = i + 1 < blocks.count ? blocks[i + 1].start : ns.length
+            let body = ns.substring(with: NSRange(location: b.start, length: end - b.start))
+            guard body.contains("المعدل") || body.contains("ساعات") else { continue }
+            var t = AcademicTerm(term: b.term)
+            t.cumulativeGPA = SISText.double(SISText.firstMatch(#"المعدل التراكمي\s*[:：]?\s*(\d+(?:\.\d+)?)"#, in: body))
+            t.termGPA = SISText.double(SISText.firstMatch(#"المعدل الفصلي\s*[:：]?\s*(\d+(?:\.\d+)?)"#, in: body))
+            t.termHours = SISText.int(SISText.firstMatch(#"عدد ساعات الفصل\s*[:：]?\s*(\d+)"#, in: body))
+            t.studiedHoursTotal = SISText.int(SISText.firstMatch(#"مجموع الساعات التي درسها الطالب\s*[:：]?\s*\(?\s*(\d+)"#, in: body))
+            t.honorList = SISText.firstMatch(#"(?:لوحة|لائحة) الشرف\s*[:：]?\s*\(?\s*(نعم)"#, in: body) != nil
+            if let idx = record.terms.firstIndex(where: { $0.term == t.term }) { record.terms[idx] = t } else { record.terms.append(t) }
+        }
+        record.terms.sort { ($0.year, $0.part) < ($1.year, $1.part) }
+        return record
+    }
+}
+
+// MARK: - Student information («المعلومات الأساسية»)
+
+enum StudentInfoParser {
+    static let identity = ["الاسم بالعربية", "الاسم بالانجليزية", "الاسم بالإنجليزية", "الرقم الوطني", "الجنس", "الجنسية", "مكان الولادة", "تاريخ الولادة"]
+    static let study = ["الكلية", "التخصص", "التخصص الفرعي", "التخصص الدقيق", "مسار اللغة في خطة متطلبات الجامعة الاختيارية", "الحالة الاكاديمية", "الحالة الأكاديمية", "المعدل التراكمي", "متوقع تخرجه؟"]
+    static let tabs: Set<String> = ["المعلومات الرئيسية", "أوقات التسجيل", "المعلومات المالية", "معلومات خدمة العلم"]
+
+    static func parse(pairs rawPairs: [[String]], lines rawLines: [String]) -> StudentInfo {
+        var info = StudentInfo()
+        let lines = SISText.cleanLines(rawLines)
+        // Header: the lines before the first tab label are name / degree / college.
+        let head = lines.prefix { !tabs.contains($0) && !identity.contains($0) }
+        let headList = Array(head.prefix(4))
+        if let n = headList.first(where: { !$0.contains("/") && !$0.contains("كلية") }) { info.name = n }
+        if let d = headList.first(where: { $0.contains("بكالوريوس") || $0.contains("ماجستير") || $0.contains("دكتوراه") || $0.contains("دبلوم") }) { info.degree = d }
+        if let c = headList.first(where: { $0.contains("كلية") }) { info.department = c }
+
+        // label → value, DOM pairs first, then known labels from the lines.
+        var values: [(label: String, value: String, section: String)] = []
+        var seen = Set<String>()
+        for p in rawPairs where p.count >= 2 {
+            let l = SISText.normalize(p[0]).trimmingCharacters(in: CharacterSet(charactersIn: ":： "))
+            let v = SISText.normalize(p[1])
+            let sec = p.count > 2 ? SISText.normalize(p[2]) : ""
+            guard !l.isEmpty, !seen.contains(l) else { continue }
+            seen.insert(l); values.append((l, v, sec))
+        }
+        let known = identity + study
+        let allLabels = Set(known).union(tabs)
+        for (i, line) in lines.enumerated() where known.contains(line) && !seen.contains(line) {
+            var v = ""
+            if i + 1 < lines.count, !allLabels.contains(lines[i + 1]) { v = lines[i + 1] }
+            seen.insert(line); values.append((line, v, ""))
+        }
+        // Lines like "الجنس: ذكر"
+        for line in lines {
+            guard let r = line.range(of: ":") else { continue }
+            let l = String(line[..<r.lowerBound]).trimmingCharacters(in: .whitespaces)
+            let v = String(line[r.upperBound...]).trimmingCharacters(in: .whitespaces)
+            if known.contains(l), !seen.contains(l) { seen.insert(l); values.append((l, v, "")) }
+        }
+
+        func rows(_ labels: [String]) -> [InfoRow] {
+            labels.compactMap { lab in values.first(where: { $0.label == lab }).map { InfoRow(label: lab, value: $0.value) } }
+                .filter { !$0.value.isEmpty }
+        }
+        let used = Set(known)
+        var groups: [InfoGroup] = [
+            InfoGroup(title: "المعلومات الشخصية", rows: rows(identity)),
+            InfoGroup(title: "الدراسة", rows: rows(study))
+        ]
+        // Everything else, grouped by its section on the page.
+        var other: [String: [InfoRow]] = [:]
+        var order: [String] = []
+        for v in values where !used.contains(v.label) && !v.value.isEmpty && v.label.count <= 60 && v.value != v.label {
+            let sec = (v.section.isEmpty || v.section == "المعلومات الرئيسية") ? "معلومات أخرى" : v.section
+            if other[sec] == nil { other[sec] = []; order.append(sec) }
+            other[sec]?.append(InfoRow(label: v.label, value: v.value))
+        }
+        for sec in order { groups.append(InfoGroup(title: sec, rows: other[sec] ?? [])) }
+        info.groups = groups.filter { !$0.rows.isEmpty }
+        if info.name.isEmpty, let n = info.value("الاسم بالعربية") { info.name = n }
+        return info
+    }
+}
+
+// MARK: - Registered courses («استطلاع المواد المسجلة»)
+
+enum RegisteredCoursesParser {
+    static func parse(tables: [SISExtract.Table]) -> [RegisteredCourse] {
+        for t in tables {
+            let h = t.headers.map(SISText.normalize)
+            func col(_ names: [String]) -> Int? { h.firstIndex { hh in names.contains { hh == $0 } } ?? h.firstIndex { hh in names.contains { hh.contains($0) } } }
+            guard let codeI = col(["رمز المساق"]), let nameI = col(["اسم المساق"]) else { continue }
+            let dayCols = ["السبت", "الاحد", "الإثنين", "الثلاثاء", "الاربعاء", "الخميس", "الجمعة"].map { d -> Int? in
+                h.firstIndex { hh in hh == d || hh.replacingOccurrences(of: "أ", with: "ا").replacingOccurrences(of: "إ", with: "ا") == d.replacingOccurrences(of: "إ", with: "ا") }
+            }
+            let secI = col(["الشعبة"]), hrsI = col(["عدد الساعات"]), fromI = col(["من"]), toI = col(["الى", "إلى"])
+            let roomI = col(["القاعة"]), modeI = col(["طريقة تدريس"]), insI = col(["المدرس"]), cancI = col(["الشعبة ملغاة"])
+            var out: [RegisteredCourse] = []
+            for row in t.rows {
+                func cell(_ i: Int?) -> String { guard let i, i < row.count else { return "" }; return SISText.normalize(row[i]) }
+                let code = cell(codeI)
+                guard !code.isEmpty, code.rangeOfCharacter(from: .letters) != nil else { continue }
+                var days: [Int] = []
+                for (d, ci) in dayCols.enumerated() {
+                    let v = cell(ci)
+                    if !v.isEmpty && v != "-" { days.append(d) }
+                }
+                out.append(RegisteredCourse(code: code, name: cell(nameI), section: cell(secI), hours: SISText.int(cell(hrsI)),
+                                            from: cell(fromI), to: cell(toI), days: days, room: cell(roomI),
+                                            mode: cell(modeI), instructor: cell(insI), cancelled: cell(cancI) == "نعم"))
+            }
+            if !out.isEmpty { return out }
+        }
+        return []
+    }
+}
+
+// MARK: - Marks («إستطلاع العلامات»)
+
+enum MarksParser {
+    static let mainHeaders = ["العلامة النهائية", "المجموع", "العلامة", "علامة", "التقدير", "النتيجة"]
+
+    static func parse(tables: [SISExtract.Table], lines: [String]) -> MarksPage {
+        var page = MarksPage()
+        let clean = SISText.cleanLines(lines)
+        if let t = clean.first(where: { $0.range(of: #"(الاول|الأول|الثاني|الصيفي)\s+\d{4}"#, options: .regularExpression) != nil && $0.count < 25 }) {
+            page.term = t
+        }
+        for t in tables {
+            let h = t.headers.map(SISText.normalize)
+            guard !h.isEmpty else { continue }
+            let codeI = h.firstIndex { $0.contains("رمز") }
+            let nameI = h.firstIndex { $0.contains("اسم المساق") || $0 == "المساق" || $0.contains("اسم المادة") }
+            guard codeI != nil || nameI != nil else { continue }
+            for row in t.rows {
+                func cell(_ i: Int?) -> String { guard let i, i < row.count else { return "" }; return SISText.normalize(row[i]) }
+                let code = cell(codeI), name = cell(nameI)
+                guard !(code.isEmpty && name.isEmpty) else { continue }
+                var cells: [MarkCell] = []
+                for (i, v) in row.enumerated() where i != codeI && i != nameI && i < h.count {
+                    let value = SISText.normalize(v)
+                    let label = h[i]
+                    if label.isEmpty || value.isEmpty { continue }
+                    cells.append(MarkCell(label: label, value: value))
+                }
+                var main: MarkCell?
+                for key in mainHeaders { if let c = cells.last(where: { $0.label.contains(key) }) { main = c; break } }
+                page.courses.append(CourseMarks(code: code, name: name, cells: cells, main: main))
+            }
+            if !page.courses.isEmpty { break }
+        }
+        if page.courses.isEmpty {
+            page.emptyMessage = clean.first(where: { $0.contains("لا يوجد") || $0.contains("لا توجد") || $0.lowercased().contains("no data") }) ?? ""
+        }
+        return page
+    }
+}
+
+// MARK: - Home («نسبة إنجازك»), student number
+
+enum SISHomeParser {
+    static func planPercent(lines: [String]) -> Int? {
+        let l = SISText.cleanLines(lines)
+        guard let i = l.firstIndex(where: { $0.contains("نسبة إنجازك") || $0.contains("نسبة انجازك") }) else { return nil }
+        for j in i..<min(i + 4, l.count) {
+            if let n = SISText.firstMatch(#"^%?\s*(\d{1,3})\s*%?$"#, in: l[j]) ?? (j == i ? SISText.firstMatch(#"(\d{1,3})\s*%"#, in: l[j]) : nil),
+               let v = Int(n), v <= 100 { return v }
+        }
+        return nil
+    }
+    static func studentNumber(in text: String) -> String? {
+        SISText.firstMatch(#"(?<!\d)(20\d{8})(?!\d)"#, in: SISText.normalize(text))
+    }
+}
+
+// MARK: - Masking for the developer export
+
+enum SISMask {
+    /// Hides names, national/student numbers, birth data and session ids in a saved page.
+    static func mask(_ html: String, secrets: [String]) -> String {
+        var out = html
+        var words = Set<String>()
+        for s in secrets {
+            let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard t.count >= 2 else { continue }
+            words.insert(t)
+            if t.rangeOfCharacter(from: .decimalDigits) == nil {
+                for part in t.split(separator: " ") where part.count >= 3 { words.insert(String(part)) }
+            }
+        }
+        for w in words.sorted(by: { $0.count > $1.count }) {
+            out = out.replacingOccurrences(of: w, with: "•••")
+        }
+        let rules: [(String, String)] = [
+            (#"(?<!\d)\d{10}(?!\d)"#, "••••••••••"),                 // national id / student number
+            (#"session=\d+"#, "session=0"),
+            (#"(P9999_PASSWORD[^>]*value=")[^"]*""#, "$1\""),
+        ]
+        for (p, r) in rules {
+            if let re = try? NSRegularExpression(pattern: p) {
+                out = re.stringByReplacingMatches(in: out, range: NSRange(location: 0, length: (out as NSString).length), withTemplate: r)
+            }
+        }
+        return out
+    }
+}

@@ -1,1 +1,54 @@
-aW1wb3J0IEFwcEludGVudHMKaW1wb3J0IEZvdW5kYXRpb24KCi8vLyDCq9mK2Kcg2LPZitix2YrYjCDYtNmIINi52YbYr9mKINio2YPYsdinINio2KzYp9mF2LnYqSDYp9mE2YrYsdmF2YjZg9ifwrsKc3RydWN0IFRvbW9ycm93U2NoZWR1bGVJbnRlbnQ6IEFwcEludGVudCB7CiAgICBzdGF0aWMgdmFyIHRpdGxlOiBMb2NhbGl6ZWRTdHJpbmdSZXNvdXJjZSA9ICLYtNmIINi52YbYr9mKINio2YPYsdinIgogICAgc3RhdGljIHZhciBkZXNjcmlwdGlvbiA9IEludGVudERlc2NyaXB0aW9uKCLZhdit2KfYttix2KfYqtmDINio2YPYsdinINmI2KPZgtix2Kgg2YjYp9is2KgiKQoKICAgIEBNYWluQWN0b3IKICAgIGZ1bmMgcGVyZm9ybSgpIGFzeW5jIHRocm93cyAtPiBzb21lIEludGVudFJlc3VsdCAmIFByb3ZpZGVzRGlhbG9nIHsKICAgICAgICBsZXQgc3RvcmUgPSBBcHBTdG9yZS5zaGFyZWQKICAgICAgICBsZXQgY2FsID0gQ2FsZW5kYXIueWFybW91awogICAgICAgIGxldCB0b21vcnJvdyA9IGNhbC5kYXRlKGJ5QWRkaW5nOiAuZGF5LCB2YWx1ZTogMSwgdG86IC5ub3cpID8/IC5ub3cKICAgICAgICBsZXQgc2xvdHMgPSBzdG9yZS50aW1ldGFibGUuc2xvdHMob246IHRvbW9ycm93KQogICAgICAgIHZhciB0ZXh0OiBTdHJpbmcKICAgICAgICBpZiBzbG90cy5pc0VtcHR5IHsKICAgICAgICAgICAgdGV4dCA9ICLYqNmD2LHYpyDZhdinINi52YbYr9mDINmF2K3Yp9i22LHYp9iqLiIKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICBsZXQgbGlzdCA9IHNsb3RzLmNvbXBhY3RNYXAgeyBzIGluIHN0b3JlLmNvdXJzZShzLmNvdXJzZUNvZGUpLm1hcCB7ICJcKCQwLm5hbWUpINin2YTYs9in2LnYqSBcKHMuc3RhcnRMYWJlbCkiIH0gfQogICAgICAgICAgICB0ZXh0ID0gItio2YPYsdinINi52YbYr9mDIFwoc2xvdHMuY291bnQpOiAiICsgbGlzdC5qb2luZWQoc2VwYXJhdG9yOiAi2IwgIikgKyAiLiIKICAgICAgICB9CiAgICAgICAgbGV0IGR1ZVNvb24gPSBzdG9yZS5wZW5kaW5nRGVhZGxpbmVzLmZpbHRlciB7ICQwLmR1ZSA8IHRvbW9ycm93LmFkZGluZ1RpbWVJbnRlcnZhbCg4NjQwMCAqIDIpIH0KICAgICAgICBpZiBsZXQgZCA9IGR1ZVNvb24uZmlyc3QgeyB0ZXh0ICs9ICIg2YjYp9mG2KrYqNmH2Iwg2KrYs9mE2YrZhSBcKGQubmFtZSkgXChBcmFiaWNGb3JtYXQucmVsYXRpdmUoZC5kdWUpKS4iIH0KICAgICAgICByZXR1cm4gLnJlc3VsdChkaWFsb2c6IEludGVudERpYWxvZyhzdHJpbmdMaXRlcmFsOiB0ZXh0KSkKICAgIH0KfQoKc3RydWN0IE5leHRMZWN0dXJlSW50ZW50OiBBcHBJbnRlbnQgewogICAgc3RhdGljIHZhciB0aXRsZTogTG9jYWxpemVkU3RyaW5nUmVzb3VyY2UgPSAi2KfZhNmF2K3Yp9i22LHYqSDYp9mE2KzYp9mK2KkiCiAgICBzdGF0aWMgdmFyIGRlc2NyaXB0aW9uID0gSW50ZW50RGVzY3JpcHRpb24oIti02Ygg2YXYrdin2LbYsdiq2YMg2KfZhNis2KfZitipINmI2YjZitmGIikKCiAgICBATWFpbkFjdG9yCiAgICBmdW5jIHBlcmZvcm0oKSBhc3luYyB0aHJvd3MgLT4gc29tZSBJbnRlbnRSZXN1bHQgJiBQcm92aWRlc0RpYWxvZyB7CiAgICAgICAgbGV0IHN0b3JlID0gQXBwU3RvcmUuc2hhcmVkCiAgICAgICAgZ3VhcmQgbGV0IG5leHQgPSBzdG9yZS50aW1ldGFibGUubmV4dExlY3R1cmUoKSwgbGV0IGMgPSBzdG9yZS5jb3Vyc2UobmV4dC5zbG90LmNvdXJzZUNvZGUpIGVsc2UgewogICAgICAgICAgICByZXR1cm4gLnJlc3VsdChkaWFsb2c6ICLZhdinINmB2Yog2YXYrdin2LbYsdin2Kog2YLYsdmK2KjYqS4iKQogICAgICAgIH0KICAgICAgICB2YXIgdGV4dCA9ICJcKGMubmFtZSkgXChBcmFiaWNGb3JtYXQucmVsYXRpdmUobmV4dC5pbnRlcnZhbC5zdGFydCkp2Iwg2KfZhNiz2KfYudipIFwobmV4dC5zbG90LnN0YXJ0TGFiZWwpIgogICAgICAgIGlmIG5leHQuc2xvdC5pc09ubGluZSB7IHRleHQgKz0gIiDYudmE2YkgVGVhbXMiIH0gZWxzZSBpZiAhbmV4dC5zbG90LnJvb20uaXNFbXB0eSB7IHRleHQgKz0gIiDYqNmC2KfYudipIFwobmV4dC5zbG90LnJvb20pIiB9CiAgICAgICAgaWYgbGV0IHNlYXQgPSBuZXh0LnNsb3Quc2VhdCB7IHRleHQgKz0gItiMINmF2YLYudiv2YMgXChzZWF0KSIgfQogICAgICAgIHJldHVybiAucmVzdWx0KGRpYWxvZzogSW50ZW50RGlhbG9nKHN0cmluZ0xpdGVyYWw6IHRleHQgKyAiLiIpKQogICAgfQp9CgpzdHJ1Y3QgWWFybW91a1Nob3J0Y3V0czogQXBwU2hvcnRjdXRzUHJvdmlkZXIgewogICAgc3RhdGljIHZhciBhcHBTaG9ydGN1dHM6IFtBcHBTaG9ydGN1dF0gewogICAgICAgIEFwcFNob3J0Y3V0KGludGVudDogVG9tb3Jyb3dTY2hlZHVsZUludGVudCgpLAogICAgICAgICAgICAgICAgICAgIHBocmFzZXM6IFsi2LTZiCDYudmG2K/ZiiDYqNmD2LHYpyDZgdmKIFwoLmFwcGxpY2F0aW9uTmFtZSkiLCAi2KzYr9mI2YQg2KjZg9ix2Kcg2YHZiiBcKC5hcHBsaWNhdGlvbk5hbWUpIl0sCiAgICAgICAgICAgICAgICAgICAgc2hvcnRUaXRsZTogIti02Ygg2LnZhtiv2Yog2KjZg9ix2KciLCBzeXN0ZW1JbWFnZU5hbWU6ICJjYWxlbmRhciIpCiAgICAgICAgQXBwU2hvcnRjdXQoaW50ZW50OiBOZXh0TGVjdHVyZUludGVudCgpLAogICAgICAgICAgICAgICAgICAgIHBocmFzZXM6IFsi2KfZhNmF2K3Yp9i22LHYqSDYp9mE2KzYp9mK2Kkg2YHZiiBcKC5hcHBsaWNhdGlvbk5hbWUpIl0sCiAgICAgICAgICAgICAgICAgICAgc2hvcnRUaXRsZTogItin2YTZhdit2KfYttix2Kkg2KfZhNis2KfZitipIiwgc3lzdGVtSW1hZ2VOYW1lOiAiY2xvY2siKQogICAgfQp9Cg==
+import AppIntents
+import Foundation
+
+/// «يا سيري، شو عندي بكرا بجامعة اليرموك؟»
+struct TomorrowScheduleIntent: AppIntent {
+    static var title: LocalizedStringResource = "شو عندي بكرا"
+    static var description = IntentDescription("محاضراتك بكرا وأقرب واجب")
+
+    @MainActor
+    func perform() async throws -> some IntentResult & ProvidesDialog {
+        let store = AppStore.shared
+        let cal = Calendar.yarmouk
+        let tomorrow = cal.date(byAdding: .day, value: 1, to: .now) ?? .now
+        let slots = store.timetable.slots(on: tomorrow)
+        var text: String
+        if slots.isEmpty {
+            text = "بكرا ما عندك محاضرات."
+        } else {
+            let list = slots.compactMap { s in store.course(s.courseCode).map { "\($0.name) الساعة \(s.startLabel)" } }
+            text = "بكرا عندك \(slots.count): " + list.joined(separator: "، ") + "."
+        }
+        let dueSoon = store.pendingDeadlines.filter { $0.due < tomorrow.addingTimeInterval(86400 * 2) }
+        if let d = dueSoon.first { text += " وانتبه، تسليم \(d.name) \(ArabicFormat.relative(d.due))." }
+        return .result(dialog: IntentDialog(stringLiteral: text))
+    }
+}
+
+struct NextLectureIntent: AppIntent {
+    static var title: LocalizedStringResource = "المحاضرة الجاية"
+    static var description = IntentDescription("شو محاضرتك الجاية ووين")
+
+    @MainActor
+    func perform() async throws -> some IntentResult & ProvidesDialog {
+        let store = AppStore.shared
+        guard let next = store.timetable.nextLecture(), let c = store.course(next.slot.courseCode) else {
+            return .result(dialog: "ما في محاضرات قريبة.")
+        }
+        var text = "\(c.name) \(ArabicFormat.relative(next.interval.start))، الساعة \(next.slot.startLabel)"
+        if next.slot.isOnline { text += " على Teams" } else if !next.slot.room.isEmpty { text += " بقاعة \(next.slot.room)" }
+        if let seat = next.slot.seat { text += "، مقعدك \(seat)" }
+        return .result(dialog: IntentDialog(stringLiteral: text + "."))
+    }
+}
+
+struct YarmoukShortcuts: AppShortcutsProvider {
+    static var appShortcuts: [AppShortcut] {
+        AppShortcut(intent: TomorrowScheduleIntent(),
+                    phrases: ["شو عندي بكرا في \(.applicationName)", "جدول بكرا في \(.applicationName)"],
+                    shortTitle: "شو عندي بكرا", systemImageName: "calendar")
+        AppShortcut(intent: NextLectureIntent(),
+                    phrases: ["المحاضرة الجاية في \(.applicationName)"],
+                    shortTitle: "المحاضرة الجاية", systemImageName: "clock")
+    }
+}

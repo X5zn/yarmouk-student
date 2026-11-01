@@ -1,1 +1,113 @@
-aW1wb3J0IEZvdW5kYXRpb24KCi8vIFBhcnNlciB0ZXN0cyB3aXRoIG1hZGUtdXAgZGF0YSBpbiB0aGUgZXhhY3Qgc2hhcGUgU0lTIHByaW50cyAocnVuIGluIENJIGJlZm9yZSB0aGUgYnVpbGQpLgp2YXIgZmFpbHVyZXMgPSAwCmZ1bmMgY2hlY2soXyBvazogQm9vbCwgXyB3aGF0OiBTdHJpbmcsIGxpbmU6IEludCA9ICNsaW5lKSB7CiAgICBpZiBvayB7IHByaW50KCLinJMgXCh3aGF0KSIpIH0gZWxzZSB7IHByaW50KCLinJcgXCh3aGF0KSAobGluZSBcKGxpbmUpKSIpOyBmYWlsdXJlcyArPSAxIH0KfQoKbGV0IHJlY29yZExpbmVzID0gIiIiCtin2YTZhdi52K/ZhCDYp9mE2KrYsdin2YPZhdmKCjc4LjQK2YXYrNmF2YjYuSDYp9mE2LPYp9i52KfYqiDYp9mE2KrYsdin2YPZhdmK2KkKNTQK2YXYrNmF2YjYuSDYp9mE2LnZhNin2YXYp9iqINin2YTYqtix2KfZg9mF2YrYqQo0MjMzCtmF2KzZhdmI2Lkg2KfZhNiz2KfYudin2Kog2KfZhNiq2Yog2YbYrNitINio2YfYpyDYp9mE2LfYp9mE2KgKNTQK2KfZhNmI2LbYuSDYudmE2Ykg2YTYp9im2K3YqSDYp9mE2LTYsdmBCjIwMjMvMAoyMDIzLzAK2KfZhNmF2LnYr9mEINin2YTYqtix2KfZg9mF2YogOjAg2KfZhNmF2LnYr9mEINin2YTZgdi12YTZiiA6MArYudiv2K8g2LPYp9i52KfYqiDYp9mE2YHYtdmEIDAK2YXYrNmF2YjYuSDYp9mE2LPYp9i52KfYqiDYp9mE2KrZiiDYr9ix2LPZh9inINin2YTYt9in2YTYqCAoNikKMjAyMy8xCjIwMjMvMQrYp9mE2YXYudiv2YQg2KfZhNiq2LHYp9mD2YXZiiA6NzUuNSDYp9mE2YXYudiv2YQg2KfZhNmB2LXZhNmKIDo3NS41Cti52K/YryDYs9in2LnYp9iqINin2YTZgdi12YQgMTUK2YXYrNmF2YjYuSDYp9mE2LPYp9i52KfYqiDYp9mE2KrZiiDYr9ix2LPZh9inINin2YTYt9in2YTYqCAoMjEpCjIwMjMvMgoyMDIzLzIK2KfZhNmF2LnYr9mEINin2YTYqtix2KfZg9mF2YogOjc5LjEg2KfZhNmF2LnYr9mEINin2YTZgdi12YTZiiA6ODIuNwrYudiv2K8g2LPYp9i52KfYqiDYp9mE2YHYtdmEIDE1CtmF2KzZhdmI2Lkg2KfZhNiz2KfYudin2Kog2KfZhNiq2Yog2K/Ysdiz2YfYpyDYp9mE2LfYp9mE2KggKDM2KSB8INin2YTZiNi22Lkg2LnZhNmJINmE2YjYrdipINin2YTYtNix2YE6ICjZhti52YUpCjIwMjMvMwoyMDIzLzMK2KfZhNmF2LnYr9mEINin2YTYqtix2KfZg9mF2YogOjc4LjQg2KfZhNmF2LnYr9mEINin2YTZgdi12YTZiiA6NzYuMgrYudiv2K8g2LPYp9i52KfYqiDYp9mE2YHYtdmEIDYK2YXYrNmF2YjYuSDYp9mE2LPYp9i52KfYqiDYp9mE2KrZiiDYr9ix2LPZh9inINin2YTYt9in2YTYqCAoNDIpCiIiIi5jb21wb25lbnRzKHNlcGFyYXRlZEJ5OiAiXG4iKQoKbGV0IHIgPSBBY2FkZW1pY1JlY29yZFBhcnNlci5wYXJzZShsaW5lczogcmVjb3JkTGluZXMpCmNoZWNrKHIuc3VtbWFyeS5jdW11bGF0aXZlR1BBID09IDc4LjQsICJzdW1tYXJ5IEdQQSIpCmNoZWNrKHIuc3VtbWFyeS5jdW11bGF0aXZlSG91cnMgPT0gNTQsICJzdW1tYXJ5IGhvdXJzIikKY2hlY2soci5zdW1tYXJ5LnRvdGFsTWFya3MgPT0gNDIzMywgInN1bW1hcnkgbWFya3MiKQpjaGVjayhyLnN1bW1hcnkucGFzc2VkSG91cnMgPT0gNTQsICJwYXNzZWQgaG91cnMiKQpjaGVjayhyLnRlcm1zLm1hcChcLnRlcm0pID09IFsiMjAyMy8wIiwgIjIwMjMvMSIsICIyMDIzLzIiLCAiMjAyMy8zIl0sICJ0ZXJtcyBpbiBvcmRlciIpCmNoZWNrKHIudGVybXNbMl0udGVybUdQQSA9PSA4Mi43ICYmIHIudGVybXNbMl0uY3VtdWxhdGl2ZUdQQSA9PSA3OS4xLCAidGVybSBHUEFzIikKY2hlY2soci50ZXJtc1syXS50ZXJtSG91cnMgPT0gMTUgJiYgci50ZXJtc1syXS5zdHVkaWVkSG91cnNUb3RhbCA9PSAzNiwgInRlcm0gaG91cnMiKQpjaGVjayhyLnRlcm1zWzJdLmhvbm9yTGlzdCAmJiAhci50ZXJtc1sxXS5ob25vckxpc3QsICJob25vciBsaXN0IGJhZGdlIikKY2hlY2soci50ZXJtc1swXS5pc1BsYWNlaG9sZGVyICYmICFyLnRlcm1zWzFdLmlzUGxhY2Vob2xkZXIsICJyZW1lZGlhbCB0ZXJtIikKY2hlY2soci50ZXJtc1szXS5zZW1lc3Rlck5hbWUgPT0gItin2YTZgdi12YQg2KfZhNi12YrZgdmKIiAmJiByLnRlcm1zWzFdLmFjYWRlbWljWWVhciA9PSAiMjAyMy8yMDI0IiwgIm5hbWVzIikKCi8vIFNhbWUgcGFnZSBhcyBvbmUgY29sbGFwc2VkIGxpbmUsIHdpdGggaGVhZGVyL2Zvb3RlciBhcm91bmQgaXQgKHdoYXQgdjEgc2F3KS4KbGV0IGJsb2IgPSAiU2tpcCB0byBNYWluIENvbnRlbnQg2YbYuNin2YUg2YXYudmE2YjZhdin2Kog2KfZhNi32YTYqNipICIgKyByZWNvcmRMaW5lcy5qb2luZWQoc2VwYXJhdG9yOiAiICIpICsgIiDYrNin2YXYudipINin2YTZitix2YXZiNmDIC0g2YXYsdmD2LIg2KfZhNit2KfYs9ioINmI2KfZhNmF2LnZhNmI2YXYp9iqIgpsZXQgcjIgPSBBY2FkZW1pY1JlY29yZFBhcnNlci5wYXJzZSh0ZXh0OiBibG9iKQpjaGVjayhyMiA9PSByLCAib25lLWxpbmUgYmxvYiBwYXJzZXMgdGhlIHNhbWUiKQoKbGV0IGluZm9MaW5lcyA9ICIiIgrYp9iz2YUg2KrYrNix2YrYqNmKINmE2YTYt9in2YTYqArYqNmD2KfZhNmI2LHZitmI2LMgLyDYudin2K/ZigrZg9mE2YrYqSDYp9mE2KLYr9in2KggLyDZgtiz2YUg2KfZhNmE2LrYqSDYp9mE2LnYsdio2YrYqSDZiNii2K/Yp9io2YfYpwrYp9mE2YXYudmE2YjZhdin2Kog2KfZhNix2KbZitiz2YrYqQrYo9mI2YLYp9iqINin2YTYqtiz2KzZitmECtin2YTYp9iz2YUg2KjYp9mE2LnYsdio2YrYqQrYp9iz2YUg2KrYrNix2YrYqNmKINmE2YTYt9in2YTYqArYp9mE2KfYs9mFINio2KfZhNin2YbYrNmE2YrYstmK2KkKVEVTVCBTVFVERU5UIE5BTUUK2KfZhNix2YLZhSDYp9mE2YjYt9mG2YoKMTIzNDU2Nzg5MArYp9mE2KzZhtizCtiw2YPYsQrYp9mE2YPZhNmK2KkK2KfZhNii2K/Yp9ioCtin2YTYqtiu2LXYtQrYp9mE2YTYutipINin2YTYudix2KjZitipINmI2KLYr9in2KjZh9inCtin2YTYqtiu2LXYtSDYp9mE2YHYsdi52YoK2KfZhNiq2K7Ytdi1INin2YTYr9mC2YrZggrYp9mE2K3Yp9mE2Kkg2KfZhNin2YPYp9iv2YrZhdmK2KkK2YrYr9ix2LMK2YXYqtmI2YLYuSDYqtiu2LHYrNmH2J8K2YTYpwoiIiIuY29tcG9uZW50cyhzZXBhcmF0ZWRCeTogIlxuIikKbGV0IGluZm8gPSBTdHVkZW50SW5mb1BhcnNlci5wYXJzZShwYWlyczogW10sIGxpbmVzOiBpbmZvTGluZXMpCmNoZWNrKGluZm8ubmFtZSA9PSAi2KfYs9mFINiq2KzYsdmK2KjZiiDZhNmE2LfYp9mE2KgiLCAiaW5mbyBuYW1lIikKY2hlY2soaW5mby5kZWdyZWUgPT0gItio2YPYp9mE2YjYsdmK2YjYsyAvINi52KfYr9mKIiwgImluZm8gZGVncmVlIikKY2hlY2soaW5mby52YWx1ZSgi2KfZhNiq2K7Ytdi1IikgPT0gItin2YTZhNi62Kkg2KfZhNi52LHYqNmK2Kkg2YjYotiv2KfYqNmH2KciLCAibWFqb3IiKQpjaGVjayhpbmZvLnZhbHVlKCLYp9mE2KrYrti12LUg2KfZhNmB2LHYudmKIikgPT0gbmlsLCAiZW1wdHkgdmFsdWUgaXMgbm90IHRoZSBuZXh0IGxhYmVsIikKY2hlY2soaW5mby52YWx1ZSgi2YXYqtmI2YLYuSDYqtiu2LHYrNmH2J8iKSA9PSAi2YTYpyIsICJleHBlY3RlZCBncmFkdWF0aW9uIikKY2hlY2soaW5mby5ncm91cHMuZmlyc3Q/LnRpdGxlID09ICLYp9mE2YXYudmE2YjZhdin2Kog2KfZhNi02K7YtdmK2KkiLCAiZ3JvdXBzIikKCmxldCBwYWlySW5mbyA9IFN0dWRlbnRJbmZvUGFyc2VyLnBhcnNlKHBhaXJzOiBbWyLYp9mE2YPZhNmK2KkiLCAi2KfZhNii2K/Yp9ioIiwgItin2YTZhdi52YTZiNmF2KfYqiDYp9mE2LHYptmK2LPZitipIl0sIFsi2LHZgtmFINin2YTZh9in2KrZgSIsICIwNyIsICLYp9mE2YXYudmE2YjZhdin2Kog2KfZhNix2KbZitiz2YrYqSJdXSwgbGluZXM6IFtdKQpjaGVjayhwYWlySW5mby52YWx1ZSgi2KfZhNmD2YTZitipIikgPT0gItin2YTYotiv2KfYqCIgJiYgcGFpckluZm8udmFsdWUoItix2YLZhSDYp9mE2YfYp9iq2YEiKSA9PSAiMDciLCAiRE9NIHBhaXJzIikKCmxldCB0YWJsZSA9IFNJU0V4dHJhY3QuVGFibGUodGl0bGU6ICIiLCBpZDogInQiLCBoZWFkZXJzOiBbItix2YXYsiDYp9mE2YXYs9in2YIiLCLYp9iz2YUg2KfZhNmF2LPYp9mCIiwi2KfZhNi02LnYqNipIiwi2LnYr9ivINin2YTYs9in2LnYp9iqIiwi2YXZhiIsItin2YTZiSIsItiu2KfYsdisINin2YTYrti32KkiLCLYp9mE2LPYqNiqIiwi2KfZhNin2K3YryIsItin2YTYpdir2YbZitmGIiwi2KfZhNir2YTYp9ir2KfYoSIsItin2YTYp9ix2KjYudin2KEiLCLYp9mE2K7ZhdmK2LMiLCLYp9mE2KzZhdi52KkiLCLYp9mE2YLYp9i52KkiLCLYp9mE2LTYudio2Kkg2YXZhNi62KfYqSIsIti32LHZitmC2Kkg2KrYr9ix2YrYsyDYp9mE2YXYs9in2YIiLCLYp9mE2YXYr9ix2LMiLCLYp9mE2KfYs9mC2KfYtyDYp9mE2LDYp9iq2Yog2YTZhNmF2LPYp9mCIiwi2LPYp9i52KfYqiDYp9mE2YXZg9iq2KgiLCIiXSwKICAgIHJvd3M6IFtbIkFSIDEwMSIsItmF2KfYr9ipINiq2KzYsdmK2KjZitipIiwiMSIsIjMiLCIwOTozMCIsIjEwOjMwIiwi2YTYpyIsIiAiLCLCpCIsIiAiLCLCpCIsIiAiLCLCpCIsIiAiLCLYp9ivIDEwMCIsItmE2KciLCLZiNis2KfZh9mKIiwi2K/Zg9iq2YjYsSDYqtis2LHZitio2YoiLCLYp9mG2LPYrdin2KgiLCIiLCIiXSwKICAgICAgICAgICBbIiIsIiIsIiIsIjMiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiXV0pCmxldCByZWcgPSBSZWdpc3RlcmVkQ291cnNlc1BhcnNlci5wYXJzZSh0YWJsZXM6IFt0YWJsZV0pCmNoZWNrKHJlZy5jb3VudCA9PSAxLCAidG90YWwgcm93IHNraXBwZWQiKQpjaGVjayhyZWcuZmlyc3Q/LmRheXMgPT0gWzEsIDMsIDVdLCAiZGF5cyBmcm9tIMKkIG1hcmtzIikKY2hlY2socmVnLmZpcnN0Py5yb29tID09ICLYp9ivIDEwMCIgJiYgcmVnLmZpcnN0Py5ob3VycyA9PSAzICYmIHJlZy5maXJzdD8uZnJvbSA9PSAiMDk6MzAiLCAiY291cnNlIGZpZWxkcyIpCgpsZXQgbWFya3NUYWJsZSA9IFNJU0V4dHJhY3QuVGFibGUodGl0bGU6ICIiLCBpZDogIm0iLCBoZWFkZXJzOiBbItix2YXYsiDYp9mE2YXYs9in2YIiLCAi2KfYs9mFINin2YTZhdiz2KfZgiIsICLYp9mE2KfZhdiq2K3Yp9mGINin2YTYo9mI2YQiLCAi2KfZhNi52YTYp9mF2Kkg2KfZhNmG2YfYp9im2YrYqSJdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcm93czogW1siQVIgMTAxIiwgItmF2KfYr9ipINiq2KzYsdmK2KjZitipIiwgIjI1IiwgIjg4Il1dKQpsZXQgbWFya3MgPSBNYXJrc1BhcnNlci5wYXJzZSh0YWJsZXM6IFttYXJrc1RhYmxlXSwgbGluZXM6IFsi2KfZhNin2YjZhCAyMDI2Il0pCmNoZWNrKG1hcmtzLmNvdXJzZXMuZmlyc3Q/Lm1haW4/LnZhbHVlID09ICI4OCIgJiYgbWFya3MuY291cnNlcy5maXJzdD8uY2VsbHMuY291bnQgPT0gMiwgIm1hcmtzIikKY2hlY2soTWFya3NQYXJzZXIucGFyc2UodGFibGVzOiBbXSwgbGluZXM6IFsi2YTYpyDZitmI2KzYryDYqNmK2KfZhtin2KoiXSkuZW1wdHlNZXNzYWdlID09ICLZhNinINmK2YjYrNivINio2YrYp9mG2KfYqiIsICJlbXB0eSBtYXJrcyBtZXNzYWdlIikKCmNoZWNrKFNJU0hvbWVQYXJzZXIucGxhblBlcmNlbnQobGluZXM6IFsi2YbYs9io2Kkg2KXZhtis2KfYstmDINmF2YYg2KfZhNiu2LfYqSDYp9mE2K/Ysdin2LPZitipIiwgIiUiLCAiNDciXSkgPT0gNDcsICJwbGFuIHBlcmNlbnQiKQpsZXQgbWFza2VkID0gU0lTTWFzay5tYXNrKCI8Yj7Yp9iz2YUg2KrYrNix2YrYqNmKPC9iPiAxMjM0NTY3ODkwID9zZXNzaW9uPTk5OSIsIHNlY3JldHM6IFsi2KfYs9mFINiq2KzYsdmK2KjZiiDZhNmE2LfYp9mE2KgiXSkKY2hlY2soIW1hc2tlZC5jb250YWlucygiMTIzNDU2Nzg5MCIpICYmICFtYXNrZWQuY29udGFpbnMoItiq2KzYsdmK2KjZiiIpICYmIG1hc2tlZC5jb250YWlucygic2Vzc2lvbj0wIiksICJtYXNraW5nIikKCmlmIGZhaWx1cmVzID4gMCB7IHByaW50KCJcKGZhaWx1cmVzKSBmYWlsZWQiKTsgZXhpdCgxKSB9CnByaW50KCJhbGwgcGFyc2VyIHRlc3RzIHBhc3NlZCIpCg==
+import Foundation
+
+// Parser tests with made-up data in the exact shape SIS prints (run in CI before the build).
+var failures = 0
+func check(_ ok: Bool, _ what: String, line: Int = #line) {
+    if ok { print("✓ \(what)") } else { print("✗ \(what) (line \(line))"); failures += 1 }
+}
+
+let recordLines = """
+المعدل التراكمي
+78.4
+مجموع الساعات التراكمية
+54
+مجموع العلامات التراكمية
+4233
+مجموع الساعات التي نجح بها الطالب
+54
+الوضع على لائحة الشرف
+2023/0
+2023/0
+المعدل التراكمي :0 المعدل الفصلي :0
+عدد ساعات الفصل 0
+مجموع الساعات التي درسها الطالب (6)
+2023/1
+2023/1
+المعدل التراكمي :75.5 المعدل الفصلي :75.5
+عدد ساعات الفصل 15
+مجموع الساعات التي درسها الطالب (21)
+2023/2
+2023/2
+المعدل التراكمي :79.1 المعدل الفصلي :82.7
+عدد ساعات الفصل 15
+مجموع الساعات التي درسها الطالب (36) | الوضع على لوحة الشرف: (نعم)
+2023/3
+2023/3
+المعدل التراكمي :78.4 المعدل الفصلي :76.2
+عدد ساعات الفصل 6
+مجموع الساعات التي درسها الطالب (42)
+""".components(separatedBy: "\n")
+
+let r = AcademicRecordParser.parse(lines: recordLines)
+check(r.summary.cumulativeGPA == 78.4, "summary GPA")
+check(r.summary.cumulativeHours == 54, "summary hours")
+check(r.summary.totalMarks == 4233, "summary marks")
+check(r.summary.passedHours == 54, "passed hours")
+check(r.terms.map(\.term) == ["2023/0", "2023/1", "2023/2", "2023/3"], "terms in order")
+check(r.terms[2].termGPA == 82.7 && r.terms[2].cumulativeGPA == 79.1, "term GPAs")
+check(r.terms[2].termHours == 15 && r.terms[2].studiedHoursTotal == 36, "term hours")
+check(r.terms[2].honorList && !r.terms[1].honorList, "honor list badge")
+check(r.terms[0].isPlaceholder && !r.terms[1].isPlaceholder, "remedial term")
+check(r.terms[3].semesterName == "الفصل الصيفي" && r.terms[1].academicYear == "2023/2024", "names")
+
+// Same page as one collapsed line, with header/footer around it (what v1 saw).
+let blob = "Skip to Main Content نظام معلومات الطلبة " + recordLines.joined(separator: " ") + " جامعة اليرموك - مركز الحاسب والمعلومات"
+let r2 = AcademicRecordParser.parse(text: blob)
+check(r2 == r, "one-line blob parses the same")
+
+let infoLines = """
+اسم تجريبي للطالب
+بكالوريوس / عادي
+كلية الآداب / قسم اللغة العربية وآدابها
+المعلومات الرئيسية
+أوقات التسجيل
+الاسم بالعربية
+اسم تجريبي للطالب
+الاسم بالانجليزية
+TEST STUDENT NAME
+الرقم الوطني
+1234567890
+الجنس
+ذكر
+الكلية
+الآداب
+التخصص
+اللغة العربية وآدابها
+التخصص الفرعي
+التخصص الدقيق
+الحالة الاكاديمية
+يدرس
+متوقع تخرجه؟
+لا
+""".components(separatedBy: "\n")
+let info = StudentInfoParser.parse(pairs: [], lines: infoLines)
+check(info.name == "اسم تجريبي للطالب", "info name")
+check(info.degree == "بكالوريوس / عادي", "info degree")
+check(info.value("التخصص") == "اللغة العربية وآدابها", "major")
+check(info.value("التخصص الفرعي") == nil, "empty value is not the next label")
+check(info.value("متوقع تخرجه؟") == "لا", "expected graduation")
+check(info.groups.first?.title == "المعلومات الشخصية", "groups")
+
+let pairInfo = StudentInfoParser.parse(pairs: [["الكلية", "الآداب", "المعلومات الرئيسية"], ["رقم الهاتف", "07", "المعلومات الرئيسية"]], lines: [])
+check(pairInfo.value("الكلية") == "الآداب" && pairInfo.value("رقم الهاتف") == "07", "DOM pairs")
+
+let table = SISExtract.Table(title: "", id: "t", headers: ["رمز المساق","اسم المساق","الشعبة","عدد الساعات","من","الى","خارج الخطة","السبت","الاحد","الإثنين","الثلاثاء","الاربعاء","الخميس","الجمعة","القاعة","الشعبة ملغاة","طريقة تدريس المساق","المدرس","الاسقاط الذاتي للمساق","ساعات المكتب",""],
+    rows: [["AR 101","مادة تجريبية","1","3","09:30","10:30","لا"," ","¤"," ","¤"," ","¤"," ","اد 100","لا","وجاهي","دكتور تجريبي","انسحاب","",""],
+           ["","","","3","","","","","","","","","","","","","","","","",""]])
+let reg = RegisteredCoursesParser.parse(tables: [table])
+check(reg.count == 1, "total row skipped")
+check(reg.first?.days == [1, 3, 5], "days from ¤ marks")
+check(reg.first?.room == "اد 100" && reg.first?.hours == 3 && reg.first?.from == "09:30", "course fields")
+
+let marksTable = SISExtract.Table(title: "", id: "m", headers: ["رمز المساق", "اسم المساق", "الامتحان الأول", "العلامة النهائية"],
+                                  rows: [["AR 101", "مادة تجريبية", "25", "88"]])
+let marks = MarksParser.parse(tables: [marksTable], lines: ["الاول 2026"])
+check(marks.courses.first?.main?.value == "88" && marks.courses.first?.cells.count == 2, "marks")
+check(MarksParser.parse(tables: [], lines: ["لا يوجد بيانات"]).emptyMessage == "لا يوجد بيانات", "empty marks message")
+
+check(SISHomeParser.planPercent(lines: ["نسبة إنجازك من الخطة الدراسية", "%", "47"]) == 47, "plan percent")
+let masked = SISMask.mask("<b>اسم تجريبي</b> 1234567890 ?session=999", secrets: ["اسم تجريبي للطالب"])
+check(!masked.contains("1234567890") && !masked.contains("تجريبي") && masked.contains("session=0"), "masking")
+
+if failures > 0 { print("\(failures) failed"); exit(1) }
+print("all parser tests passed")

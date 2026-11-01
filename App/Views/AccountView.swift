@@ -1,1 +1,203 @@
-aW1wb3J0IFN3aWZ0VUkKCnN0cnVjdCBBY2NvdW50VmlldzogVmlldyB7CiAgICBARW52aXJvbm1lbnRPYmplY3QgdmFyIHN0b3JlOiBBcHBTdG9yZQogICAgQEVudmlyb25tZW50T2JqZWN0IHZhciByb3V0ZXI6IFJvdXRlcgogICAgQFN0YXRlIHByaXZhdGUgdmFyIHNob3dTSVMgPSBmYWxzZQogICAgQFN0YXRlIHByaXZhdGUgdmFyIHNob3dNb29kbGUgPSBmYWxzZQogICAgQFN0YXRlIHByaXZhdGUgdmFyIGNvbmZpcm1TaWduT3V0ID0gZmFsc2UKCiAgICB2YXIgYm9keTogc29tZSBWaWV3IHsKICAgICAgICBMaXN0IHsKICAgICAgICAgICAgU2VjdGlvbiB7IHByb2ZpbGVIZWFkZXIgfQogICAgICAgICAgICAgICAgLmxpc3RSb3dJbnNldHMoRWRnZUluc2V0cygpKQogICAgICAgICAgICAgICAgLmxpc3RSb3dCYWNrZ3JvdW5kKENvbG9yLmNsZWFyKQoKICAgICAgICAgICAgU2VjdGlvbiB7CiAgICAgICAgICAgICAgICBzdGF0c0dyaWQKICAgICAgICAgICAgfQogICAgICAgICAgICAubGlzdFJvd0luc2V0cyhFZGdlSW5zZXRzKCkpCiAgICAgICAgICAgIC5saXN0Um93QmFja2dyb3VuZChDb2xvci5jbGVhcikKCiAgICAgICAgICAgIFNlY3Rpb24oItmF2YYg2YbYuNin2YUg2YXYudmE2YjZhdin2Kog2KfZhNi32YTYqNipIikgewogICAgICAgICAgICAgICAgTmF2aWdhdGlvbkxpbmsodmFsdWU6IFBsYW5Sb3V0ZSgpKSB7IHJvdygiY2hhcnQucGllIiwgItin2YTYrti32Kkg2KfZhNiv2LHYp9iz2YrYqSIsIEJyYW5kLmdyZWVuKSB9CiAgICAgICAgICAgICAgICBOYXZpZ2F0aW9uTGluayh2YWx1ZTogU0lTUGFnZVJvdXRlKGtleTogInJlY29yZHMiKSkgeyByb3coImxpc3QuYnVsbGV0LnJlY3RhbmdsZSIsICLYp9mE2LPYrNmEINin2YTYo9mD2KfYr9mK2YXZiiIsIC5ibHVlKSB9CiAgICAgICAgICAgICAgICBOYXZpZ2F0aW9uTGluayh2YWx1ZTogU0lTUGFnZVJvdXRlKGtleTogIm1hcmtzIikpIHsgcm93KCJjaGFydC5iYXIuZG9jLmhvcml6b250YWwiLCAi2KfZhNi52YTYp9mF2KfYqiIsIC5vcmFuZ2UpIH0KICAgICAgICAgICAgICAgIE5hdmlnYXRpb25MaW5rKHZhbHVlOiBTSVNQYWdlUm91dGUoa2V5OiAicmVnaXN0ZXJlZCIpKSB7IHJvdygiY2FsZW5kYXIiLCAi2YXZiNin2K/ZiiDZh9in2YTZgdi12YQiLCAucHVycGxlKSB9CiAgICAgICAgICAgICAgICBOYXZpZ2F0aW9uTGluayh2YWx1ZTogU0lTUGFnZVJvdXRlKGtleTogImZpbmFuY2UiKSkgeyByb3coImNyZWRpdGNhcmQiLCAi2KfZhNmF2KfZhNmK2KkiLCAudGVhbCkgfQogICAgICAgICAgICAgICAgTmF2aWdhdGlvbkxpbmsodmFsdWU6IFNJU1BhZ2VSb3V0ZShrZXk6ICJpbmZvIikpIHsgcm93KCJwZXJzb24udGV4dC5yZWN0YW5nbGUiLCAi2KfZhNmF2LnZhNmI2YXYp9iqINin2YTYo9iz2KfYs9mK2KkiLCAuZ3JheSkgfQogICAgICAgICAgICB9CgogICAgICAgICAgICBTZWN0aW9uIHsKICAgICAgICAgICAgICAgIEJ1dHRvbiB7IEhhcHRpY3MudGFwKCk7IHJvdXRlci5vcGVuKCJodHRwczovL3Npcy55dS5lZHUuam8vb3Jkcy8iLCB0aXRsZTogItin2YTYqtiz2KzZitmEIikgfSBsYWJlbDogewogICAgICAgICAgICAgICAgICAgIHJvdygicGx1cy5yZWN0YW5nbGUub24ucmVjdGFuZ2xlIiwgItiq2LPYrNmK2YQg2KfZhNmF2YjYp9ivIMK3INiz2K3YqCDZiNil2LbYp9mB2KkiLCAuaW5kaWdvKQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgQnV0dG9uIHsgSGFwdGljcy50YXAoKTsgcm91dGVyLm9wZW4oImh0dHBzOi8vZWxlYXJuaW5nLnl1LmVkdS5qby9teS8iLCB0aXRsZTogItin2YTYp9mK2YTZitix2YbZitmG2LoiKSB9IGxhYmVsOiB7CiAgICAgICAgICAgICAgICAgICAgcm93KCJhcnJvdy51cC5kb2MiLCAi2LHZgdi5INmI2KfYrNioINi52YTZiSDYp9mE2KfZitmE2YrYsdmG2YrZhti6IiwgLm9yYW5nZSkKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSBoZWFkZXI6IHsKICAgICAgICAgICAgICAgIFRleHQoItil2KzYsdin2KHYp9iqINix2LPZhdmK2KkiKQogICAgICAgICAgICB9IGZvb3RlcjogewogICAgICAgICAgICAgICAgVGV4dCgi2YfYr9mI2YQg2KjZitmB2KrYrdmI2Kcg2LXZgdit2Kkg2KfZhNis2KfZhdi52Kkg2YbZgdiz2YfYpyDYrNmI2Kcg2KfZhNiq2LfYqNmK2YLYjCDYudi02KfZhiDZhdinINmK2LXZitixINij2Yog2LrZhNi3INio2KrYs9is2YrZhNmDLiIpCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIFNlY3Rpb24oItin2YTYrdiz2KfYqNin2KoiKSB7CiAgICAgICAgICAgICAgICBCdXR0b24geyBIYXB0aWNzLnRhcCgpOyBpZiBzdG9yZS5tb29kbGVMaW5rZWQgeyBUYXNrIHsgYXdhaXQgc3RvcmUucmVmcmVzaE1vb2RsZSgpIH0gfSBlbHNlIHsgc2hvd01vb2RsZSA9IHRydWUgfSB9IGxhYmVsOiB7CiAgICAgICAgICAgICAgICAgICAgSFN0YWNrIHsKICAgICAgICAgICAgICAgICAgICAgICAgcm93KCJib29rcy52ZXJ0aWNhbCIsICLYp9mE2KfZitmE2YrYsdmG2YrZhti6IiwgQnJhbmQuZ3JlZW4pCiAgICAgICAgICAgICAgICAgICAgICAgIFNwYWNlcigpCiAgICAgICAgICAgICAgICAgICAgICAgIHN0YXR1cyhzdG9yZS5tb29kbGVMaW5rZWQgJiYgIXN0b3JlLm1vb2RsZU5lZWRzTG9naW4sIHN0b3JlLmxhc3RNb29kbGVTeW5jKQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIEJ1dHRvbiB7CiAgICAgICAgICAgICAgICAgICAgSGFwdGljcy50YXAoKQogICAgICAgICAgICAgICAgICAgIGlmIHN0b3JlLnNpc0xpbmtlZCAmJiBTSVNTeW5jLnNhdmVkU2Vzc2lvbiAhPSBuaWwgJiYgIXN0b3JlLnNpc05lZWRzTG9naW4gewogICAgICAgICAgICAgICAgICAgICAgICBUYXNrIHsgaWYgIShhd2FpdCBzdG9yZS5yZWZyZXNoU0lTKCkpIHsgc2hvd1NJUyA9IHRydWUgfSB9CiAgICAgICAgICAgICAgICAgICAgfSBlbHNlIHsgc2hvd1NJUyA9IHRydWUgfQogICAgICAgICAgICAgICAgfSBsYWJlbDogewogICAgICAgICAgICAgICAgICAgIEhTdGFjayB7CiAgICAgICAgICAgICAgICAgICAgICAgIHJvdygiYnVpbGRpbmcuY29sdW1ucyIsICJTSVMiLCAuYmx1ZSkKICAgICAgICAgICAgICAgICAgICAgICAgU3BhY2VyKCkKICAgICAgICAgICAgICAgICAgICAgICAgaWYgc3RvcmUuc2lzUmVmcmVzaGluZyB7IFByb2dyZXNzVmlldygpIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSB7IHN0YXR1cyhzdG9yZS5zaXNMaW5rZWQgJiYgIXN0b3JlLnNpc05lZWRzTG9naW4sIHN0b3JlLnNpcy51cGRhdGVkQXQgPz8gc3RvcmUucHJvZmlsZS51cGRhdGVkQXQpIH0KICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIFNlY3Rpb24gewogICAgICAgICAgICAgICAgTmF2aWdhdGlvbkxpbmsgeyBTZXR0aW5nc1ZpZXcoKSB9IGxhYmVsOiB7IHJvdygiZ2VhcnNoYXBlIiwgItin2YTYpdi52K/Yp9iv2KfYqiDZiNin2YTYqtmG2KjZitmH2KfYqiIsIC5ncmF5KSB9CiAgICAgICAgICAgICAgICBOYXZpZ2F0aW9uTGluayh2YWx1ZTogUG9ldHJ5Um91dGUoKSkgeyByb3coInRleHQucXVvdGUiLCAi2KjZitiqINin2YTZitmI2YUg2YjYp9iu2KrYqNin2LEg2KfZhNio2K3ZiNixIiwgQnJhbmQuZ3JlZW4pIH0KICAgICAgICAgICAgICAgIE5hdmlnYXRpb25MaW5rIHsgR3JhZGVDYWxjdWxhdG9yVmlldygpIH0gbGFiZWw6IHsgcm93KCJmdW5jdGlvbiIsICLZg9mFINio2K/ZiiDYqNin2YTZgdin2YrZhtmE2J8iLCAucGluaykgfQogICAgICAgICAgICB9CgogICAgICAgICAgICBTZWN0aW9uIHsKICAgICAgICAgICAgICAgIE5hdmlnYXRpb25MaW5rIHsgRGV2ZWxvcGVyRXhwb3J0VmlldygpIH0gbGFiZWw6IHsgcm93KCJwYXBlcnBsYW5lIiwgItin2LHYs9mEINi12YHYrdipINmE2YTZhdi32YjYsSIsIC5pbmRpZ28pIH0KICAgICAgICAgICAgfSBmb290ZXI6IHsKICAgICAgICAgICAgICAgIFRleHQoItmE2Ygg2LXZgdit2Kkg2YXZhiBTSVMg2LfZhNi52Kog2YXYtCDZhdix2KrYqNipIikKICAgICAgICAgICAgfQoKICAgICAgICAgICAgU2VjdGlvbiB7CiAgICAgICAgICAgICAgICBCdXR0b24ocm9sZTogLmRlc3RydWN0aXZlKSB7IGNvbmZpcm1TaWduT3V0ID0gdHJ1ZSB9IGxhYmVsOiB7IFRleHQoItiq2LPYrNmK2YQg2KfZhNiu2LHZiNisINmF2YYg2YPZhCDYp9mE2K3Ys9in2KjYp9iqIikgfQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIC5uYXZpZ2F0aW9uVGl0bGUoItit2LPYp9io2YoiKQogICAgICAgIC5uYXZpZ2F0aW9uQmFyVGl0bGVEaXNwbGF5TW9kZSgubGFyZ2UpCiAgICAgICAgLnNoZWV0KGlzUHJlc2VudGVkOiAkc2hvd1NJUykgeyBTSVNMb2dpblNoZWV0KCkgfQogICAgICAgIC5zaGVldChpc1ByZXNlbnRlZDogJHNob3dNb29kbGUpIHsgTW9vZGxlTG9naW5TaGVldCgpIH0KICAgICAgICAuY29uZmlybWF0aW9uRGlhbG9nKCLZhdiq2KPZg9iv2J8g2LHYrSDZitmG2YXYs9itINin2YTYr9iu2YjZhCDZhdmGINmH2KfZhNis2YjYp9mELiIsIGlzUHJlc2VudGVkOiAkY29uZmlybVNpZ25PdXQsIHRpdGxlVmlzaWJpbGl0eTogLnZpc2libGUpIHsKICAgICAgICAgICAgQnV0dG9uKCLYqtiz2KzZitmEINin2YTYrtix2YjYrCIsIHJvbGU6IC5kZXN0cnVjdGl2ZSkgeyBUYXNrIHsgYXdhaXQgc3RvcmUuc2lnbk91dCgpIH0gfQogICAgICAgIH0KICAgIH0KCiAgICBwcml2YXRlIHZhciBwcm9maWxlSGVhZGVyOiBzb21lIFZpZXcgewogICAgICAgIGxldCBwID0gc3RvcmUucHJvZmlsZQogICAgICAgIHJldHVybiBIU3RhY2soc3BhY2luZzogMTQpIHsKICAgICAgICAgICAgVGV4dChzdG9yZS5hdmF0YXJMZXR0ZXIpCiAgICAgICAgICAgICAgICAuZm9udCgudGl0bGUuYm9sZCgpKS5mb3JlZ3JvdW5kU3R5bGUoLndoaXRlKQogICAgICAgICAgICAgICAgLmZyYW1lKHdpZHRoOiA2NCwgaGVpZ2h0OiA2NCkKICAgICAgICAgICAgICAgIC5iYWNrZ3JvdW5kKEJyYW5kLmdyZWVuLCBpbjogQ2lyY2xlKCkpCiAgICAgICAgICAgIFZTdGFjayhhbGlnbm1lbnQ6IC5sZWFkaW5nLCBzcGFjaW5nOiAzKSB7CiAgICAgICAgICAgICAgICBUZXh0KHAuZnVsbE5hbWUpLmZvbnQoLnRpdGxlMy5ib2xkKCkpCiAgICAgICAgICAgICAgICBUZXh0KHAuc3R1ZGVudE51bWJlcikuZm9udCguc3ViaGVhZGxpbmUubW9ub3NwYWNlZERpZ2l0KCkpLmZvcmVncm91bmRTdHlsZSguc2Vjb25kYXJ5KQogICAgICAgICAgICAgICAgVGV4dChbcC5tYWpvciwgcC5jb2xsZWdlXS5maWx0ZXIgeyAhJDAuaXNFbXB0eSB9LmpvaW5lZChzZXBhcmF0b3I6ICIgwrcgIikpLmZvbnQoLmZvb3Rub3RlKS5mb3JlZ3JvdW5kU3R5bGUoLnNlY29uZGFyeSkKICAgICAgICAgICAgfQogICAgICAgICAgICBTcGFjZXIoKQogICAgICAgIH0KICAgICAgICAucGFkZGluZygudmVydGljYWwsIDgpCiAgICB9CgogICAgcHJpdmF0ZSB2YXIgc3RhdHNHcmlkOiBzb21lIFZpZXcgewogICAgICAgIGxldCBwID0gc3RvcmUucHJvZmlsZQogICAgICAgIHJldHVybiBHcmlkKGhvcml6b250YWxTcGFjaW5nOiAxMCwgdmVydGljYWxTcGFjaW5nOiAxMCkgewogICAgICAgICAgICBHcmlkUm93IHsKICAgICAgICAgICAgICAgIHN0YXQoItin2YTZhdi52K/ZhCDYp9mE2KrYsdin2YPZhdmKIiwgcC5ncGEubWFwIHsgU3RyaW5nKGZvcm1hdDogIiUuMWYiLCAkMCkgfSA/PyAi4oCUIiwgQnJhbmQuZ3JlZW4pCiAgICAgICAgICAgICAgICBzdGF0KCLYs9in2LnYp9iqINmF2KzYqtin2LLYqSIsIHAucGFzc2VkSG91cnMubWFwKFN0cmluZy5pbml0KSA/PyAi4oCUIiwgLmJsdWUpCiAgICAgICAgICAgIH0KICAgICAgICAgICAgR3JpZFJvdyB7CiAgICAgICAgICAgICAgICBzdGF0KCLYttin2YrZhNmDIiwgcC5yZW1haW5pbmdIb3Vycy5tYXAgeyAiXCgkMCkg2LPYp9i52KkiIH0gPz8gIuKAlCIsIC5vcmFuZ2UpCiAgICAgICAgICAgICAgICBzdGF0KCLYp9mE2KrYrtix2Kwg2KrZgtix2YrYqNin2YsiLCBwLmdyYWR1YXRpb25Fc3RpbWF0ZSA/PyAi4oCUIiwgLnB1cnBsZSkKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCiAgICBwcml2YXRlIGZ1bmMgc3RhdChfIHRpdGxlOiBTdHJpbmcsIF8gdmFsdWU6IFN0cmluZywgXyB0aW50OiBDb2xvcikgLT4gc29tZSBWaWV3IHsKICAgICAgICBWU3RhY2soYWxpZ25tZW50OiAubGVhZGluZywgc3BhY2luZzogNikgewogICAgICAgICAgICBUZXh0KHRpdGxlKS5mb250KC5mb290bm90ZS53ZWlnaHQoLnNlbWlib2xkKSkuZm9yZWdyb3VuZFN0eWxlKHRpbnQpCiAgICAgICAgICAgIFRleHQodmFsdWUpLmZvbnQoLnRpdGxlMy5ib2xkKCkpLmxpbmVMaW1pdCgxKS5taW5pbXVtU2NhbGVGYWN0b3IoMC42KQogICAgICAgIH0KICAgICAgICAuaGVhbHRoQ2FyZChwYWRkaW5nOiAxNCkKICAgIH0KCiAgICBwcml2YXRlIGZ1bmMgcm93KF8gc3ltYm9sOiBTdHJpbmcsIF8gdGl0bGU6IFN0cmluZywgXyB0aW50OiBDb2xvcikgLT4gc29tZSBWaWV3IHsKICAgICAgICBIU3RhY2soc3BhY2luZzogMTIpIHsKICAgICAgICAgICAgSW1hZ2Uoc3lzdGVtTmFtZTogc3ltYm9sKQogICAgICAgICAgICAgICAgLmZvbnQoLnN5c3RlbShzaXplOiAxNCwgd2VpZ2h0OiAuc2VtaWJvbGQpKQogICAgICAgICAgICAgICAgLmZvcmVncm91bmRTdHlsZSgud2hpdGUpCiAgICAgICAgICAgICAgICAuZnJhbWUod2lkdGg6IDI5LCBoZWlnaHQ6IDI5KQogICAgICAgICAgICAgICAgLmJhY2tncm91bmQodGludCwgaW46IFJvdW5kZWRSZWN0YW5nbGUoY29ybmVyUmFkaXVzOiA3LCBzdHlsZTogLmNvbnRpbnVvdXMpKQogICAgICAgICAgICBUZXh0KHRpdGxlKS5mb3JlZ3JvdW5kU3R5bGUoLnByaW1hcnkpCiAgICAgICAgfQogICAgfQoKICAgIHByaXZhdGUgZnVuYyBzdGF0dXMoXyBvazogQm9vbCwgXyBkYXRlOiBEYXRlPykgLT4gc29tZSBWaWV3IHsKICAgICAgICBUZXh0KG9rID8gKGRhdGUubWFwIHsgItmF2K3Yr9mR2KsgXChBcmFiaWNGb3JtYXQucmVsYXRpdmUoJDApKSIgfSA/PyAi2YXYqti12YQiKSA6ICLYs9is2ZHZhCDYr9iu2YjZhCIpCiAgICAgICAgICAgIC5mb250KC5mb290bm90ZSkuZm9yZWdyb3VuZFN0eWxlKG9rID8gQ29sb3Iuc2Vjb25kYXJ5IDogQ29sb3Iub3JhbmdlKQogICAgfQp9CgpzdHJ1Y3QgUGxhblZpZXc6IFZpZXcgewogICAgQEVudmlyb25tZW50T2JqZWN0IHZhciBzdG9yZTogQXBwU3RvcmUKICAgIEBTdGF0ZSBwcml2YXRlIHZhciBzaG93U0lTID0gZmFsc2UKCiAgICB2YXIgYm9keTogc29tZSBWaWV3IHsKICAgICAgICBTY3JvbGxWaWV3IHsKICAgICAgICAgICAgVlN0YWNrKGFsaWdubWVudDogLmxlYWRpbmcsIHNwYWNpbmc6IDEyKSB7CiAgICAgICAgICAgICAgICBsZXQgcCA9IHN0b3JlLnByb2ZpbGUKICAgICAgICAgICAgICAgIFZTdGFjayhhbGlnbm1lbnQ6IC5sZWFkaW5nLCBzcGFjaW5nOiA4KSB7CiAgICAgICAgICAgICAgICAgICAgVGV4dCgiXChwLnBhc3NlZEhvdXJzID8/IDApIC8gXChwLnBsYW5Ub3RhbEhvdXJzKSDYs9in2LnYqSIpLmZvbnQoLmxhcmdlVGl0bGUuYm9sZCgpKQogICAgICAgICAgICAgICAgICAgIFByb2dyZXNzVmlldyh2YWx1ZTogRG91YmxlKHAucGFzc2VkSG91cnMgPz8gMCksIHRvdGFsOiBEb3VibGUocC5wbGFuVG90YWxIb3VycykpLnRpbnQoQnJhbmQuZ3JlZW4pCiAgICAgICAgICAgICAgICAgICAgSFN0YWNrIHsKICAgICAgICAgICAgICAgICAgICAgICAgaWYgbGV0IGlwID0gcC5pblByb2dyZXNzSG91cnMgeyBQaWxsKHRleHQ6ICJcKGlwKSDYs9in2LnYqSDZh9in2YTZgdi12YQiLCB0aW50OiAuYmx1ZSkgfQogICAgICAgICAgICAgICAgICAgICAgICBpZiBsZXQgciA9IHAucmVtYWluaW5nSG91cnMgeyBQaWxsKHRleHQ6ICLYttin2YrZhCBcKHIpIiwgdGludDogLm9yYW5nZSkgfQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICBpZiBsZXQgZyA9IHAuZ3JhZHVhdGlvbkVzdGltYXRlIHsKICAgICAgICAgICAgICAgICAgICAgICAgVGV4dCgi2KXYsNinINij2K7YsNiqIDE1INiz2KfYudipINio2KfZhNmB2LXZhCDYqNiq2KrYrtix2Kwg2KrZgtix2YrYqNin2YsgXChnKSIpLmZvbnQoLmZvb3Rub3RlKS5mb3JlZ3JvdW5kU3R5bGUoLnNlY29uZGFyeSkKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgaWYgbGV0IGUgPSBwLmV4cGVjdGVkVG9HcmFkdWF0ZSB7IFRleHQoItmF2KrZiNmC2Lkg2KrYrtix2KzZhyAoU0lTKTogXChlKSIpLmZvbnQoLmZvb3Rub3RlKS5mb3JlZ3JvdW5kU3R5bGUoLnNlY29uZGFyeSkgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgLmhlYWx0aENhcmQoKQoKICAgICAgICAgICAgICAgIGlmIHN0b3JlLnBsYW5DYXRlZ29yaWVzLmlzRW1wdHkgewogICAgICAgICAgICAgICAgICAgIEJ1dHRvbiB7IEhhcHRpY3MudGFwKCk7IHNob3dTSVMgPSB0cnVlIH0gbGFiZWw6IHsKICAgICAgICAgICAgICAgICAgICAgICAgRW1wdHlIaW50KHN5bWJvbDogImFycm93LmNsb2Nrd2lzZSIsIHRleHQ6ICLYrdiv2ZHYqyDZhdmGIFNJUyDYudi02KfZhiDYqti42YfYsSDYqtmB2KfYtdmK2YQg2KfZhNiu2LfYqSAo2KXYrNio2KfYsdmKL9in2K7YqtmK2KfYsdmKKSIpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAuaGVhbHRoQ2FyZCgpCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIC5idXR0b25TdHlsZShQcmVzc2FibGVTdHlsZSgpKQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgRm9yRWFjaChzdG9yZS5wbGFuQ2F0ZWdvcmllcykgeyBjYXQgaW4KICAgICAgICAgICAgICAgICAgICBWU3RhY2soYWxpZ25tZW50OiAubGVhZGluZywgc3BhY2luZzogOCkgewogICAgICAgICAgICAgICAgICAgICAgICBIU3RhY2sgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgVGV4dChjYXQudGl0bGUpLmZvbnQoLmJvZHkud2VpZ2h0KC5zZW1pYm9sZCkpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTcGFjZXIoKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgbGV0IGMgPSBjYXQuY29tcGxldGVkLCBsZXQgciA9IGNhdC5yZXF1aXJlZCB7IFRleHQoIlwoYykvXChyKSIpLmZvbnQoLmhlYWRsaW5lLm1vbm9zcGFjZWREaWdpdCgpKSB9CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgaWYgbGV0IGMgPSBjYXQuY29tcGxldGVkLCBsZXQgciA9IGNhdC5yZXF1aXJlZCwgciA+IDAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgUHJvZ3Jlc3NWaWV3KHZhbHVlOiBEb3VibGUobWluKGMsIHIpKSwgdG90YWw6IERvdWJsZShyKSkudGludChjID49IHIgPyAuZ3JlZW4gOiBCcmFuZC5ncmVlbikKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAuaGVhbHRoQ2FyZChwYWRkaW5nOiAxNCkKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGlmIGxldCBwbGFuID0gc3RvcmUuc2lzUGFnZXNbInBsYW4iXSwgIXBsYW4udGFibGVzLmlzRW1wdHkgewogICAgICAgICAgICAgICAgICAgIE5hdmlnYXRpb25MaW5rKHZhbHVlOiBTSVNQYWdlUm91dGUoa2V5OiAicGxhbiIpKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIExhYmVsKCLZg9mEINmF2YjYp9ivINin2YTYrti32KkiLCBzeXN0ZW1JbWFnZTogImxpc3QuYnVsbGV0IikuZnJhbWUobWF4V2lkdGg6IC5pbmZpbml0eSkKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgLmJ1dHRvblN0eWxlKC5ib3JkZXJlZCkKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAucGFkZGluZygxNikKICAgICAgICB9CiAgICAgICAgLmJhY2tncm91bmQoQnJhbmQuY2FudmFzKQogICAgICAgIC5uYXZpZ2F0aW9uVGl0bGUoItin2YTYrti32Kkg2KfZhNiv2LHYp9iz2YrYqSIpCiAgICAgICAgLnNoZWV0KGlzUHJlc2VudGVkOiAkc2hvd1NJUykgeyBTSVNMb2dpblNoZWV0KCkgfQogICAgfQp9Cg==
+import SwiftUI
+
+struct AccountView: View {
+    @EnvironmentObject var store: AppStore
+    @EnvironmentObject var router: Router
+    @State private var showSIS = false
+    @State private var showMoodle = false
+    @State private var confirmSignOut = false
+
+    var body: some View {
+        List {
+            Section { profileHeader }
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+
+            Section {
+                statsGrid
+            }
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
+
+            Section("من نظام معلومات الطلبة") {
+                NavigationLink(value: PlanRoute()) { row("chart.pie", "الخطة الدراسية", Brand.green) }
+                NavigationLink(value: SISPageRoute(key: "records")) { row("list.bullet.rectangle", "السجل الأكاديمي", .blue) }
+                NavigationLink(value: SISPageRoute(key: "marks")) { row("chart.bar.doc.horizontal", "العلامات", .orange) }
+                NavigationLink(value: SISPageRoute(key: "registered")) { row("calendar", "موادي هالفصل", .purple) }
+                NavigationLink(value: SISPageRoute(key: "finance")) { row("creditcard", "المالية", .teal) }
+                NavigationLink(value: SISPageRoute(key: "info")) { row("person.text.rectangle", "المعلومات الأساسية", .gray) }
+            }
+
+            Section {
+                Button { Haptics.tap(); router.open("https://sis.yu.edu.jo/ords/", title: "التسجيل") } label: {
+                    row("plus.rectangle.on.rectangle", "تسجيل المواد · سحب وإضافة", .indigo)
+                }
+                Button { Haptics.tap(); router.open("https://elearning.yu.edu.jo/my/", title: "الايليرنينغ") } label: {
+                    row("arrow.up.doc", "رفع واجب على الايليرنينغ", .orange)
+                }
+            } header: {
+                Text("إجراءات رسمية")
+            } footer: {
+                Text("هدول بيفتحوا صفحة الجامعة نفسها جوا التطبيق، عشان ما يصير أي غلط بتسجيلك.")
+            }
+
+            Section("الحسابات") {
+                Button { Haptics.tap(); if store.moodleLinked { Task { await store.refreshMoodle() } } else { showMoodle = true } } label: {
+                    HStack {
+                        row("books.vertical", "الايليرنينغ", Brand.green)
+                        Spacer()
+                        status(store.moodleLinked && !store.moodleNeedsLogin, store.lastMoodleSync)
+                    }
+                }
+                Button {
+                    Haptics.tap()
+                    if store.sisLinked && SISSync.savedSession != nil && !store.sisNeedsLogin {
+                        Task { if !(await store.refreshSIS()) { showSIS = true } }
+                    } else { showSIS = true }
+                } label: {
+                    HStack {
+                        row("building.columns", "SIS", .blue)
+                        Spacer()
+                        if store.sisRefreshing { ProgressView() }
+                        else { status(store.sisLinked && !store.sisNeedsLogin, store.sis.updatedAt ?? store.profile.updatedAt) }
+                    }
+                }
+            }
+
+            Section {
+                NavigationLink { SettingsView() } label: { row("gearshape", "الإعدادات والتنبيهات", .gray) }
+                NavigationLink(value: PoetryRoute()) { row("text.quote", "بيت اليوم واختبار البحور", Brand.green) }
+                NavigationLink { GradeCalculatorView() } label: { row("function", "كم بدي بالفاينل؟", .pink) }
+            }
+
+            Section {
+                NavigationLink { DeveloperExportView() } label: { row("paperplane", "ارسل صفحة للمطور", .indigo) }
+            } footer: {
+                Text("لو صفحة من SIS طلعت مش مرتبة")
+            }
+
+            Section {
+                Button(role: .destructive) { confirmSignOut = true } label: { Text("تسجيل الخروج من كل الحسابات") }
+            }
+        }
+        .navigationTitle("حسابي")
+        .navigationBarTitleDisplayMode(.large)
+        .sheet(isPresented: $showSIS) { SISLoginSheet() }
+        .sheet(isPresented: $showMoodle) { MoodleLoginSheet() }
+        .confirmationDialog("متأكد؟ رح ينمسح الدخول من هالجوال.", isPresented: $confirmSignOut, titleVisibility: .visible) {
+            Button("تسجيل الخروج", role: .destructive) { Task { await store.signOut() } }
+        }
+    }
+
+    private var profileHeader: some View {
+        let p = store.profile
+        return HStack(spacing: 14) {
+            Text(store.avatarLetter)
+                .font(.title.bold()).foregroundStyle(.white)
+                .frame(width: 64, height: 64)
+                .background(Brand.green, in: Circle())
+            VStack(alignment: .leading, spacing: 3) {
+                Text(p.fullName).font(.title3.bold())
+                Text(p.studentNumber).font(.subheadline.monospacedDigit()).foregroundStyle(.secondary)
+                Text([p.major, p.college].filter { !$0.isEmpty }.joined(separator: " · ")).font(.footnote).foregroundStyle(.secondary)
+            }
+            Spacer()
+        }
+        .padding(.vertical, 8)
+    }
+
+    private var statsGrid: some View {
+        let p = store.profile
+        return Grid(horizontalSpacing: 10, verticalSpacing: 10) {
+            GridRow {
+                stat("المعدل التراكمي", p.gpa.map { String(format: "%.1f", $0) } ?? "—", Brand.green)
+                stat("ساعات مجتازة", p.passedHours.map(String.init) ?? "—", .blue)
+            }
+            GridRow {
+                stat("ضايلك", p.remainingHours.map { "\($0) ساعة" } ?? "—", .orange)
+                stat("التخرج تقريباً", p.graduationEstimate ?? "—", .purple)
+            }
+        }
+    }
+
+    private func stat(_ title: String, _ value: String, _ tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(title).font(.footnote.weight(.semibold)).foregroundStyle(tint)
+            Text(value).font(.title3.bold()).lineLimit(1).minimumScaleFactor(0.6)
+        }
+        .healthCard(padding: 14)
+    }
+
+    private func row(_ symbol: String, _ title: String, _ tint: Color) -> some View {
+        HStack(spacing: 12) {
+            Image(systemName: symbol)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 29, height: 29)
+                .background(tint, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
+            Text(title).foregroundStyle(.primary)
+        }
+    }
+
+    private func status(_ ok: Bool, _ date: Date?) -> some View {
+        Text(ok ? (date.map { "محدّث \(ArabicFormat.relative($0))" } ?? "متصل") : "سجّل دخول")
+            .font(.footnote).foregroundStyle(ok ? Color.secondary : Color.orange)
+    }
+}
+
+struct PlanView: View {
+    @EnvironmentObject var store: AppStore
+    @State private var showSIS = false
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                let p = store.profile
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("\(p.passedHours ?? 0) / \(p.planTotalHours) ساعة").font(.largeTitle.bold())
+                    ProgressView(value: Double(p.passedHours ?? 0), total: Double(p.planTotalHours)).tint(Brand.green)
+                    HStack {
+                        if let ip = p.inProgressHours { Pill(text: "\(ip) ساعة هالفصل", tint: .blue) }
+                        if let r = p.remainingHours { Pill(text: "ضايل \(r)", tint: .orange) }
+                    }
+                    if let g = p.graduationEstimate {
+                        Text("إذا أخذت 15 ساعة بالفصل بتتخرج تقريباً \(g)").font(.footnote).foregroundStyle(.secondary)
+                    }
+                    if let e = p.expectedToGraduate { Text("متوقع تخرجه (SIS): \(e)").font(.footnote).foregroundStyle(.secondary) }
+                }
+                .healthCard()
+
+                if store.planCategories.isEmpty {
+                    Button { Haptics.tap(); showSIS = true } label: {
+                        EmptyHint(symbol: "arrow.clockwise", text: "حدّث من SIS عشان تظهر تفاصيل الخطة (إجباري/اختياري)")
+                            .healthCard()
+                    }
+                    .buttonStyle(PressableStyle())
+                }
+                ForEach(store.planCategories) { cat in
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Text(cat.title).font(.body.weight(.semibold))
+                            Spacer()
+                            if let c = cat.completed, let r = cat.required { Text("\(c)/\(r)").font(.headline.monospacedDigit()) }
+                        }
+                        if let c = cat.completed, let r = cat.required, r > 0 {
+                            ProgressView(value: Double(min(c, r)), total: Double(r)).tint(c >= r ? .green : Brand.green)
+                        }
+                    }
+                    .healthCard(padding: 14)
+                }
+                if let plan = store.sisPages["plan"], !plan.tables.isEmpty {
+                    NavigationLink(value: SISPageRoute(key: "plan")) {
+                        Label("كل مواد الخطة", systemImage: "list.bullet").frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.bordered)
+                }
+            }
+            .padding(16)
+        }
+        .background(Brand.canvas)
+        .navigationTitle("الخطة الدراسية")
+        .sheet(isPresented: $showSIS) { SISLoginSheet() }
+    }
+}
