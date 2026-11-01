@@ -14,7 +14,7 @@ struct SettingsView: View {
                 Toggle("تذكير قبل المحاضرة", isOn: $store.settings.lectureReminders)
                 Stepper("قبلها بـ \(store.settings.lectureReminderMinutes) دقيقة", value: $store.settings.lectureReminderMinutes, in: 5...60, step: 5)
                 Toggle("منبه حقيقي (بيرن والجوال صامت)", isOn: $store.settings.useAlarms)
-                if !alarmState.isEmpty { Text(alarmState).font(.footnote).foregroundStyle(.secondary) }
+                if !alarmState.isEmpty { Text(alarmState).font(.plex(.footnote)).foregroundStyle(.secondary) }
             } header: { Text("المحاضرات") } footer: {
                 Text("المنبه بيستخدم منبهات الآيفون (iOS 26 وأحدث). إذا ما اشتغل على نسختك بنرجع للإشعارات العادية.")
             }
@@ -106,13 +106,13 @@ struct ExamsView: View {
             ForEach(store.exams.sorted { $0.date < $1.date }) { e in
                 HStack {
                     VStack(alignment: .leading, spacing: 3) {
-                        Text("\(e.title) · \(store.course(e.courseCode)?.name ?? e.courseCode)").font(.body.weight(.semibold))
-                        Text("\(ArabicFormat.shortDate(e.date)) · \(ArabicFormat.time(e.date))").font(.footnote).foregroundStyle(.secondary)
-                        if !e.notes.isEmpty { Text(e.notes).font(.footnote).foregroundStyle(.secondary) }
+                        Text("\(e.title) · \(store.course(e.courseCode)?.name ?? e.courseCode)").font(.plex(.body, .semibold))
+                        Text("\(ArabicFormat.shortDate(e.date)) · \(ArabicFormat.time(e.date))").font(.plex(.footnote)).foregroundStyle(.secondary)
+                        if !e.notes.isEmpty { Text(e.notes).font(.plex(.footnote)).foregroundStyle(.secondary) }
                     }
                     Spacer()
                     let d = ArabicFormat.daysLeft(to: e.date)
-                    Text(d < 0 ? "خلص" : (d == 0 ? "اليوم" : "\(d) يوم")).font(.headline).foregroundStyle(d <= 3 ? .red : .purple)
+                    Text(d < 0 ? "خلص" : (d == 0 ? "اليوم" : "\(d) يوم")).font(.plex(.headline)).foregroundStyle(d <= 3 ? .red : .purple)
                 }
             }
             .onDelete { idx in
@@ -200,10 +200,10 @@ struct AssignmentsView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(d.name).foregroundStyle(.primary)
                     Text("\(store.course(moodleId: d.courseId)?.name ?? "") · \(ArabicFormat.shortDate(d.due)) \(ArabicFormat.time(d.due))")
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.plex(.footnote)).foregroundStyle(.secondary)
                 }
                 Spacer()
-                if !d.submitted { Text(ArabicFormat.relative(d.due)).font(.caption.weight(.semibold)).foregroundStyle(.orange) }
+                if !d.submitted { Text(ArabicFormat.relative(d.due)).font(.plex(.caption, .semibold)).foregroundStyle(.orange) }
             }
         }
     }
@@ -222,7 +222,7 @@ struct SearchView: View {
             Section("المواد") {
                 ForEach(courses) { c in
                     NavigationLink(value: CourseRoute(code: c.code)) {
-                        VStack(alignment: .leading) { Text(c.name); Text(c.code).font(.footnote).foregroundStyle(.secondary) }
+                        VStack(alignment: .leading) { Text(c.name); Text(c.code).font(.plex(.footnote)).foregroundStyle(.secondary) }
                     }
                 }
             }
@@ -266,11 +266,11 @@ struct PoetryView: View {
                 .padding(.vertical, 28)
                 .healthCard()
 
-                Text("شو بحر هالبيت؟").font(.headline)
+                Text("شو بحر هالبيت؟").font(.plex(.headline))
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                     ForEach(choices, id: \.self) { c in
                         Button { answer(c) } label: {
-                            Text(c).font(.body.weight(.semibold)).frame(maxWidth: .infinity).padding(.vertical, 14)
+                            Text(c).font(.plex(.body, .semibold)).frame(maxWidth: .infinity).padding(.vertical, 14)
                                 .foregroundStyle(color(for: c) == .clear ? Color.primary : Color.white)
                                 .background(color(for: c) == .clear ? Brand.card : color(for: c),
                                             in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -281,14 +281,14 @@ struct PoetryView: View {
                 }
                 if picked != nil, let m = Poetry.meter(named: verse.meter) {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("\(verse.poet) · بحر \(m.name)").font(.headline)
-                        Text(m.feet).font(.subheadline).foregroundStyle(.secondary)
-                        Text(m.key).font(.footnote).foregroundStyle(.secondary)
+                        Text("\(verse.poet) · بحر \(m.name)").font(.plex(.headline))
+                        Text(m.feet).font(.plex(.subheadline)).foregroundStyle(.secondary)
+                        Text(m.key).font(.plex(.footnote)).foregroundStyle(.secondary)
                     }
                     .healthCard()
                     Button("بيت ثاني") { next() }.buttonStyle(.borderedProminent).tint(Brand.green)
                 }
-                Text("نتيجتك \(score)/\(total)").font(.footnote).foregroundStyle(.secondary)
+                Text("نتيجتك \(score)/\(total)").font(.plex(.footnote)).foregroundStyle(.secondary)
             }
             .padding(16)
         }

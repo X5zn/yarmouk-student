@@ -8,6 +8,11 @@ struct YarmoukStudentApp: App {
     @StateObject private var router = Router.shared
     @Environment(\.scenePhase) private var scenePhase
 
+    init() {
+        Plex.applyAppearance()
+        if DemoMode.isOn { DemoMode.install(store: AppStore.shared, router: Router.shared) }
+    }
+
     var body: some Scene {
         WindowGroup {
             Group {
@@ -21,6 +26,7 @@ struct YarmoukStudentApp: App {
             .environmentObject(router)
             .environment(\.layoutDirection, .rightToLeft)
             .environment(\.locale, Locale(identifier: "ar_JO"))
+            .font(.plex(.body))
             .tint(Brand.green)
             .sheet(item: $router.web) { link in
                 InAppBrowser(url: link.url, title: link.title)
@@ -30,9 +36,11 @@ struct YarmoukStudentApp: App {
                 NavigationStack { NotesView(courseCode: route.code) }
                     .environmentObject(store)
                     .environment(\.layoutDirection, .rightToLeft)
+                    .font(.plex(.body))
             }
         }
         .onChange(of: scenePhase) { _, phase in
+            if DemoMode.isOn { return }
             if phase == .active, store.onboarded {
                 Task { await store.refreshMoodle() }
                 Task { await store.refreshSISIfStale() }
@@ -47,6 +55,7 @@ extension CourseRoute: Identifiable { var id: String { code } }
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        if DemoMode.isOn { return true }
         NotificationManager.shared.setup()
         BackgroundRefresh.register()
         Task { @MainActor in

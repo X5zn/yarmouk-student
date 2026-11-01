@@ -28,6 +28,7 @@
 	<key>NSPhotoLibraryUsageDescription</key><string>لإضافة صور من الألبوم لملف المادة.</string>
 	<key>NSAlarmKitUsageDescription</key><string>منبه حقيقي قبل كل محاضرة، بيرن حتى لو الجوال صامت.</string>
 	<key>NSUserActivityTypes</key><array><string>NextLectureIntent</string><string>TomorrowScheduleIntent</string></array>
+	<key>UIAppFonts</key><array><string>IBMPlexSansArabic-Regular.ttf</string><string>IBMPlexSansArabic-Medium.ttf</string><string>IBMPlexSansArabic-SemiBold.ttf</string><string>IBMPlexSansArabic-Bold.ttf</string></array>
 	<key>NSAppTransportSecurity</key><dict><key>NSAllowsArbitraryLoadsInWebContent</key><true/></dict>
 </dict>
 </plist>

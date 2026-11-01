@@ -38,11 +38,11 @@ struct SectionTitle: View {
     var onAction: (() -> Void)? = nil
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text(title).font(.title2.bold())
+            Text(title).font(.plex(.title2, .bold))
             Spacer()
             if let action, let onAction {
                 Button(action) { Haptics.tap(); onAction() }
-                    .font(.body)
+                    .font(.plex(.body))
                     .foregroundStyle(Brand.green)
             }
         }
@@ -59,11 +59,11 @@ struct CardHeader: View {
     var trailing: String? = nil
     var body: some View {
         HStack(spacing: 6) {
-            Image(systemName: symbol).font(.subheadline.weight(.semibold))
-            Text(title).font(.subheadline.weight(.semibold))
+            Image(systemName: symbol).font(.plex(.subheadline, .semibold))
+            Text(title).font(.plex(.subheadline, .semibold))
             Spacer()
-            if let trailing { Text(trailing).font(.footnote).foregroundStyle(.secondary) }
-            Image(systemName: "chevron.forward").font(.footnote.weight(.semibold)).foregroundStyle(.tertiary)
+            if let trailing { Text(trailing).font(.plex(.footnote)).foregroundStyle(.secondary) }
+            Image(systemName: "chevron.forward").font(.plex(.footnote, .semibold)).foregroundStyle(.tertiary)
         }
         .foregroundStyle(tint)
     }
@@ -84,7 +84,7 @@ struct QuickAction: View {
                     .foregroundStyle(.primary)
                     .frame(width: 54, height: 54)
                     .background(Color(uiColor: .systemGray6), in: Circle())
-                Text(title).font(.caption).foregroundStyle(.primary).lineLimit(1)
+                Text(title).font(.plex(.caption)).foregroundStyle(.primary).lineLimit(1)
             }
             .frame(maxWidth: .infinity)
         }
@@ -97,7 +97,7 @@ struct Pill: View {
     var tint: Color
     var body: some View {
         Text(text)
-            .font(.caption.weight(.semibold))
+            .font(.plex(.caption, .semibold))
             .padding(.horizontal, 9).padding(.vertical, 4)
             .foregroundStyle(tint)
             .background(tint.opacity(0.12), in: Capsule())
@@ -110,7 +110,7 @@ struct EmptyHint: View {
     var body: some View {
         HStack(spacing: 10) {
             Image(systemName: symbol).foregroundStyle(.secondary)
-            Text(text).font(.subheadline).foregroundStyle(.secondary)
+            Text(text).font(.plex(.subheadline)).foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

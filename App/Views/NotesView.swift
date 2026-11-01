@@ -44,19 +44,43 @@ struct NotesView: View {
                 if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     Button("احفظ الملاحظة") { Haptics.success(); add(.text, file: nil) }
                 }
+                if recorder.isRecording {
+                    HStack(spacing: 8) {
+                        Circle().fill(.red).frame(width: 8, height: 8)
+                            .phaseAnimator([1.0, 0.3]) { v, p in v.opacity(p) } animation: { _ in .easeInOut(duration: 0.6) }
+                        Text("عم نسجّل… اضغط «وقّف» لما تخلص").font(.plex(.footnote, .medium)).foregroundStyle(.red)
+                    }
+                }
             } header: {
-                Text(store.course(courseCode)?.name ?? courseCode)
+                HStack(spacing: 8) {
+                    Circle().fill(store.course(courseCode)?.color ?? Brand.green).frame(width: 8, height: 8)
+                    Text(store.course(courseCode)?.name ?? courseCode).font(.plex(.footnote, .semibold))
+                }
             }
 
-            Section("الملاحظات") {
-                if notes.isEmpty { Text("لسا ما في ملاحظات").foregroundStyle(.secondary) }
+            Section {
+                if notes.isEmpty {
+                    VStack(spacing: 8) {
+                        Image(systemName: "note.text").font(.system(size: 30)).foregroundStyle(Brand.green.opacity(0.8))
+                        Text("لسا ما في ملاحظات").font(.plex(.headline))
+                        Text("سجّل صوت، صوّر اللوح، أو اكتب شو اخدتوا، وبتلاقيها هون مرتبة حسب التاريخ.")
+                            .font(.plex(.footnote)).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity).padding(.vertical, 18)
+                }
                 ForEach(notes) { NoteRow(note: $0) }
                     .onDelete { idx in
                         let ids = idx.map { notes[$0].id }
                         store.notes.removeAll { ids.contains($0.id) }
                     }
+            } header: {
+                Text("الملاحظات (\(notes.count))").font(.plex(.footnote, .semibold))
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(Brand.canvas)
+        .animation(.snappy, value: notes.count)
+        .animation(.snappy, value: recorder.isRecording)
         .navigationTitle("شو اخدتوا؟")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .confirmationAction) { Button("تم") { dismiss() } } }
@@ -107,8 +131,8 @@ struct NoteRow: View {
             case .text:
                 EmptyView()
             }
-            if !note.text.isEmpty { Text(note.text) }
-            Text(ArabicFormat.shortDate(note.date) + " · " + ArabicFormat.time(note.date)).font(.caption).foregroundStyle(.secondary)
+            if !note.text.isEmpty { Text(note.text).font(.plex(.body)) }
+            Text(ArabicFormat.shortDate(note.date) + " · " + ArabicFormat.time(note.date)).font(.plex(.caption)).foregroundStyle(.secondary)
         }
         .padding(.vertical, 4)
     }

@@ -81,3 +81,57 @@ jobs:
         with:
           name: build-logs
           path: "*.log"
+
+  screens:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select newest Xcode
+        run: |
+          XC=$(ls -d /Applications/Xcode_*.app | grep -v -i beta | sort -V | tail -1)
+          sudo xcode-select -s "$XC/Contents/Developer"
+          xcodebuild -version
+
+      - name: Generate Xcode project
+        run: |
+          brew install xcodegen
+          xcodegen generate
+
+      - name: Create simulator
+        id: sim
+        run: |
+          DEVTYPE=$(xcrun simctl list devicetypes -j | python3 -c "import json,sys; d=[x for x in json.load(sys.stdin)['devicetypes'] if x['name'].startswith('iPhone') and 'Pro Max' in x['name']]; print(d[-1]['identifier'])")
+          RUNTIME=$(xcrun simctl list runtimes -j | python3 -c "import json,sys; r=[x for x in json.load(sys.stdin)['runtimes'] if x.get('platform')=='iOS' and x.get('isAvailable')]; print(r[-1]['identifier'])")
+          echo "device $DEVTYPE runtime $RUNTIME"
+          UDID=$(xcrun simctl create shots "$DEVTYPE" "$RUNTIME")
+          xcrun simctl boot "$UDID"
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Build for simulator
+        run: |
+          set -o pipefail
+          xcodebuild -project YarmoukStudent.xcodeproj -scheme YarmoukStudent -configuration Debug \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.udid }}" -derivedDataPath simbuild \
+            CODE_SIGNING_ALLOWED=NO build 2>&1 | tee sim_build.log | grep -E "error:|BUILD (SUCCEEDED|FAILED)" | head -200
+
+      - name: Screenshots
+        run: |
+          xcrun simctl bootstatus "${{ steps.sim.outputs.udid }}" -b
+          APP=$(find simbuild/Build/Products -maxdepth 2 -name "YarmoukStudent.app" -type d | head -1)
+          bash .github/scripts/screens.sh "$APP" "${{ steps.sim.outputs.udid }}"
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screens
+          path: screens/*.png
+
+      - name: Upload sim log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-logs
+          path: "*.log"

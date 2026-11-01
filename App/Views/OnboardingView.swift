@@ -20,7 +20,7 @@ struct OnboardingView: View {
                         Task { notificationsOn = await NotificationManager.shared.requestPermission() }
                     }
                     Text("كلمة السر بتنكتب بصفحة الجامعة نفسها وبتضل على جوالك بس.")
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.plex(.footnote)).foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
                         .padding(.top, 6)
                 }
@@ -32,7 +32,7 @@ struct OnboardingView: View {
                     store.rescheduleEverything()
                 } label: {
                     Text(store.moodleLinked || store.sisLinked ? "يلا نبلش" : "كمّل بدون ربط هلأ")
-                        .font(.headline)
+                        .font(.plex(.headline))
                         .frame(maxWidth: .infinity).padding(.vertical, 16)
                         .background(Brand.green, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .foregroundStyle(.white)
@@ -56,8 +56,8 @@ struct OnboardingView: View {
                 .frame(width: 88, height: 88)
                 .background(.white, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
                 .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
-            Text("جامعة اليرموك").font(.largeTitle.bold()).foregroundStyle(.white)
-            Text("جامعتك كلها بتطبيق واحد").font(.body).foregroundStyle(.white.opacity(0.85))
+            Text("جامعة اليرموك").font(.plex(.largeTitle, .bold)).foregroundStyle(.white)
+            Text("جامعتك كلها بتطبيق واحد").font(.plex(.body)).foregroundStyle(.white.opacity(0.85))
         }
         .frame(maxWidth: .infinity)
         .padding(.top, 90).padding(.bottom, 36)
@@ -69,15 +69,15 @@ struct OnboardingView: View {
             HStack(spacing: 14) {
                 ZStack {
                     Circle().fill(done ? Brand.green : Color(uiColor: .systemGray5)).frame(width: 36, height: 36)
-                    if done { Image(systemName: "checkmark").font(.headline).foregroundStyle(.white) }
-                    else { Text("\(number)").font(.headline).foregroundStyle(.primary) }
+                    if done { Image(systemName: "checkmark").font(.plex(.headline)).foregroundStyle(.white) }
+                    else { Text("\(number)").font(.plex(.headline)).foregroundStyle(.primary) }
                 }
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(title).font(.headline).foregroundStyle(.primary)
-                    Text(subtitle).font(.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.leading)
+                    Text(title).font(.plex(.headline)).foregroundStyle(.primary)
+                    Text(subtitle).font(.plex(.subheadline)).foregroundStyle(.secondary).multilineTextAlignment(.leading)
                 }
                 Spacer()
-                Image(systemName: "chevron.forward").font(.footnote.weight(.semibold)).foregroundStyle(.tertiary)
+                Image(systemName: "chevron.forward").font(.plex(.footnote, .semibold)).foregroundStyle(.tertiary)
             }
             .healthCard()
         }
@@ -99,7 +99,7 @@ struct MoodleLoginSheet: View {
                     if finishing {
                         VStack(spacing: 12) {
                             ProgressView().controlSize(.large)
-                            Text("عم نجيب موادك…").font(.headline)
+                            Text("عم نجيب موادك…").font(.plex(.headline))
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(.regularMaterial)
@@ -145,7 +145,7 @@ struct SISLoginSheet: View {
                     case .failed(let msg):
                         VStack(spacing: 14) {
                             Image(systemName: "wifi.exclamationmark").font(.system(size: 40)).foregroundStyle(.orange)
-                            Text(msg).font(.headline).multilineTextAlignment(.center)
+                            Text(msg).font(.plex(.headline)).multilineTextAlignment(.center)
                             Button("جرّب مرة ثانية") { Haptics.tap(); sync.start() }
                                 .buttonStyle(.borderedProminent).tint(Brand.green)
                         }
@@ -160,9 +160,9 @@ struct SISLoginSheet: View {
                     if sync.phase == .login {
                         VStack(alignment: .leading, spacing: 6) {
                             Toggle("احفظ كلمة السر على جوالي (Keychain)", isOn: $sync.rememberPassword)
-                                .font(.footnote)
+                                .font(.plex(.footnote))
                             Text("مرة وحدة بس. بعدها التطبيق بيستخدم نفس الجلسة لكل الصفحات.")
-                                .font(.caption2).foregroundStyle(.secondary)
+                                .font(.plex(.caption2)).foregroundStyle(.secondary)
                         }
                         .padding(.horizontal, 16).padding(.vertical, 10)
                         .background(.bar)
@@ -191,8 +191,8 @@ struct SISLoginSheet: View {
         VStack(spacing: 14) {
             Image("YULogo").resizable().scaledToFit().frame(width: 64, height: 64)
             ProgressView().controlSize(.regular)
-            Text(title).font(.headline)
-            Text(subtitle).font(.subheadline).foregroundStyle(.secondary).contentTransition(.opacity)
+            Text(title).font(.plex(.headline))
+            Text(subtitle).font(.plex(.subheadline)).foregroundStyle(.secondary).contentTransition(.opacity)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Brand.canvas)

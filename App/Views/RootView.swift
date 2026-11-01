@@ -39,5 +39,6 @@ extension View {
             .navigationDestination(for: ExamsRoute.self) { _ in ExamsView() }
             .navigationDestination(for: PoetryRoute.self) { _ in PoetryView() }
             .navigationDestination(for: AssignmentsRoute.self) { _ in AssignmentsView() }
+            .navigationDestination(for: DemoRoute.self) { DemoScreen(name: $0.name) }
     }
 }

@@ -93,13 +93,13 @@ struct AccountView: View {
         let p = store.profile
         return HStack(spacing: 14) {
             Text(store.avatarLetter)
-                .font(.title.bold()).foregroundStyle(.white)
+                .font(.plex(.title, .bold)).foregroundStyle(.white)
                 .frame(width: 64, height: 64)
                 .background(Brand.green, in: Circle())
             VStack(alignment: .leading, spacing: 3) {
-                Text(p.fullName).font(.title3.bold())
-                Text(p.studentNumber).font(.subheadline.monospacedDigit()).foregroundStyle(.secondary)
-                Text([p.major, p.college].filter { !$0.isEmpty }.joined(separator: " · ")).font(.footnote).foregroundStyle(.secondary)
+                Text(p.fullName).font(.plex(.title3, .bold))
+                Text(p.studentNumber).font(.plex(.subheadline)).monospacedDigit().foregroundStyle(.secondary)
+                Text([p.major, p.college].filter { !$0.isEmpty }.joined(separator: " · ")).font(.plex(.footnote)).foregroundStyle(.secondary)
             }
             Spacer()
         }
@@ -122,8 +122,8 @@ struct AccountView: View {
 
     private func stat(_ title: String, _ value: String, _ tint: Color) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(title).font(.footnote.weight(.semibold)).foregroundStyle(tint)
-            Text(value).font(.title3.bold()).lineLimit(1).minimumScaleFactor(0.6)
+            Text(title).font(.plex(.footnote, .semibold)).foregroundStyle(tint)
+            Text(value).font(.plex(.title3, .bold)).lineLimit(1).minimumScaleFactor(0.6)
         }
         .healthCard(padding: 14)
     }
@@ -141,7 +141,7 @@ struct AccountView: View {
 
     private func status(_ ok: Bool, _ date: Date?) -> some View {
         Text(ok ? (date.map { "محدّث \(ArabicFormat.relative($0))" } ?? "متصل") : "سجّل دخول")
-            .font(.footnote).foregroundStyle(ok ? Color.secondary : Color.orange)
+            .font(.plex(.footnote)).foregroundStyle(ok ? Color.secondary : Color.orange)
     }
 }
 
@@ -154,16 +154,16 @@ struct PlanView: View {
             VStack(alignment: .leading, spacing: 12) {
                 let p = store.profile
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("\(p.passedHours ?? 0) / \(p.planTotalHours) ساعة").font(.largeTitle.bold())
+                    Text("\(p.passedHours ?? 0) / \(p.planTotalHours) ساعة").font(.plex(.largeTitle, .bold))
                     ProgressView(value: Double(p.passedHours ?? 0), total: Double(p.planTotalHours)).tint(Brand.green)
                     HStack {
                         if let ip = p.inProgressHours { Pill(text: "\(ip) ساعة هالفصل", tint: .blue) }
                         if let r = p.remainingHours { Pill(text: "ضايل \(r)", tint: .orange) }
                     }
                     if let g = p.graduationEstimate {
-                        Text("إذا أخذت 15 ساعة بالفصل بتتخرج تقريباً \(g)").font(.footnote).foregroundStyle(.secondary)
+                        Text("إذا أخذت 15 ساعة بالفصل بتتخرج تقريباً \(g)").font(.plex(.footnote)).foregroundStyle(.secondary)
                     }
-                    if let e = p.expectedToGraduate { Text("متوقع تخرجه (SIS): \(e)").font(.footnote).foregroundStyle(.secondary) }
+                    if let e = p.expectedToGraduate { Text("متوقع تخرجه (SIS): \(e)").font(.plex(.footnote)).foregroundStyle(.secondary) }
                 }
                 .healthCard()
 
@@ -177,9 +177,9 @@ struct PlanView: View {
                 ForEach(store.planCategories) { cat in
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
-                            Text(cat.title).font(.body.weight(.semibold))
+                            Text(cat.title).font(.plex(.body, .semibold))
                             Spacer()
-                            if let c = cat.completed, let r = cat.required { Text("\(c)/\(r)").font(.headline.monospacedDigit()) }
+                            if let c = cat.completed, let r = cat.required { Text("\(c)/\(r)").font(.plex(.headline)).monospacedDigit() }
                         }
                         if let c = cat.completed, let r = cat.required, r > 0 {
                             ProgressView(value: Double(min(c, r)), total: Double(r)).tint(c >= r ? .green : Brand.green)

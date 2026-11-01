@@ -72,6 +72,7 @@ final class AppStore: ObservableObject {
             seed()
         }
         loading = false
+        if let reg = sis.registered, !reg.isEmpty { syncTimetable(with: reg) }
     }
 
     /// Timetable + known exam so the app is useful before the first sync.
@@ -164,7 +165,9 @@ final class AppStore: ObservableObject {
         SISDebugStore.save(r)
         sisNeedsLogin = false
         if !r.planCategories.isEmpty { planCategories = r.planCategories }
-        if !r.rooms.isEmpty {
+        if let reg = sis.registered, !reg.isEmpty {
+            syncTimetable(with: reg)
+        } else if !r.rooms.isEmpty {
             var t = timetable
             for i in t.slots.indices where !t.slots[i].isOnline {
                 if let room = r.rooms[t.slots[i].courseCode], !room.isEmpty { t.slots[i].room = room }
@@ -173,6 +176,60 @@ final class AppStore: ObservableObject {
         }
         sisLinked = true
         rescheduleEverything()
+    }
+
+
+    // MARK: - Timetable from SIS («استطلاع المواد المسجلة»)
+
+    static let coursePalette = ["#006B3F", "#E07A1F", "#5B4BC4", "#1D74D8", "#0E8C8C", "#C2410C", "#B4236B", "#4D7C0F"]
+
+    /// "09:30" / "4:30" / "16:30" → (hour, minute) on a 24h clock (university hours 8:00–19:00).
+    static func clock(_ s: String) -> (Int, Int)? {
+        let digits = s.replacingOccurrences(of: ".", with: ":").split(separator: ":").map { Int($0.trimmingCharacters(in: .whitespaces)) }
+        guard digits.count >= 2, var h = digits[0], let m = digits[1] else { return nil }
+        if h < 7 { h += 12 }
+        return (h, m)
+    }
+
+    /// His real registered courses become the timetable: days, times, rooms, instructors.
+    /// Seats and colours he already has are kept; e-learning ids are matched by course code.
+    func syncTimetable(with reg: [RegisteredCourse]) {
+        let old = timetable
+        var courses: [CourseInfo] = []
+        var slots: [LectureSlot] = []
+        for (i, rc) in reg.enumerated() where !rc.cancelled {
+            let code = rc.compactCode
+            let prev = old.course(code)
+            var moodle: Int? = prev?.moodleId
+            if moodle == nil {
+                for mc in moodleCourses {
+                    let s = (mc.shortName + " " + mc.fullName).replacingOccurrences(of: " ", with: "")
+                    if s.localizedCaseInsensitiveContains(code) { moodle = mc.id; break }
+                }
+            }
+            if !courses.contains(where: { $0.code == code }) {
+                courses.append(CourseInfo(code: code, name: rc.name.isEmpty ? (prev?.name ?? code) : rc.name,
+                                          instructor: rc.instructor.isEmpty ? (prev?.instructor ?? "") : rc.instructor,
+                                          moodleId: moodle, creditHours: rc.hours ?? prev?.creditHours ?? 3,
+                                          colorHex: prev?.colorHex ?? Self.coursePalette[i % Self.coursePalette.count]))
+            }
+            guard let start = Self.clock(rc.from) else { continue }
+            let h = start.0, m = start.1
+            var duration = 60
+            if let end = Self.clock(rc.to) { duration = max((end.0 * 60 + end.1) - (h * 60 + m), 30) }
+            let online = rc.mode.contains("إلكتروني") || rc.mode.contains("الكتروني") || rc.mode.contains("عن بعد")
+            let room = online && rc.room.isEmpty ? "Teams" : rc.room
+            for d in rc.days {
+                let weekday = d == 0 ? 7 : d          // SIS: 0 = Saturday … 6 = Friday
+                let seat = old.slots.first { $0.courseCode == code && $0.weekday == weekday }?.seat
+                    ?? old.slots.first { $0.courseCode == code }?.seat
+                slots.append(LectureSlot(courseCode: code, weekday: weekday, startHour: h, startMinute: m,
+                                         durationMinutes: duration, room: room, seat: seat))
+            }
+        }
+        guard !courses.isEmpty else { return }
+        let t = Timetable(courses: courses, slots: slots)
+        if t != timetable { timetable = t }
     }
 
     /// Refresh SIS in the background with the saved session (no login screen).
@@ -227,7 +284,10 @@ final class AppStore: ObservableObject {
             async let d = client.deadlines(known: deadlines)
             async let n = client.notices()
             let (courses, dl, nt) = try await (c, d, n)
-            if !courses.isEmpty { moodleCourses = courses }
+            if !courses.isEmpty {
+                moodleCourses = courses
+                if let reg = sis.registered, !reg.isEmpty { syncTimetable(with: reg) }
+            }
             deadlines = dl
             notices = nt
             if let prof = try? await client.profile() {
@@ -255,8 +315,29 @@ final class AppStore: ObservableObject {
         }
     }
 
-    func loadSections(courseId: Int) async {
-        if let s = try? await MoodleClient.shared.sections(courseId: courseId) { sections[courseId] = s }
+    enum LoadResult { case ok, needsLogin, failed }
+    @Published var fileKinds: [String: MoodleFileKind] = [:]
+
+    /// Course content (sections, files, links). Renews the session silently once if it expired.
+    @discardableResult
+    func loadSections(courseId: Int) async -> LoadResult {
+        let client = MoodleClient.shared
+        do {
+            let s = try await client.sections(courseId: courseId)
+            sections[courseId] = s
+            moodleNeedsLogin = false
+        } catch MoodleError.needsLogin {
+            guard await client.silentReauth(), let s = try? await client.sections(courseId: courseId) else {
+                moodleNeedsLogin = true
+                return .needsLogin
+            }
+            sections[courseId] = s
+        } catch {
+            return .failed
+        }
+        let kinds = await client.fileKinds(courseId: courseId)
+        if !kinds.isEmpty { fileKinds.merge(kinds) { _, n in n } }
+        return .ok
     }
 
     func rescheduleEverything() {

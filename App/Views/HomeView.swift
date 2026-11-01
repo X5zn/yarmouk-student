@@ -40,13 +40,13 @@ struct HomeView: View {
             HStack(spacing: 12) {
                 Button { Haptics.tap(); router.tab = .account } label: {
                     Text(store.avatarLetter)
-                        .font(.headline).foregroundStyle(Brand.green)
+                        .font(.plex(.headline)).foregroundStyle(Brand.green)
                         .frame(width: 40, height: 40)
                         .background(.white, in: Circle())
                 }
                 VStack(alignment: .leading, spacing: 1) {
-                    Text(store.greeting).font(.headline).foregroundStyle(.white)
-                    Text(store.profile.major).font(.footnote).foregroundStyle(.white.opacity(0.8))
+                    Text(store.greeting).font(.plex(.headline)).foregroundStyle(.white)
+                    Text(store.profile.major).font(.plex(.footnote)).foregroundStyle(.white.opacity(0.8))
                 }
                 Spacer()
                 Image("YULogo")
@@ -74,7 +74,7 @@ struct HomeView: View {
                     .foregroundStyle(.white)
                     .contentTransition(.numericText())
                 Text(store.todaysSlots.isEmpty ? "ما في محاضرات اليوم" : "محاضرات اليوم")
-                    .font(.subheadline).foregroundStyle(.white.opacity(0.85))
+                    .font(.plex(.subheadline)).foregroundStyle(.white.opacity(0.85))
             }
             .padding(.bottom, 74)
         }
@@ -95,15 +95,15 @@ struct HomeView: View {
                             RoundedRectangle(cornerRadius: 3).fill(course.color).frame(width: 5, height: 46)
                             VStack(alignment: .leading, spacing: 3) {
                                 Text(next.interval.start <= context.date ? "المحاضرة الحالية" : "المحاضرة الجاية")
-                                    .font(.caption).foregroundStyle(.secondary)
-                                Text(course.name).font(.headline).foregroundStyle(.primary)
-                                Text(detail(next.slot)).font(.subheadline).foregroundStyle(.secondary)
+                                    .font(.plex(.caption)).foregroundStyle(.secondary)
+                                Text(course.name).font(.plex(.headline)).foregroundStyle(.primary)
+                                Text(detail(next.slot)).font(.plex(.subheadline)).foregroundStyle(.secondary)
                             }
                             Spacer()
                             VStack(alignment: .trailing, spacing: 2) {
-                                Text(next.slot.startLabel).font(.title3.bold()).foregroundStyle(.primary)
+                                Text(next.slot.startLabel).font(.plex(.title3, .bold)).foregroundStyle(.primary)
                                 Text(countdown(to: next.interval.start, now: context.date))
-                                    .font(.caption.weight(.semibold)).foregroundStyle(Brand.green)
+                                    .font(.plex(.caption, .semibold)).foregroundStyle(Brand.green)
                             }
                         }
                     }
@@ -150,7 +150,7 @@ struct HomeView: View {
         Button { Haptics.tap(); Task { await store.refreshMoodle() } } label: {
             HStack {
                 Image(systemName: "arrow.triangle.2.circlepath")
-                Text("جلسة الايليرنينغ خلصت، اضغط لنجددها").font(.subheadline.weight(.semibold))
+                Text("جلسة الايليرنينغ خلصت، اضغط لنجددها").font(.plex(.subheadline, .semibold))
                 Spacer()
             }
             .foregroundStyle(.orange)
@@ -168,15 +168,15 @@ struct HomeView: View {
             if let d = store.pendingDeadlines.first {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text("\(store.pendingDeadlines.count)").font(.system(size: 30, weight: .bold, design: .rounded))
-                    Text("مطلوب").font(.subheadline).foregroundStyle(.secondary)
+                    Text("مطلوب").font(.plex(.subheadline)).foregroundStyle(.secondary)
                 }
                 .foregroundStyle(.primary)
                 Text("\(d.name) · \(store.course(moodleId: d.courseId)?.name ?? "") · \(ArabicFormat.relative(d.due))")
-                    .font(.subheadline).foregroundStyle(.secondary).lineLimit(1)
+                    .font(.plex(.subheadline)).foregroundStyle(.secondary).lineLimit(1)
             } else {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text("\(store.submittedCount)").font(.system(size: 30, weight: .bold, design: .rounded))
-                    Text("مسلّم · ما عليك إشي هلأ").font(.subheadline).foregroundStyle(.secondary)
+                    Text("مسلّم · ما عليك إشي هلأ").font(.plex(.subheadline)).foregroundStyle(.secondary)
                 }
                 .foregroundStyle(.primary)
             }
@@ -190,11 +190,11 @@ struct HomeView: View {
             if let e = store.upcomingExams.first {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text("\(max(ArabicFormat.daysLeft(to: e.date), 0))").font(.system(size: 30, weight: .bold, design: .rounded))
-                    Text("يوم").font(.subheadline).foregroundStyle(.secondary)
+                    Text("يوم").font(.plex(.subheadline)).foregroundStyle(.secondary)
                 }
                 .foregroundStyle(.primary)
                 Text("\(store.course(e.courseCode)?.name ?? e.courseCode) · \(e.title) \(ArabicFormat.shortDate(e.date))")
-                    .font(.subheadline).foregroundStyle(.secondary).lineLimit(1)
+                    .font(.plex(.subheadline)).foregroundStyle(.secondary).lineLimit(1)
             } else {
                 EmptyHint(symbol: "checkmark.seal", text: "ما في امتحانات مسجلة — ضيفها من هون")
             }
@@ -209,7 +209,7 @@ struct HomeView: View {
             if let w = worst, w.used > 0 {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text("\(w.used)/\(w.limit)").font(.system(size: 30, weight: .bold, design: .rounded))
-                    Text(w.name).font(.subheadline).foregroundStyle(.secondary)
+                    Text(w.name).font(.plex(.subheadline)).foregroundStyle(.secondary)
                 }
                 ProgressView(value: Double(min(w.used, w.limit)), total: Double(w.limit))
                     .tint(w.used >= w.limit - 1 ? Color.red : Color.orange)
@@ -250,14 +250,14 @@ struct HomeView: View {
                             .frame(width: 32, height: 32)
                             .background(course.color, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(course.name).font(.body).foregroundStyle(.primary)
+                            Text(course.name).font(.plex(.body)).foregroundStyle(.primary)
                             Text(course.code + (course.instructor.isEmpty ? "" : " · \(course.instructor)"))
-                                .font(.footnote).foregroundStyle(.secondary)
+                                .font(.plex(.footnote)).foregroundStyle(.secondary)
                         }
                         Spacer()
                         let pending = store.pendingDeadlines.filter { $0.courseId == course.moodleId }.count
                         if pending > 0 { Pill(text: "\(pending) واجب", tint: .orange) }
-                        Image(systemName: "chevron.forward").font(.footnote.weight(.semibold)).foregroundStyle(.tertiary)
+                        Image(systemName: "chevron.forward").font(.plex(.footnote, .semibold)).foregroundStyle(.tertiary)
                     }
                     .padding(.horizontal, 16).padding(.vertical, 12)
                     .contentShape(Rectangle())
@@ -281,7 +281,7 @@ struct HomeView: View {
             .foregroundStyle(.primary)
             .frame(maxWidth: .infinity)
             .multilineTextAlignment(.center)
-            Text("شو بحره؟ اضغط وجرّب").font(.footnote).foregroundStyle(.secondary)
+            Text("شو بحره؟ اضغط وجرّب").font(.plex(.footnote)).foregroundStyle(.secondary)
         }
         .healthCard()
     }

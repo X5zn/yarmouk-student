@@ -33,10 +33,10 @@ struct SISRefreshable: ViewModifier {
                 if store.sisNeedsLogin && store.sisLinked {
                     Button { Haptics.tap(); showLogin = true } label: {
                         HStack(spacing: 10) {
-                            Image(systemName: "clock.arrow.circlepath").font(.subheadline.weight(.semibold))
-                            Text("جلسة SIS خلصت، المعروض من آخر تحديث").font(.footnote.weight(.medium))
+                            Image(systemName: "clock.arrow.circlepath").font(.plex(.subheadline, .semibold))
+                            Text("جلسة SIS خلصت، المعروض من آخر تحديث").font(.plex(.footnote, .medium))
                             Spacer(minLength: 6)
-                            Text("تحديث").font(.footnote.weight(.semibold))
+                            Text("تحديث").font(.plex(.footnote, .semibold))
                         }
                         .foregroundStyle(.orange)
                         .padding(.horizontal, 14).padding(.vertical, 10)
@@ -86,15 +86,15 @@ struct SISEmptyState: View {
                 .foregroundStyle(Brand.green)
                 .frame(width: 66, height: 66)
                 .background(Brand.green.opacity(0.12), in: Circle())
-            Text(title).font(.headline)
-            Text(message).font(.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+            Text(title).font(.plex(.headline))
+            Text(message).font(.plex(.subheadline)).foregroundStyle(.secondary).multilineTextAlignment(.center)
             Button {
                 Haptics.tap()
                 if store.sisLinked && SISSync.savedSession != nil { Task { if !(await store.refreshSIS()) { showLogin = true } } }
                 else { showLogin = true }
             } label: {
                 Text(store.sisLinked ? "حدّث هلأ" : "سجّل دخول SIS")
-                    .font(.headline).frame(maxWidth: .infinity).padding(.vertical, 12)
+                    .font(.plex(.headline)).frame(maxWidth: .infinity).padding(.vertical, 12)
             }
             .buttonStyle(.borderedProminent).tint(Brand.green)
             .padding(.top, 4)
@@ -111,7 +111,7 @@ struct SISFooter: View {
     var body: some View {
         if let date {
             Text("آخر تحديث من SIS \(ArabicFormat.relative(date))")
-                .font(.caption).foregroundStyle(.secondary)
+                .font(.plex(.caption)).foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity)
                 .padding(.top, 4)
         }
@@ -165,11 +165,11 @@ private struct RecordHero: View {
         let honors = record.terms.filter(\.honorList).count
         VStack(alignment: .leading, spacing: 16) {
             HStack {
-                Text("المعدل التراكمي").font(.subheadline.weight(.semibold)).foregroundStyle(.white.opacity(0.85))
+                Text("المعدل التراكمي").font(.plex(.subheadline, .semibold)).foregroundStyle(.white.opacity(0.85))
                 Spacer()
                 if honors > 0 {
                     Label(honors == 1 ? "لوحة الشرف" : "لوحة الشرف ×\(honors)", systemImage: "star.fill")
-                        .font(.caption.weight(.bold))
+                        .font(.plex(.caption, .bold))
                         .foregroundStyle(Brand.gold)
                         .padding(.horizontal, 10).padding(.vertical, 5)
                         .background(.white.opacity(0.95), in: Capsule())
@@ -198,8 +198,8 @@ private struct RecordHero: View {
 
     private func heroStat(_ title: String, _ value: String) -> some View {
         VStack(spacing: 3) {
-            Text(verbatim: value).font(.title3.bold().monospacedDigit()).foregroundStyle(.white)
-            Text(title).font(.caption).foregroundStyle(.white.opacity(0.8)).lineLimit(1).minimumScaleFactor(0.8)
+            Text(verbatim: value).font(.plex(.title3, .bold)).monospacedDigit().foregroundStyle(.white)
+            Text(title).font(.plex(.caption)).foregroundStyle(.white.opacity(0.8)).lineLimit(1).minimumScaleFactor(0.8)
         }
         .frame(maxWidth: .infinity)
     }
@@ -215,7 +215,7 @@ private struct GPATrendCard: View {
                 Image(systemName: "chart.xyaxis.line")
                 Text("معدلك عبر الفصول")
             }
-            .font(.subheadline.weight(.semibold)).foregroundStyle(Brand.green)
+            .font(.plex(.subheadline, .semibold)).foregroundStyle(Brand.green)
             Chart {
                 ForEach(terms) { t in
                     if let g = t.termGPA {
@@ -252,13 +252,13 @@ private struct TermCard: View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(term.semesterName).font(.headline)
-                    Text(verbatim: "\(term.academicYear) · \(term.term)").font(.footnote).foregroundStyle(.secondary)
+                    Text(term.semesterName).font(.plex(.headline))
+                    Text(verbatim: "\(term.academicYear) · \(term.term)").font(.plex(.footnote)).foregroundStyle(.secondary)
                 }
                 Spacer()
                 if term.honorList {
                     Label("لوحة الشرف", systemImage: "star.fill")
-                        .font(.caption.weight(.bold))
+                        .font(.plex(.caption, .bold))
                         .foregroundStyle(Brand.gold)
                         .padding(.horizontal, 9).padding(.vertical, 5)
                         .background(Brand.gold.opacity(0.14), in: Capsule())
@@ -268,14 +268,14 @@ private struct TermCard: View {
                 Text(verbatim: gpaText(term.termGPA))
                     .font(.system(size: 36, weight: .bold, design: .rounded))
                     .foregroundStyle(Brand.green)
-                Text("المعدل الفصلي").font(.footnote).foregroundStyle(.secondary)
+                Text("المعدل الفصلي").font(.plex(.footnote)).foregroundStyle(.secondary)
                 Spacer()
                 if let d = delta {
                     HStack(spacing: 3) {
                         Image(systemName: d >= 0 ? "arrow.up.right" : "arrow.down.right")
                         Text(verbatim: String(format: "%+.1f", d))
                     }
-                    .font(.caption.weight(.bold))
+                    .font(.plex(.caption, .bold))
                     .foregroundStyle(d >= 0 ? Color.green : Color.red)
                     .padding(.horizontal, 8).padding(.vertical, 4)
                     .background((d >= 0 ? Color.green : Color.red).opacity(0.12), in: Capsule())
@@ -301,8 +301,8 @@ private struct TermCard: View {
 
     private func metric(_ title: String, _ value: String) -> some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text(title).font(.caption).foregroundStyle(.secondary)
-            Text(verbatim: value).font(.body.weight(.semibold).monospacedDigit())
+            Text(title).font(.plex(.caption)).foregroundStyle(.secondary)
+            Text(verbatim: value).font(.plex(.body, .semibold)).monospacedDigit()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -317,12 +317,12 @@ private struct PlaceholderTermRow: View {
                 .frame(width: 34, height: 34)
                 .background(Color(uiColor: .tertiarySystemFill), in: RoundedRectangle(cornerRadius: 9, style: .continuous))
             VStack(alignment: .leading, spacing: 2) {
-                Text("مواد استدراكية").font(.subheadline.weight(.semibold))
+                Text("مواد استدراكية").font(.plex(.subheadline, .semibold))
                 Text(verbatim: "\(term.term)" + (term.studiedHoursTotal.map { " · \($0) ساعات" } ?? ""))
-                    .font(.caption).foregroundStyle(.secondary)
+                    .font(.plex(.caption)).foregroundStyle(.secondary)
             }
             Spacer()
-            Text("ما بتدخل بالمعدل").font(.caption).foregroundStyle(.secondary)
+            Text("ما بتدخل بالمعدل").font(.plex(.caption)).foregroundStyle(.secondary)
         }
         .healthCard(padding: 14)
     }
@@ -345,16 +345,16 @@ struct StudentInfoView: View {
                                 .foregroundStyle(.white)
                                 .frame(width: 84, height: 84)
                                 .background(LinearGradient(colors: [Brand.green, Brand.greenDark], startPoint: .top, endPoint: .bottom), in: Circle())
-                            Text(info.name).font(.title3.bold()).multilineTextAlignment(.center)
+                            Text(info.name).font(.plex(.title3, .bold)).multilineTextAlignment(.center)
                             if !store.profile.studentNumber.isEmpty {
-                                Text(verbatim: store.profile.studentNumber).font(.subheadline.monospacedDigit()).foregroundStyle(.secondary)
+                                Text(verbatim: store.profile.studentNumber).font(.plex(.subheadline)).monospacedDigit().foregroundStyle(.secondary)
                             }
                             HStack(spacing: 6) {
                                 if !info.degree.isEmpty { Pill(text: info.degree, tint: Brand.green) }
                                 if let s = info.value("الحالة الاكاديمية") ?? info.value("الحالة الأكاديمية") { Pill(text: s, tint: .blue) }
                             }
                             if !info.department.isEmpty {
-                                Text(info.department).font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                                Text(info.department).font(.plex(.footnote)).foregroundStyle(.secondary).multilineTextAlignment(.center)
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -407,7 +407,7 @@ struct StudentInfoView: View {
                     .environment(\.layoutDirection, row.value.range(of: "[A-Za-z]", options: .regularExpression) != nil ? .leftToRight : .rightToLeft)
             }
         }
-        .font(.body)
+        .font(.plex(.body))
         .contentShape(Rectangle())
         .onTapGesture { if isID { Haptics.select(); withAnimation { revealID.toggle() } } }
         .contextMenu {
@@ -453,14 +453,14 @@ struct RegisteredCoursesView: View {
         return VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .firstTextBaseline) {
                 Text(verbatim: "\(hours)").font(.system(size: 40, weight: .bold, design: .rounded)).foregroundStyle(Brand.green)
-                Text("ساعة معتمدة").font(.subheadline).foregroundStyle(.secondary)
+                Text("ساعة معتمدة").font(.plex(.subheadline)).foregroundStyle(.secondary)
                 Spacer()
-                Text(verbatim: "\(courses.count) مواد").font(.subheadline.weight(.semibold)).foregroundStyle(.secondary)
+                Text(verbatim: "\(courses.count) مواد").font(.plex(.subheadline, .semibold)).foregroundStyle(.secondary)
             }
             HStack(spacing: 6) {
                 ForEach(0..<6, id: \.self) { d in
                     Text(RegisteredCourse.shortDayNames[d])
-                        .font(.caption.weight(.semibold))
+                        .font(.plex(.caption, .semibold))
                         .frame(maxWidth: .infinity).padding(.vertical, 7)
                         .foregroundStyle(used.contains(d) ? AnyShapeStyle(Color.white) : AnyShapeStyle(.secondary))
                         .background(used.contains(d) ? Brand.green : Color(uiColor: .tertiarySystemFill),
@@ -488,39 +488,39 @@ private struct RegisteredCourseCard: View {
                         .background(tint.opacity(0.12), in: Capsule())
                         .environment(\.layoutDirection, .leftToRight)
                     if !course.section.isEmpty {
-                        Text(verbatim: "شعبة \(course.section)").font(.caption).foregroundStyle(.secondary)
+                        Text(verbatim: "شعبة \(course.section)").font(.plex(.caption)).foregroundStyle(.secondary)
                     }
                     Spacer()
                     if let h = course.hours {
-                        Text(verbatim: h == 0 ? "بدون ساعات" : "\(h) س").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+                        Text(verbatim: h == 0 ? "بدون ساعات" : "\(h) س").font(.plex(.caption, .semibold)).foregroundStyle(.secondary)
                     }
                 }
-                Text(course.name).font(.headline)
+                Text(course.name).font(.plex(.headline))
                 HStack(spacing: 14) {
                     Label { Text(verbatim: "\(course.from) – \(course.to)").monospacedDigit() } icon: { Image(systemName: "clock") }
                     if !course.room.isEmpty {
                         Label { Text(verbatim: displayRoom) } icon: { Image(systemName: course.mode.contains("إلكتروني") ? "video" : "mappin.and.ellipse") }
                     }
                 }
-                .font(.subheadline).foregroundStyle(.secondary)
+                .font(.plex(.subheadline)).foregroundStyle(.secondary)
                 HStack(spacing: 5) {
                     ForEach(course.days, id: \.self) { d in
                         Text(RegisteredCourse.shortDayNames[d])
-                            .font(.caption2.weight(.semibold))
+                            .font(.plex(.caption2, .semibold))
                             .padding(.horizontal, 8).padding(.vertical, 4)
                             .foregroundStyle(tint)
                             .background(tint.opacity(0.12), in: Capsule())
                     }
                     Spacer()
                     if !course.mode.isEmpty {
-                        Label(course.mode, systemImage: modeSymbol).font(.caption).foregroundStyle(.secondary)
+                        Label(course.mode, systemImage: modeSymbol).font(.plex(.caption)).foregroundStyle(.secondary)
                     }
                 }
                 if !course.instructor.isEmpty && course.instructor != "غير محدد" {
-                    Label(course.instructor, systemImage: "person").font(.footnote).foregroundStyle(.secondary)
+                    Label(course.instructor, systemImage: "person").font(.plex(.footnote)).foregroundStyle(.secondary)
                 }
                 if course.cancelled {
-                    Label("الشعبة ملغاة", systemImage: "exclamationmark.triangle.fill").font(.footnote.weight(.semibold)).foregroundStyle(.red)
+                    Label("الشعبة ملغاة", systemImage: "exclamationmark.triangle.fill").font(.plex(.footnote, .semibold)).foregroundStyle(.red)
                 }
             }
         }
@@ -545,7 +545,7 @@ struct MarksView: View {
             VStack(alignment: .leading, spacing: 14) {
                 if let marks = store.sis.marks, !marks.courses.isEmpty {
                     if !marks.term.isEmpty {
-                        Text(marks.term).font(.subheadline.weight(.semibold)).foregroundStyle(.secondary).padding(.horizontal, 4)
+                        Text(marks.term).font(.plex(.subheadline, .semibold)).foregroundStyle(.secondary).padding(.horizontal, 4)
                     }
                     ForEach(marks.courses) { c in MarkCard(course: c, tint: store.course(c.code.replacingOccurrences(of: " ", with: ""))?.color ?? Brand.green) }
                 } else if store.sis.marks != nil {
@@ -553,9 +553,9 @@ struct MarksView: View {
                         Image(systemName: "hourglass")
                             .font(.system(size: 28, weight: .semibold)).foregroundStyle(.orange)
                             .frame(width: 62, height: 62).background(.orange.opacity(0.12), in: Circle())
-                        Text("لسا ما نزلت علامات هالفصل").font(.headline)
+                        Text("لسا ما نزلت علامات هالفصل").font(.plex(.headline))
                         Text(store.sis.marks?.emptyMessage.isEmpty == false ? store.sis.marks!.emptyMessage : "أول ما الدكاترة ينزلوا العلامات على SIS بتطلع هون مرتبة.")
-                            .font(.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                            .font(.plex(.subheadline)).foregroundStyle(.secondary).multilineTextAlignment(.center)
                     }
                     .padding(24).frame(maxWidth: .infinity)
                     .background(Brand.card, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
@@ -570,11 +570,11 @@ struct MarksView: View {
                             Image(systemName: "list.bullet.rectangle.portrait").foregroundStyle(.white)
                                 .frame(width: 34, height: 34).background(.blue, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("معدلاتك بالفصول السابقة").font(.subheadline.weight(.semibold)).foregroundStyle(.primary)
-                                Text(verbatim: "التراكمي \(gpaText(r.summary.cumulativeGPA))").font(.caption).foregroundStyle(.secondary)
+                                Text("معدلاتك بالفصول السابقة").font(.plex(.subheadline, .semibold)).foregroundStyle(.primary)
+                                Text(verbatim: "التراكمي \(gpaText(r.summary.cumulativeGPA))").font(.plex(.caption)).foregroundStyle(.secondary)
                             }
                             Spacer()
-                            Image(systemName: "chevron.forward").font(.footnote.weight(.semibold)).foregroundStyle(.tertiary)
+                            Image(systemName: "chevron.forward").font(.plex(.footnote, .semibold)).foregroundStyle(.tertiary)
                         }
                         .healthCard(padding: 14)
                     }
@@ -602,13 +602,13 @@ private struct MarkCard: View {
                         Text(verbatim: course.code).font(.caption.weight(.bold).monospaced()).foregroundStyle(tint)
                             .environment(\.layoutDirection, .leftToRight)
                     }
-                    Text(course.name.isEmpty ? course.code : course.name).font(.headline)
+                    Text(course.name.isEmpty ? course.code : course.name).font(.plex(.headline))
                 }
                 Spacer()
                 if let m = course.main {
                     VStack(alignment: .trailing, spacing: 0) {
                         Text(verbatim: m.value).font(.system(size: 30, weight: .bold, design: .rounded)).foregroundStyle(tint)
-                        Text(m.label).font(.caption2).foregroundStyle(.secondary)
+                        Text(m.label).font(.plex(.caption2)).foregroundStyle(.secondary)
                     }
                 }
             }
@@ -618,8 +618,8 @@ private struct MarkCard: View {
                 LazyVGrid(columns: [GridItem(.flexible(), alignment: .leading), GridItem(.flexible(), alignment: .leading)], spacing: 10) {
                     ForEach(rest, id: \.self) { c in
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(c.label).font(.caption).foregroundStyle(.secondary).lineLimit(2)
-                            Text(verbatim: c.value).font(.subheadline.weight(.semibold))
+                            Text(c.label).font(.plex(.caption)).foregroundStyle(.secondary).lineLimit(2)
+                            Text(verbatim: c.value).font(.plex(.subheadline, .semibold))
                         }
                     }
                 }
@@ -649,7 +649,7 @@ struct SISGenericPageView: View {
                                     Spacer(minLength: 12)
                                     Text(verbatim: pair[1]).fontWeight(.semibold).multilineTextAlignment(.trailing)
                                 }
-                                .font(.subheadline)
+                                .font(.plex(.subheadline))
                                 .padding(.horizontal, 16).padding(.vertical, 12)
                                 if idx < pairs.count - 1 { Divider().padding(.leading, 16) }
                             }
@@ -667,10 +667,10 @@ struct SISGenericPageView: View {
                         Image(systemName: "doc.text.magnifyingglass")
                             .font(.system(size: 28, weight: .semibold)).foregroundStyle(Brand.green)
                             .frame(width: 62, height: 62).background(Brand.green.opacity(0.12), in: Circle())
-                        Text("هاي الصفحة لسا بنرتبها").font(.headline)
-                        Text("بتقدر تفتحها من الجامعة جوا التطبيق هلأ.").font(.subheadline).foregroundStyle(.secondary)
+                        Text("هاي الصفحة لسا بنرتبها").font(.plex(.headline))
+                        Text("بتقدر تفتحها من الجامعة جوا التطبيق هلأ.").font(.plex(.subheadline)).foregroundStyle(.secondary)
                         Button { Haptics.tap(); router.open("https://sis.yu.edu.jo/ords/", title: title) } label: {
-                            Text("افتح صفحة الجامعة").font(.headline).frame(maxWidth: .infinity).padding(.vertical, 10)
+                            Text("افتح صفحة الجامعة").font(.plex(.headline)).frame(maxWidth: .infinity).padding(.vertical, 10)
                         }
                         .buttonStyle(.bordered).tint(Brand.green)
                     }
@@ -695,14 +695,14 @@ struct SISGenericPageView: View {
     private func tableRowCard(headers: [String], row: [String]) -> some View {
         let cells = Array(zip(headers.indices, row)).filter { !$0.1.isEmpty }
         return VStack(alignment: .leading, spacing: 6) {
-            if let first = cells.first { Text(verbatim: first.1).font(.body.weight(.semibold)) }
+            if let first = cells.first { Text(verbatim: first.1).font(.plex(.body, .semibold)) }
             ForEach(cells.dropFirst(), id: \.0) { idx, value in
                 HStack(alignment: .top) {
                     Text(idx < headers.count ? headers[idx] : "").foregroundStyle(.secondary)
                     Spacer(minLength: 10)
                     Text(verbatim: value).multilineTextAlignment(.trailing)
                 }
-                .font(.subheadline)
+                .font(.plex(.subheadline))
             }
         }
         .healthCard(padding: 14)
@@ -729,7 +729,7 @@ struct DeveloperExportView: View {
                                 .background(.indigo, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(f.title).foregroundStyle(.primary)
-                                Text(ArabicFormat.relative(f.date)).font(.caption).foregroundStyle(.secondary)
+                                Text(ArabicFormat.relative(f.date)).font(.plex(.caption)).foregroundStyle(.secondary)
                             }
                             Spacer()
                             Image(systemName: "square.and.arrow.up").foregroundStyle(Brand.green)
