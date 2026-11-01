@@ -1,0 +1,77 @@
+name: Build IPA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select newest Xcode
+        run: |
+          ls -d /Applications/Xcode*.app
+          XC=$(ls -d /Applications/Xcode_*.app | grep -v -i beta | sort -V | tail -1)
+          echo "Using $XC"
+          sudo xcode-select -s "$XC/Contents/Developer"
+          xcodebuild -version
+          xcodebuild -showsdks | grep -i ios
+
+      - name: Generate Xcode project
+        run: |
+          brew install xcodegen
+          xcodegen generate
+
+      - name: Build (with AlarmKit)
+        id: build_alarm
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          xcodebuild -project YarmoukStudent.xcodeproj -scheme YarmoukStudent -configuration Release \
+            -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            'SWIFT_ACTIVE_COMPILATION_CONDITIONS=$(inherited) ALARMKIT' \
+            build 2>&1 | tee build_alarm.log | grep -E "error:|warning: .*deprecated|BUILD (SUCCEEDED|FAILED)" | head -200
+
+      - name: Build (without AlarmKit fallback)
+        if: steps.build_alarm.outcome == 'failure'
+        run: |
+          set -o pipefail
+          rm -rf build
+          xcodebuild -project YarmoukStudent.xcodeproj -scheme YarmoukStudent -configuration Release \
+            -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            build 2>&1 | tee build_plain.log | grep -E "error:|BUILD (SUCCEEDED|FAILED)" | head -200
+
+      - name: Package unsigned IPA (entitlements embedded for Sideloadly)
+        run: |
+          APP=$(find build/Build/Products -maxdepth 2 -name "YarmoukStudent.app" -type d | head -1)
+          echo "App: $APP"
+          for ext in "$APP"/PlugIns/*.appex; do
+            codesign --force --sign - --entitlements Widgets/YarmoukWidgets.entitlements "$ext"
+          done
+          codesign --force --sign - --entitlements App/YarmoukStudent.entitlements "$APP"
+          mkdir -p out/Payload
+          cp -R "$APP" out/Payload/
+          (cd out && zip -qry YarmoukStudent.ipa Payload)
+          ls -la out
+          echo "alarmkit=${{ steps.build_alarm.outcome }}" > out/build_info.txt
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: YarmoukStudent-ipa
+          path: |
+            out/YarmoukStudent.ipa
+            out/build_info.txt
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: "*.log"
