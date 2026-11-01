@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key><string>ar</string>
+	<key>CFBundleLocalizations</key><array><string>ar</string></array>
+	<key>CFBundleDisplayName</key><string>طالب اليرموك</string>
+	<key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+	<key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key><string>APPL</string>
+	<key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key><true/>
+	<key>UILaunchScreen</key><dict><key>UIColorName</key><string>LaunchGreen</string></dict>
+	<key>UIApplicationSceneManifest</key><dict><key>UIApplicationSupportsMultipleScenes</key><false/></dict>
+	<key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>
+	<key>UIStatusBarStyle</key><string>UIStatusBarStyleDefault</string>
+	<key>NSSupportsLiveActivities</key><true/>
+	<key>NSSupportsLiveActivitiesFrequentUpdates</key><false/>
+	<key>UIBackgroundModes</key><array><string>fetch</string><string>processing</string><string>location</string></array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key><array><string>com.baihas.yarmoukstudent.refresh</string></array>
+	<key>NSLocationWhenInUseUsageDescription</key><string>عشان نعرف إذا وصلت الجامعة ونفرجيك محاضرتك الجاية وقاعتها.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key><string>عشان نذكرك «يلا اطلع» إذا لسا بالبيت قبل المحاضرة، ونرحب فيك لما توصل الجامعة. الموقع ما بيطلع من جوالك.</string>
+	<key>NSMicrophoneUsageDescription</key><string>لتسجيل ملاحظة صوتية بعد المحاضرة («شو اخدتوا؟»).</string>
+	<key>NSCameraUsageDescription</key><string>لتصوير اللوح أو الدفتر وحفظه بملف المادة.</string>
+	<key>NSPhotoLibraryUsageDescription</key><string>لإضافة صور من الألبوم لملف المادة.</string>
+	<key>NSAlarmKitUsageDescription</key><string>منبه حقيقي قبل كل محاضرة، بيرن حتى لو الجوال صامت.</string>
+	<key>NSUserActivityTypes</key><array><string>NextLectureIntent</string><string>TomorrowScheduleIntent</string></array>
+	<key>NSAppTransportSecurity</key><dict><key>NSAllowsArbitraryLoadsInWebContent</key><true/></dict>
+</dict>
+</plist>
