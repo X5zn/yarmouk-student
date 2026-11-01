@@ -70,7 +70,9 @@ struct SummaryView: View {
     }
 
     private var attendanceCard: some View {
-        let rows = store.timetable.courses.filter { c in store.timetable.slots.contains { $0.courseCode == c.code } }
+        let rows: [CourseInfo] = store.timetable.courses.filter { c in store.timetable.slots.contains { $0.courseCode == c.code } }
+        let limits: [Int] = rows.map { store.absenceLimit(for: $0.code) }
+        let maxLimit: Int = max(limits.max() ?? 7, 1)
         return VStack(alignment: .leading, spacing: 12) {
             CardHeader(symbol: "person.badge.clock.fill", title: "الحضور", tint: .red)
             Chart(rows) { c in
@@ -80,7 +82,7 @@ struct SummaryView: View {
                         Text("\(store.absences(for: c.code))/\(store.absenceLimit(for: c.code))").font(.caption2).foregroundStyle(.secondary)
                     }
             }
-            .chartXScale(domain: 0...max(rows.map { store.absenceLimit(for: $0.code) }.max() ?? 7, 1))
+            .chartXScale(domain: 0...maxLimit)
             .chartXAxis(.hidden)
             .frame(height: CGFloat(rows.count) * 34)
             Text("الحد المسموح محسوب على \(Int(store.settings.absenceLimitPercent))٪ من المحاضرات (بتقدر تغيّره من الإعدادات)")
@@ -101,7 +103,7 @@ struct SummaryView: View {
                     Circle().trim(from: 0, to: total > 0 ? done / total : 0)
                         .stroke(Brand.green, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                         .rotationEffect(.degrees(-90))
-                    Text("\(p.planPercent ?? Int(total > 0 ? done / total * 100 : 0))٪").font(.headline)
+                    Text(percentText(p, done: done, total: total)).font(.headline)
                 }
                 .frame(width: 74, height: 74)
                 VStack(alignment: .leading, spacing: 4) {
@@ -112,6 +114,11 @@ struct SummaryView: View {
             }
         }
         .healthCard()
+    }
+
+    private func percentText(_ p: StudentProfile, done: Double, total: Double) -> String {
+        let pct: Int = p.planPercent ?? (total > 0 ? Int(done / total * 100) : 0)
+        return "\(pct)٪"
     }
 
     private var noticesCard: some View {

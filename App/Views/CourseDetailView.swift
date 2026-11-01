@@ -42,15 +42,23 @@ struct CourseDetailView: View {
             Text(c.code).font(.subheadline.weight(.semibold)).foregroundStyle(.white.opacity(0.85))
             Text(c.name).font(.title.bold()).foregroundStyle(.white)
             if !c.instructor.isEmpty { Text(c.instructor).font(.body).foregroundStyle(.white.opacity(0.9)) }
-            if let first = slots.first {
-                let days = slots.map { ArabicFormat.dayName($0.weekday) }.joined(separator: " · ")
-                Text("\(days) · \(first.startLabel)–\(first.endLabel)\(first.isOnline ? " · Teams" : (first.room.isEmpty ? "" : " · \(first.room)"))\(first.seat.map { " · مقعد \($0)" } ?? "")")
+            if !slots.isEmpty {
+                Text(scheduleLine(slots))
                     .font(.footnote).foregroundStyle(.white.opacity(0.85))
             }
         }
         .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(c.color.gradient, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+    }
+
+    private func scheduleLine(_ slots: [LectureSlot]) -> String {
+        guard let first = slots.first else { return "" }
+        var parts: [String] = [slots.map { ArabicFormat.dayName($0.weekday) }.joined(separator: " · ")]
+        parts.append("\(first.startLabel)–\(first.endLabel)")
+        if first.isOnline { parts.append("Teams") } else if !first.room.isEmpty { parts.append(first.room) }
+        if let seat = first.seat { parts.append("مقعد \(seat)") }
+        return parts.joined(separator: " · ")
     }
 
     private func actions(_ c: CourseInfo) -> some View {
@@ -90,7 +98,8 @@ struct CourseDetailView: View {
                 Spacer()
                 if let r = store.attendanceRate(for: code) { Pill(text: "حضور \(Int(r * 100))٪", tint: .green) }
             }
-            ProgressView(value: Double(min(used, limit)), total: Double(max(limit, 1))).tint(used >= limit - 1 ? .red : .orange)
+            ProgressView(value: Double(min(used, limit)), total: Double(max(limit, 1)))
+                .tint(used >= limit - 1 ? Color.red : Color.orange)
             Text(used >= limit ? "وصلت الحد! انتبه من الحرمان." : "بتقدر تغيب \(max(limit - used, 0)) كمان بأمان (تقريباً).")
                 .font(.footnote).foregroundStyle(used >= limit ? .red : .secondary)
             HStack {

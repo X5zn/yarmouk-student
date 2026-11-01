@@ -192,23 +192,40 @@ struct HomeView: View {
     }
 
     private var absencesCard: some View {
-        let worst = store.timetable.courses
-            .filter { c in store.timetable.slots.contains { $0.courseCode == c.code } }
-            .map { ($0, store.absences(for: $0.code), store.absenceLimit(for: $0.code)) }
-            .max { Double($0.1) / Double($0.2) < Double($1.1) / Double($1.2) }
+        let worst: AbsenceStat? = worstAbsence()
         return VStack(alignment: .leading, spacing: 10) {
             CardHeader(symbol: "person.badge.clock", title: "الغيابات", tint: .red)
-            if let w = worst, w.1 > 0 {
+            if let w = worst, w.used > 0 {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
-                    Text("\(w.1)/\(w.2)").font(.system(size: 30, weight: .bold, design: .rounded))
-                    Text(w.0.name).font(.subheadline).foregroundStyle(.secondary)
+                    Text("\(w.used)/\(w.limit)").font(.system(size: 30, weight: .bold, design: .rounded))
+                    Text(w.name).font(.subheadline).foregroundStyle(.secondary)
                 }
-                ProgressView(value: Double(min(w.1, w.2)), total: Double(w.2)).tint(w.1 >= w.2 - 1 ? .red : .orange)
+                ProgressView(value: Double(min(w.used, w.limit)), total: Double(w.limit))
+                    .tint(w.used >= w.limit - 1 ? Color.red : Color.orange)
             } else {
                 EmptyHint(symbol: "hand.thumbsup", text: "ولا غياب لحد هلأ. بعد كل محاضرة بنسألك «حضرت؟»")
             }
         }
         .healthCard()
+    }
+
+    private struct AbsenceStat { let name: String; let used: Int; let limit: Int }
+
+    private func worstAbsence() -> AbsenceStat? {
+        var best: AbsenceStat?
+        var bestRatio = -1.0
+        for c in store.timetable.courses {
+            let hasSlots = store.timetable.slots.contains { $0.courseCode == c.code }
+            if !hasSlots { continue }
+            let used = store.absences(for: c.code)
+            let limit = store.absenceLimit(for: c.code)
+            let ratio = Double(used) / Double(max(limit, 1))
+            if ratio > bestRatio {
+                bestRatio = ratio
+                best = AbsenceStat(name: c.name, used: used, limit: limit)
+            }
+        }
+        return best
     }
 
     private var coursesList: some View {
