@@ -13,7 +13,12 @@ shot() {
   xcrun simctl terminate "$UDID" "$BID" >/dev/null 2>&1 || true
   xcrun simctl launch "$UDID" "$BID" -demo "$@" -AppleLanguages "(ar)" -AppleLocale ar_JO >/dev/null
   sleep 6
-  xcrun simctl io "$UDID" screenshot "screens/$name.png" >/dev/null 2>&1 && echo "shot $name"
+  xcrun simctl io "$UDID" screenshot "screens/$name.png" >/dev/null 2>&1
+  # A launch-screen frame is a nearly empty PNG: wait and take it again.
+  if [ "$(stat -f%z "screens/$name.png" 2>/dev/null || echo 0)" -lt 120000 ]; then
+    sleep 5; xcrun simctl io "$UDID" screenshot "screens/$name.png" >/dev/null 2>&1
+  fi
+  echo "shot $name $(stat -f%z "screens/$name.png" 2>/dev/null)"
 }
 
 xcrun simctl ui "$UDID" appearance light

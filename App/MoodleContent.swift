@@ -186,6 +186,12 @@ final class FileStore: ObservableObject {
 }
 
 extension String {
+    /// "ملخص الوحدة.pdf" → "ملخص الوحدة" (the type shows as an icon + label instead).
+    var displayFileName: String {
+        let ext = (self as NSString).pathExtension
+        guard !ext.isEmpty, ext.count <= 5 else { return self }
+        return (self as NSString).deletingPathExtension
+    }
     var safeFileName: String { replacingOccurrences(of: "[^A-Za-z0-9_-]", with: "_", options: .regularExpression) }
 }
 

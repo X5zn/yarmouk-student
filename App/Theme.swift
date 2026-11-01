@@ -43,7 +43,7 @@ struct SectionTitle: View {
             if let action, let onAction {
                 Button(action) { Haptics.tap(); onAction() }
                     .font(.plex(.body))
-                    .foregroundStyle(Brand.green)
+                    .foregroundStyle(Brand.accent)
             }
         }
         .padding(.horizontal, 4)
@@ -57,13 +57,14 @@ struct CardHeader: View {
     var title: String
     var tint: Color
     var trailing: String? = nil
+    var chevron: Bool = true
     var body: some View {
         HStack(spacing: 6) {
             Image(systemName: symbol).font(.plex(.subheadline, .semibold))
             Text(title).font(.plex(.subheadline, .semibold))
             Spacer()
             if let trailing { Text(trailing).font(.plex(.footnote)).foregroundStyle(.secondary) }
-            Image(systemName: "chevron.forward").font(.plex(.footnote, .semibold)).foregroundStyle(.tertiary)
+            if chevron { Image(systemName: "chevron.forward").font(.plex(.footnote, .semibold)).foregroundStyle(.tertiary) }
         }
         .foregroundStyle(tint)
     }
@@ -96,11 +97,12 @@ struct Pill: View {
     var text: String
     var tint: Color
     var body: some View {
+        let t = tint == Brand.green ? Brand.accent : tint
         Text(text)
             .font(.plex(.caption, .semibold))
             .padding(.horizontal, 9).padding(.vertical, 4)
-            .foregroundStyle(tint)
-            .background(tint.opacity(0.12), in: Capsule())
+            .foregroundStyle(t)
+            .background(t.opacity(0.14), in: Capsule())
     }
 }
 

@@ -23,6 +23,10 @@ enum Brand {
     static let gold = Color(red: 201/255, green: 162/255, blue: 39/255)
     static let canvas = Color(uiColor: .systemGroupedBackground)
     static let card = Color(uiColor: .secondarySystemGroupedBackground)
+    /// Brand green for text, icons and controls: deep green in light mode, brighter in dark mode so it stays readable.
+    static let accent = Color(uiColor: UIColor { t in
+        t.userInterfaceStyle == .dark ? UIColor(red: 0.20, green: 0.78, blue: 0.48, alpha: 1) : UIColor(red: 0, green: 107 / 255, blue: 63 / 255, alpha: 1)
+    })
 }
 
 // MARK: - Courses & timetable
@@ -129,7 +133,7 @@ extension Calendar {
     static var yarmouk: Calendar {
         var c = Calendar(identifier: .gregorian)
         c.timeZone = TimeZone(identifier: "Asia/Amman") ?? .current
-        c.locale = Locale(identifier: "ar_JO")
+        c.locale = Locale(identifier: "ar_JO@numbers=latn")
         return c
     }
 }
@@ -169,7 +173,7 @@ enum ArabicFormat {
 
     static func shortDate(_ date: Date) -> String {
         let f = DateFormatter()
-        f.locale = Locale(identifier: "ar_JO")
+        f.locale = Locale(identifier: "ar_JO@numbers=latn")
         f.timeZone = Calendar.yarmouk.timeZone
         f.dateFormat = "EEEE d MMMM"
         return f.string(from: date)
@@ -182,7 +186,7 @@ enum ArabicFormat {
 
     static func relative(_ date: Date, from now: Date = .now) -> String {
         let f = RelativeDateTimeFormatter()
-        f.locale = Locale(identifier: "ar")
+        f.locale = Locale(identifier: "ar@numbers=latn")
         f.unitsStyle = .full
         return f.localizedString(for: date, relativeTo: now)
     }

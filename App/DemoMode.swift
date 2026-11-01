@@ -53,6 +53,8 @@ enum DemoMode {
             store.sections = [:]
             store.deadlines = []; store.notices = []; store.exams = []; store.attendance = []; store.notes = []
             store.profile = StudentProfile(planTotalHours: 132)
+            store.lastMoodleSync = nil
+            store.planCategories = []
         } else {
             store.profile = StudentProfile(fullName: "طالب تجريبي محمد", firstName: "طالب", studentNumber: "2024000000",
                                            major: "اللغة العربية وآدابها", college: "الآداب", email: "student@yu.edu.jo",

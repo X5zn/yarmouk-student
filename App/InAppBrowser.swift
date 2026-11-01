@@ -17,7 +17,7 @@ struct InAppBrowser: View {
                     if model.progress < 1 {
                         ProgressView(value: model.progress)
                             .progressViewStyle(.linear)
-                            .tint(Brand.green)
+                            .tint(Brand.accent)
                     }
                 }
                 .navigationTitle(model.title.isEmpty ? title : model.title)

@@ -130,7 +130,8 @@ struct ExamsView: View {
                 HStack(spacing: 12) {
                     RoundedRectangle(cornerRadius: 2).fill(store.course(e.courseCode)?.color ?? .purple).frame(width: 4, height: 40)
                     VStack(alignment: .leading, spacing: 3) {
-                        Text("\(e.title) · \(store.course(e.courseCode)?.name ?? e.courseCode)").font(.plex(.body, .semibold))
+                        Text(e.title).font(.plex(.body, .semibold))
+                        Text(store.course(e.courseCode)?.name ?? e.courseCode).font(.plex(.subheadline)).foregroundStyle(.secondary)
                         Text("\(ArabicFormat.shortDate(e.date)) · \(ArabicFormat.time(e.date))").font(.plex(.footnote)).foregroundStyle(.secondary)
                         if !e.notes.isEmpty { Text(e.notes).font(.plex(.footnote)).foregroundStyle(.secondary) }
                     }
@@ -235,18 +236,24 @@ struct AssignmentsView: View {
 
     private func row(_ d: Deadline) -> some View {
         Button { Haptics.tap(); router.open(d.url, title: d.name) } label: {
-            HStack {
-                Image(systemName: d.submitted ? "checkmark.circle.fill" : "clock.badge.exclamationmark")
-                    .foregroundStyle(d.submitted ? .green : .orange)
+            HStack(spacing: 12) {
+                Image(systemName: d.submitted ? "checkmark.circle.fill" : "clock.fill")
+                    .font(.title3)
+                    .foregroundStyle(d.submitted ? Color.green : Color.orange)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(d.name).font(.plex(.body, .medium)).foregroundStyle(.primary)
-                    Text("\(store.course(moodleId: d.courseId)?.name ?? "") · \(ArabicFormat.shortDate(d.due)) \(ArabicFormat.time(d.due))")
-                        .font(.plex(.footnote)).foregroundStyle(.secondary)
+                    Text(d.name).font(.plex(.body, .medium)).foregroundStyle(Color.primary)
+                    Text(store.course(moodleId: d.courseId)?.name ?? (d.kind == "quiz" ? "كويز" : "واجب"))
+                        .font(.plex(.footnote)).foregroundStyle(Color.secondary)
+                    Text("\(ArabicFormat.shortDate(d.due)) · \(ArabicFormat.time(d.due))")
+                        .font(.plex(.caption)).foregroundStyle(Color.secondary)
                 }
                 Spacer()
-                if !d.submitted { Text(ArabicFormat.relative(d.due)).font(.plex(.caption, .semibold)).foregroundStyle(.orange) }
+                if !d.submitted { Pill(text: ArabicFormat.relative(d.due), tint: .orange) }
             }
+            .padding(.vertical, 2)
+            .contentShape(Rectangle())
         }
+        .buttonStyle(.plain)
     }
 }
 
@@ -289,8 +296,8 @@ struct SearchView: View {
                                     let k = store.fileKinds[m.id] ?? .generic
                                     SymbolTile(symbol: m.kind == "resource" ? k.symbol : m.symbol, tint: m.kind == "resource" ? k.tint : Brand.green, size: 30)
                                     VStack(alignment: .leading, spacing: 1) {
-                                        Text(m.name).font(.plex(.body)).foregroundStyle(.primary).lineLimit(2)
-                                        Text(store.course(moodleId: cid)?.name ?? m.kindLabel).font(.plex(.caption)).foregroundStyle(.secondary)
+                                        Text(m.name).font(.plex(.body)).foregroundStyle(Color.primary).lineLimit(2)
+                                        Text(store.course(moodleId: cid)?.name ?? m.kindLabel).font(.plex(.caption)).foregroundStyle(Color.secondary)
                                     }
                                     Spacer()
                                     if opener.busyKey == m.id || opener.busyKey == "cm" + m.id { ProgressView().controlSize(.small) }

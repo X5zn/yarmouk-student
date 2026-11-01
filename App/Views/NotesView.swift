@@ -29,17 +29,17 @@ struct NotesView: View {
                         Label(recorder.isRecording ? "وقّف" : "صوت", systemImage: recorder.isRecording ? "stop.circle.fill" : "mic.fill")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.bordered).tint(recorder.isRecording ? .red : Brand.green)
+                    .buttonStyle(.bordered).tint(recorder.isRecording ? .red : Brand.accent)
 
                     Button { Haptics.tap(); showCamera = true } label: {
                         Label("صوّر اللوح", systemImage: "camera.fill").frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.bordered).tint(Brand.green)
+                    .buttonStyle(.bordered).tint(Brand.accent)
 
                     PhotosPicker(selection: $photoItem, matching: .images) {
                         Image(systemName: "photo.on.rectangle")
                     }
-                    .buttonStyle(.bordered).tint(Brand.green)
+                    .buttonStyle(.bordered).tint(Brand.accent)
                 }
                 if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     Button("احفظ الملاحظة") { Haptics.success(); add(.text, file: nil) }

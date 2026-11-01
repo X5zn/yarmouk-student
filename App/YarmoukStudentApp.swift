@@ -25,9 +25,9 @@ struct YarmoukStudentApp: App {
             .environmentObject(store)
             .environmentObject(router)
             .environment(\.layoutDirection, .rightToLeft)
-            .environment(\.locale, Locale(identifier: "ar_JO"))
+            .environment(\.locale, Locale(identifier: "ar_JO@numbers=latn"))
             .font(.plex(.body))
-            .tint(Brand.green)
+            .tint(Brand.accent)
             .sheet(item: $router.web) { link in
                 InAppBrowser(url: link.url, title: link.title)
             }

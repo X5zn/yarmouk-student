@@ -40,7 +40,7 @@ struct HomeView: View {
             HStack(spacing: 12) {
                 Button { Haptics.tap(); router.tab = .account } label: {
                     Text(store.avatarLetter)
-                        .font(.plex(.headline)).foregroundStyle(Brand.green)
+                        .font(.plex(.headline)).foregroundStyle(Brand.accent)
                         .frame(width: 40, height: 40)
                         .background(.white, in: Circle())
                 }
@@ -103,7 +103,7 @@ struct HomeView: View {
                             VStack(alignment: .trailing, spacing: 2) {
                                 Text(next.slot.startLabel).font(.plex(.title3, .bold)).foregroundStyle(.primary)
                                 Text(countdown(to: next.interval.start, now: context.date))
-                                    .font(.plex(.caption, .semibold)).foregroundStyle(Brand.green)
+                                    .font(.plex(.caption, .semibold)).foregroundStyle(Brand.accent)
                             }
                         }
                     }
@@ -171,8 +171,13 @@ struct HomeView: View {
                     Text("مطلوب").font(.plex(.subheadline)).foregroundStyle(.secondary)
                 }
                 .foregroundStyle(.primary)
-                Text("\(d.name) · \(store.course(moodleId: d.courseId)?.name ?? "") · \(ArabicFormat.relative(d.due))")
-                    .font(.plex(.subheadline)).foregroundStyle(.secondary).lineLimit(1)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(d.name).font(.plex(.subheadline, .medium)).foregroundStyle(.primary).lineLimit(1)
+                    Text([store.course(moodleId: d.courseId)?.name ?? "", ArabicFormat.relative(d.due)].filter { !$0.isEmpty }.joined(separator: " · "))
+                        .font(.plex(.footnote)).foregroundStyle(.secondary).lineLimit(1)
+                }
+            } else if !store.moodleLinked {
+                InlineEmpty(symbol: "link", text: "اربط الايليرنينغ من «حسابي» وبتظهر واجباتك هون")
             } else {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text("\(store.submittedCount)").font(.system(size: 30, weight: .bold, design: .rounded))
@@ -193,8 +198,11 @@ struct HomeView: View {
                     Text("يوم").font(.plex(.subheadline)).foregroundStyle(.secondary)
                 }
                 .foregroundStyle(.primary)
-                Text("\(store.course(e.courseCode)?.name ?? e.courseCode) · \(e.title) \(ArabicFormat.shortDate(e.date))")
-                    .font(.plex(.subheadline)).foregroundStyle(.secondary).lineLimit(1)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(e.title).font(.plex(.subheadline, .medium)).foregroundStyle(.primary).lineLimit(1)
+                    Text((store.course(e.courseCode)?.name ?? e.courseCode) + " · " + ArabicFormat.shortDate(e.date))
+                        .font(.plex(.footnote)).foregroundStyle(.secondary).lineLimit(1)
+                }
             } else {
                 InlineEmpty(symbol: "plus", text: "ما في امتحانات مسجلة، ضيفها من هون")
             }
@@ -205,7 +213,7 @@ struct HomeView: View {
     private var absencesCard: some View {
         let worst: AbsenceStat? = worstAbsence()
         return VStack(alignment: .leading, spacing: 10) {
-            CardHeader(symbol: "person.badge.clock", title: "الغيابات", tint: .red)
+            CardHeader(symbol: "person.badge.clock", title: "الغيابات", tint: .red, chevron: false)
             if let w = worst, w.used > 0 {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text("\(w.used)/\(w.limit)").font(.system(size: 30, weight: .bold, design: .rounded))

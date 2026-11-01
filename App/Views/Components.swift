@@ -15,9 +15,9 @@ struct StateCard: View {
         VStack(spacing: 12) {
             Image(systemName: symbol)
                 .font(.system(size: 26, weight: .semibold))
-                .foregroundStyle(tint)
+                .foregroundStyle(tint == Brand.green ? Brand.accent : tint)
                 .frame(width: 60, height: 60)
-                .background(tint.opacity(0.12), in: Circle())
+                .background(tint.opacity(0.14), in: Circle())
                 .symbolEffect(.bounce, value: title)
             Text(title).font(.plex(.headline)).multilineTextAlignment(.center)
             Text(message)

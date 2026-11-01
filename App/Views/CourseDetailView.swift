@@ -119,7 +119,7 @@ struct CourseDetailView: View {
     private func reload(force: Bool) async {
         guard let id = course?.moodleId else { return }
         guard store.moodleLinked || DemoMode.isOn else { state = .needsLogin; return }
-        if DemoMode.isOn { state = DemoMode.flag("-loading") ? .loading : .loaded; return }
+        if DemoMode.isOn { state = DemoMode.flag("-loading") ? .loading : (store.moodleLinked ? .loaded : .needsLogin); return }
         if store.sections[id] == nil { state = .loading }
         else if !force { state = .loaded }
         let r = await store.loadSections(courseId: id)
@@ -180,7 +180,7 @@ struct CourseDetailView: View {
 
     private func deadlinesCard(_ list: [Deadline]) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            CardHeader(symbol: "square.and.pencil", title: "الواجبات", tint: .orange)
+            CardHeader(symbol: "square.and.pencil", title: "الواجبات", tint: .orange, chevron: false)
             ForEach(list.sorted { $0.due < $1.due }) { d in
                 Button { Haptics.tap(); router.open(d.url, title: d.name) } label: {
                     HStack(spacing: 12) {
@@ -202,7 +202,7 @@ struct CourseDetailView: View {
 
     private func examsCard(_ list: [Exam]) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            CardHeader(symbol: "graduationcap.fill", title: "الامتحانات", tint: .purple)
+            CardHeader(symbol: "graduationcap.fill", title: "الامتحانات", tint: .purple, chevron: false)
             ForEach(list) { e in
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
@@ -288,13 +288,6 @@ struct CourseHero: View {
         .background {
             RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .fill(LinearGradient(colors: [course.color, course.color.opacity(0.78)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                .overlay(alignment: .bottomLeading) {
-                    Image(systemName: "book.closed.fill")
-                        .font(.system(size: 90, weight: .bold))
-                        .foregroundStyle(.white.opacity(0.08))
-                        .offset(x: -6, y: 18)
-                        .clipped()
-                }
                 .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
         }
     }
@@ -318,7 +311,7 @@ struct CourseAttendanceCard: View {
         let used = store.absences(for: code), limit = store.absenceLimit(for: code)
         let danger = used >= limit
         VStack(alignment: .leading, spacing: 12) {
-            CardHeader(symbol: "person.badge.clock.fill", title: "الحضور والغياب", tint: .red)
+            CardHeader(symbol: "person.badge.clock.fill", title: "الحضور والغياب", tint: .red, chevron: false)
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text("\(used)").font(.system(size: 32, weight: .bold, design: .rounded)).contentTransition(.numericText())
                 Text("غياب من \(limit) مسموح").font(.plex(.subheadline)).foregroundStyle(.secondary)
@@ -577,7 +570,7 @@ struct DiscussionView: View {
                     HStack(spacing: 10) {
                         let k = MoodleFileKind(fileName: a.name)
                         SymbolTile(symbol: k.symbol, tint: k.tint, size: 30)
-                        Text(a.name).font(.plex(.subheadline, .medium)).foregroundStyle(.primary).lineLimit(1)
+                        Text(a.name.displayFileName).font(.plex(.subheadline, .medium)).foregroundStyle(.primary).lineLimit(1)
                         Spacer()
                         if opener.busyKey == a.url { ProgressView().controlSize(.small) }
                         else { Image(systemName: "arrow.down.circle").foregroundStyle(tint) }
@@ -631,12 +624,12 @@ struct FolderView: View {
                                         let k = MoodleFileKind(fileName: f.name)
                                         SymbolTile(symbol: k.symbol, tint: k.tint, size: 34)
                                         VStack(alignment: .leading, spacing: 2) {
-                                            Text(f.name).font(.plex(.body, .medium)).foregroundStyle(.primary).lineLimit(2).multilineTextAlignment(.leading)
+                                            Text(f.name.displayFileName).font(.plex(.body, .medium)).foregroundStyle(.primary).lineLimit(2).multilineTextAlignment(.leading)
                                             Text(k.label).font(.plex(.caption)).foregroundStyle(.secondary)
                                         }
                                         Spacer()
                                         if opener.busyKey == f.url { ProgressView().controlSize(.small) }
-                                        else { Image(systemName: "arrow.down.circle").foregroundStyle(Brand.green) }
+                                        else { Image(systemName: "arrow.down.circle").foregroundStyle(Brand.accent) }
                                     }
                                     .padding(.horizontal, 16).padding(.vertical, 11)
                                     .contentShape(Rectangle())
@@ -733,7 +726,7 @@ struct AssignmentView: View {
         }
         if !i.intro.isEmpty {
             VStack(alignment: .leading, spacing: 8) {
-                CardHeader(symbol: "text.alignright", title: "المطلوب", tint: tint)
+                CardHeader(symbol: "text.alignright", title: "المطلوب", tint: tint, chevron: false)
                 Text(i.intro).font(.plex(.body)).textSelection(.enabled).fixedSize(horizontal: false, vertical: true)
             }
             .healthCard()
@@ -743,7 +736,7 @@ struct AssignmentView: View {
                 HStack(spacing: 10) {
                     let k = MoodleFileKind(fileName: f.name)
                     SymbolTile(symbol: k.symbol, tint: k.tint, size: 32)
-                    Text(f.name).font(.plex(.subheadline, .medium)).foregroundStyle(.primary).lineLimit(1)
+                    Text(f.name.displayFileName).font(.plex(.subheadline, .medium)).foregroundStyle(.primary).lineLimit(1)
                     Spacer()
                     if opener.busyKey == f.url { ProgressView().controlSize(.small) } else { Image(systemName: "arrow.down.circle").foregroundStyle(tint) }
                 }

@@ -160,26 +160,45 @@ struct PlanView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 let p = store.profile
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("\(p.passedHours ?? 0) / \(p.planTotalHours) ساعة").font(.plex(.largeTitle, .bold))
-                    ProgressView(value: Double(p.passedHours ?? 0), total: Double(p.planTotalHours)).tint(Brand.green)
-                    HStack {
+                let done = p.passedHours ?? store.sis.record?.summary.cumulativeHours ?? 0
+                let total = max(p.planTotalHours, 1)
+                VStack(alignment: .leading, spacing: 14) {
+                    HStack(spacing: 18) {
+                        ZStack {
+                            Circle().stroke(Brand.green.opacity(0.15), lineWidth: 12)
+                            Circle().trim(from: 0, to: min(Double(done) / Double(total), 1))
+                                .stroke(Brand.green, style: StrokeStyle(lineWidth: 12, lineCap: .round))
+                                .rotationEffect(.degrees(-90))
+                            VStack(spacing: 0) {
+                                Text("\(p.planPercent ?? Int(Double(done) / Double(total) * 100))٪").font(.system(size: 22, weight: .bold, design: .rounded))
+                                Text("من الخطة").font(.plex(.caption2)).foregroundStyle(.secondary)
+                            }
+                        }
+                        .frame(width: 96, height: 96)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("\(done) من \(total) ساعة").font(.plex(.title2, .bold))
+                            Text("ضايلك \(max(total - done, 0)) ساعة").font(.plex(.subheadline)).foregroundStyle(.secondary)
+                        }
+                        Spacer(minLength: 0)
+                    }
+                    HStack(spacing: 6) {
                         if let ip = p.inProgressHours { Pill(text: "\(ip) ساعة هالفصل", tint: .blue) }
-                        if let r = p.remainingHours { Pill(text: "ضايل \(r)", tint: .orange) }
+                        if let e = p.expectedToGraduate { Pill(text: "متوقع تخرجه: \(e)", tint: .purple) }
                     }
                     if let g = p.graduationEstimate {
-                        Text("إذا أخذت 15 ساعة بالفصل بتتخرج تقريباً \(g)").font(.plex(.footnote)).foregroundStyle(.secondary)
+                        Label("إذا أخذت 15 ساعة بالفصل بتتخرج تقريباً \(g)", systemImage: "graduationcap")
+                            .font(.plex(.footnote)).foregroundStyle(.secondary)
                     }
-                    if let e = p.expectedToGraduate { Text("متوقع تخرجه (SIS): \(e)").font(.plex(.footnote)).foregroundStyle(.secondary) }
                 }
                 .healthCard()
 
                 if store.planCategories.isEmpty {
-                    Button { Haptics.tap(); showSIS = true } label: {
-                        EmptyHint(symbol: "arrow.clockwise", text: "حدّث من SIS عشان تظهر تفاصيل الخطة (إجباري/اختياري)")
-                            .healthCard()
+                    StateCard(symbol: "list.bullet.clipboard", title: "تفاصيل الخطة من SIS",
+                              message: "متطلبات الجامعة والكلية والتخصص، الإجباري والاختياري، وكم ضايلك من كل وحدة.",
+                              actionTitle: store.sisLinked ? "حدّث من SIS" : "سجّل دخول SIS") {
+                        if store.sisLinked && SISSync.savedSession != nil { Task { if !(await store.refreshSIS()) { showSIS = true } } }
+                        else { showSIS = true }
                     }
-                    .buttonStyle(PressableStyle())
                 }
                 ForEach(store.planCategories) { cat in
                     VStack(alignment: .leading, spacing: 8) {

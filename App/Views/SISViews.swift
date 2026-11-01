@@ -83,7 +83,7 @@ struct SISEmptyState: View {
         VStack(spacing: 14) {
             Image(systemName: symbol)
                 .font(.system(size: 30, weight: .semibold))
-                .foregroundStyle(Brand.green)
+                .foregroundStyle(Brand.accent)
                 .frame(width: 66, height: 66)
                 .background(Brand.green.opacity(0.12), in: Circle())
             Text(title).font(.plex(.headline))
@@ -215,7 +215,7 @@ private struct GPATrendCard: View {
                 Image(systemName: "chart.xyaxis.line")
                 Text("معدلك عبر الفصول")
             }
-            .font(.plex(.subheadline, .semibold)).foregroundStyle(Brand.green)
+            .font(.plex(.subheadline, .semibold)).foregroundStyle(Brand.accent)
             Chart {
                 ForEach(terms) { t in
                     if let g = t.termGPA {
@@ -267,7 +267,7 @@ private struct TermCard: View {
             HStack(alignment: .firstTextBaseline, spacing: 8) {
                 Text(verbatim: gpaText(term.termGPA))
                     .font(.system(size: 36, weight: .bold, design: .rounded))
-                    .foregroundStyle(Brand.green)
+                    .foregroundStyle(Brand.accent)
                 Text("المعدل الفصلي").font(.plex(.footnote)).foregroundStyle(.secondary)
                 Spacer()
                 if let d = delta {
@@ -452,7 +452,7 @@ struct RegisteredCoursesView: View {
         let used = Set(courses.flatMap(\.days))
         return VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .firstTextBaseline) {
-                Text(verbatim: "\(hours)").font(.system(size: 40, weight: .bold, design: .rounded)).foregroundStyle(Brand.green)
+                Text(verbatim: "\(hours)").font(.system(size: 40, weight: .bold, design: .rounded)).foregroundStyle(Brand.accent)
                 Text("ساعة معتمدة").font(.plex(.subheadline)).foregroundStyle(.secondary)
                 Spacer()
                 Text(verbatim: "\(courses.count) مواد").font(.plex(.subheadline, .semibold)).foregroundStyle(.secondary)
@@ -665,14 +665,14 @@ struct SISGenericPageView: View {
                 } else if store.sisLinked && store.sis.updatedAt != nil {
                     VStack(spacing: 12) {
                         Image(systemName: "doc.text.magnifyingglass")
-                            .font(.system(size: 28, weight: .semibold)).foregroundStyle(Brand.green)
+                            .font(.system(size: 28, weight: .semibold)).foregroundStyle(Brand.accent)
                             .frame(width: 62, height: 62).background(Brand.green.opacity(0.12), in: Circle())
                         Text("هاي الصفحة لسا بنرتبها").font(.plex(.headline))
                         Text("بتقدر تفتحها من الجامعة جوا التطبيق هلأ.").font(.plex(.subheadline)).foregroundStyle(.secondary)
                         Button { Haptics.tap(); router.open("https://sis.yu.edu.jo/ords/", title: title) } label: {
                             Text("افتح صفحة الجامعة").font(.plex(.headline)).frame(maxWidth: .infinity).padding(.vertical, 10)
                         }
-                        .buttonStyle(.bordered).tint(Brand.green)
+                        .buttonStyle(.bordered).tint(Brand.accent)
                     }
                     .padding(24).frame(maxWidth: .infinity)
                     .background(Brand.card, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
@@ -732,7 +732,7 @@ struct DeveloperExportView: View {
                                 Text(ArabicFormat.relative(f.date)).font(.plex(.caption)).foregroundStyle(.secondary)
                             }
                             Spacer()
-                            Image(systemName: "square.and.arrow.up").foregroundStyle(Brand.green)
+                            Image(systemName: "square.and.arrow.up").foregroundStyle(Brand.accent)
                         }
                     }
                 }

@@ -90,17 +90,23 @@ struct SummaryView: View {
                 .foregroundStyle(LinearGradient(colors: [Brand.green.opacity(0.25), Brand.green.opacity(0)], startPoint: .top, endPoint: .bottom))
                 .interpolationMethod(.catmullRom)
             LineMark(x: .value("الفصل", i), y: .value("المعدل", t.termGPA ?? 0))
-                .foregroundStyle(Brand.green)
+                .foregroundStyle(Brand.accent)
                 .lineStyle(StrokeStyle(lineWidth: 2.5, lineCap: .round))
                 .interpolationMethod(.catmullRom)
             if i == terms.count - 1 {
-                PointMark(x: .value("الفصل", i), y: .value("المعدل", t.termGPA ?? 0)).foregroundStyle(Brand.green).symbolSize(40)
+                PointMark(x: .value("الفصل", i), y: .value("المعدل", t.termGPA ?? 0)).foregroundStyle(Brand.accent).symbolSize(40)
             }
         }
-        .chartYScale(domain: .automatic(includesZero: false))
+        .chartYScale(domain: sparkDomain(terms))
         .chartXAxis(.hidden)
         .chartYAxis(.hidden)
         .environment(\.layoutDirection, .leftToRight)
+    }
+
+    private func sparkDomain(_ terms: [AcademicTerm]) -> ClosedRange<Double> {
+        let v = terms.compactMap(\.termGPA)
+        let lo = (v.min() ?? 60) - 2, hi = (v.max() ?? 100) + 2
+        return lo...max(hi, lo + 1)
     }
 
     // MARK: Plan
@@ -112,6 +118,9 @@ struct SummaryView: View {
         let pct = p.planPercent ?? Int(done / total * 100)
         return VStack(alignment: .leading, spacing: 12) {
             CardHeader(symbol: "chart.pie.fill", title: "الخطة الدراسية", tint: .teal)
+            if doneInt == 0 && !store.sisLinked {
+                InlineEmpty(symbol: "building.columns", text: "سجّل دخول SIS وبنحسبلك كم ضايلك للتخرج")
+            } else {
             HStack(spacing: 18) {
                 ZStack {
                     Circle().stroke(Color.teal.opacity(0.15), lineWidth: 10)
@@ -127,6 +136,7 @@ struct SummaryView: View {
                     if let g = p.graduationEstimate { Text("التخرج تقريباً: \(g)").font(.plex(.subheadline)).foregroundStyle(.secondary) }
                 }
                 Spacer(minLength: 0)
+            }
             }
         }
         .healthCard()
@@ -196,7 +206,7 @@ struct SummaryView: View {
         let anyMarks = !store.attendance.isEmpty
         let maxLimit: Int = max(rows.map { store.absenceLimit(for: $0.code) }.max() ?? 7, 1)
         return VStack(alignment: .leading, spacing: 12) {
-            CardHeader(symbol: "person.badge.clock.fill", title: "الغياب", tint: .red)
+            CardHeader(symbol: "person.badge.clock.fill", title: "الغياب", tint: .red, chevron: false)
             if !anyMarks || rows.isEmpty {
                 InlineEmpty(symbol: "hand.raised", text: "علّم «حضرت/غبت» من صفحة المادة، وهون بتشوف وين وصلت من الحد")
             } else {
@@ -235,7 +245,7 @@ struct SummaryView: View {
         } else {
             VStack(alignment: .leading, spacing: 12) {
                 CardHeader(symbol: "bell.badge.fill", title: "آخر الإشعارات", tint: .blue,
-                           trailing: store.lastMoodleSync.map { ArabicFormat.relative($0) })
+                           trailing: store.lastMoodleSync.map { ArabicFormat.relative($0) }, chevron: false)
                 if store.notices.isEmpty { InlineEmpty(symbol: "bell.slash", text: "ما في إشعارات جديدة") }
                 ForEach(Array(store.notices.prefix(5).enumerated()), id: \.element.id) { i, n in
                     if i > 0 { Divider() }

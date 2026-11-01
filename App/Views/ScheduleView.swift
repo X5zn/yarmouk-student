@@ -58,7 +58,7 @@ struct ScheduleView: View {
         return VStack(alignment: .leading, spacing: 12) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(ArabicFormat.dayName(Calendar.yarmouk.component(.weekday, from: now)) + "، " + ArabicFormat.shortDate(now))
+                    Text(ArabicFormat.shortDate(now))
                         .font(.plex(.subheadline, .medium)).opacity(0.85)
                     Text(countText(today.count))
                         .font(.plex(.title3, .bold))

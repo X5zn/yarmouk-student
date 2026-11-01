@@ -24,7 +24,7 @@ struct RootView: View {
                 NavigationStack { SearchView().withDestinations() }
             }
         }
-        .tint(Brand.green)
+        .tint(Brand.accent)
         .sensoryFeedback(.selection, trigger: router.tab)
     }
 }
